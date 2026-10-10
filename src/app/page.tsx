@@ -1,34 +1,41 @@
+import { ButtonLink } from "@/components/button-link";
+import { Card } from "@/components/card";
+import { Container } from "@/components/container";
+import { SectionHeading } from "@/components/section-heading";
+import { SiteShell } from "@/components/site-shell";
+
 export default function Home() {
   return (
-    <main className="min-h-screen px-6 py-10 sm:px-10 lg:px-16">
-      <div className="mx-auto flex min-h-[calc(100vh-5rem)] max-w-6xl flex-col justify-between rounded-3xl border border-white/10 bg-surface p-8 shadow-2xl shadow-black/20 sm:p-12">
-        <header className="flex items-center justify-between gap-4">
-          <p className="font-mono text-xs uppercase tracking-[0.24em] text-accent">
-            Developer Portfolio
-          </p>
-          <span className="rounded-full border border-white/10 px-3 py-1 text-xs text-secondary">
-            Foundation · Task 001
-          </span>
-        </header>
-
-        <section className="max-w-3xl py-20">
-          <p className="mb-5 text-sm font-medium uppercase tracking-[0.2em] text-secondary">
-            Full-stack web developer
-          </p>
-          <h1 className="text-4xl font-semibold tracking-tight text-primary sm:text-6xl">
-            Modern business applications, built with clarity.
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-secondary">
-            The portfolio foundation is ready. Projects, services, about, and
-            contact experiences will be added in the next implementation tasks.
-          </p>
+    <SiteShell>
+      <Container className="py-16 sm:py-24">
+        <section className="grid gap-12 lg:grid-cols-[1.35fr_0.65fr] lg:items-end">
+          <div>
+            <p className="font-mono text-xs uppercase tracking-[0.24em] text-accent">Full-stack web developer</p>
+            <h1 className="mt-5 max-w-4xl text-4xl font-semibold tracking-tight text-primary sm:text-6xl">Modern business applications, built with clarity.</h1>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-secondary">A focused portfolio shell for thoughtful digital products. The complete homepage content and owner profile will be introduced in TASK-003.</p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <ButtonLink href="/projects">Explore projects</ButtonLink>
+              <ButtonLink href="/contact" variant="secondary">Discuss a project</ButtonLink>
+            </div>
+          </div>
+          <Card className="lg:mb-2">
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">Design system preview</p>
+            <p className="mt-4 text-xl font-medium text-primary">Premium, spacious, and quietly technical.</p>
+            <p className="mt-3 text-sm leading-6 text-secondary">Shared spacing, type, color, focus, and navigation foundations are now in place.</p>
+          </Card>
         </section>
 
-        <footer className="flex flex-col gap-3 border-t border-white/10 pt-6 text-sm text-secondary sm:flex-row sm:items-center sm:justify-between">
-          <span>Dark Premium Tech direction</span>
-          <span className="font-mono text-xs">/src/app · strict TypeScript</span>
-        </footer>
-      </div>
-    </main>
+        <section className="mt-24 border-t border-border pt-12">
+          <SectionHeading eyebrow="Shell foundations" title="A clear starting point for the portfolio." description="Reusable layout primitives and route placeholders keep the next implementation tasks focused on content and verified project stories." />
+          <div className="mt-8 grid gap-4 sm:grid-cols-3">
+            {["Responsive navigation", "Accessible foundations", "Verified content ahead"].map((item) => (
+              <Card key={item} className="p-5">
+                <p className="text-sm font-medium text-primary">{item}</p>
+              </Card>
+            ))}
+          </div>
+        </section>
+      </Container>
+    </SiteShell>
   );
 }

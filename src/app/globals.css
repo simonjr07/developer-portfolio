@@ -3,17 +3,21 @@
 :root {
   --background: #0b0f14;
   --surface: #141b24;
+  --surface-raised: #1b2531;
   --primary: #f3f6fa;
   --secondary: #9aa8b8;
   --accent: #75afff;
+  --border: rgba(154, 168, 184, 0.2);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
   --color-accent: var(--accent);
+  --color-border: var(--border);
   --font-sans: var(--font-geist-sans), Arial, Helvetica, sans-serif;
   --font-mono: var(--font-geist-mono), "Courier New", monospace;
 }
@@ -24,6 +28,8 @@
 
 html {
   background: var(--background);
+  color-scheme: dark;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -31,4 +37,29 @@ body {
   background: var(--background);
   color: var(--primary);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--background);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }

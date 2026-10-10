@@ -5,16 +5,18 @@
 Run from the repository root:
 
 ```bash
-npm install
+npm ci
 npm run lint
 npm run typecheck
 npm run build
 git diff --check
 ```
 
+Pull requests targeting `main` also run the same lint, TypeScript, and production-build checks in `.github/workflows/validate.yml` with Node.js 22.
+
 ## Local smoke test
 
-Start the development server with `npm run dev`, open `http://localhost:3000`, and confirm the foundation screen renders without console or server errors. Route-specific smoke tests will be added as routes are implemented.
+Start the development server with `npm run dev`, open `http://localhost:3000`, and confirm the responsive shell renders without console or server errors. Check the menu and route placeholders at 320px, 390px, tablet, and desktop widths when browser tooling permits. Route-specific smoke tests will be added as routes are implemented.
 
 ## Quality expectations
 
