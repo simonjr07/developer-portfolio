@@ -49,6 +49,7 @@ web_modules/
 
 # Optional npm cache directory
 .npm
+.npm-cache/
 
 # Optional eslint cache
 .eslintcache
@@ -77,6 +78,10 @@ web_modules/
 # Next.js build output
 .next
 out
+
+# Next.js / tooling local metadata
+.vercel
+*.tsbuildinfo
 
 # Nuxt.js build / generate output
 .nuxt
@@ -147,3 +152,7 @@ vite.config.ts.timestamp-*
 
 # Turbo Repo
 .turbo
+
+# OS metadata
+.DS_Store
+Thumbs.db
