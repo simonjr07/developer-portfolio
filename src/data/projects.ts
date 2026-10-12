@@ -41,8 +41,9 @@ export const projects = [
       { title: "Preserved lead history", detail: "Relational constraints and non-destructive publication/account states retain historical lead links and note authorship." },
     ],
     quality: "The source project documents Vitest domain and PostgreSQL integration coverage, plus CI checks for migrations, generated Prisma Client, lint, types, tests, and build. Browser end-to-end tests are planned, not installed.",
-    boundaries: ["This is a fictional portfolio project, not an operating business or paid client commission.", "The repository reports local development and CI only; there is no deployed app or live demo URL.", "The enquiry form is for fictional demonstration data and must not be used for genuine customer enquiries."],
+    boundaries: ["This is a fictional portfolio project, not an operating business or paid client commission.", "The repository documents local development and CI; the hosted demonstration is provided separately through the live-demo link.", "The enquiry form is for fictional demonstration data and must not be used for genuine customer enquiries."],
     repository: "https://github.com/simonjr07/nexaservice",
+    liveDemo: { url: "https://nexaservice-flax.vercel.app/", note: "Fictional demonstration; do not submit real customer information." },
   },
   {
     slug: "copper-spoon",
