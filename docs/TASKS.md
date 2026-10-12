@@ -23,7 +23,8 @@
 
 - Add a central typed source for the four demonstration projects, used by the listing and dynamic case-study routes.
 - Document verified project workflows, features, technical approaches, and quality evidence; unknown or unsupported claims are omitted.
-- Use source repositories for all four projects. NexaService has no live deployment; include verified demos only for Copper Spoon, Aurelia Studio, and Maison Vale.
+- Use source repositories for all four projects and include the available hosted demos for NexaService, Copper Spoon, Aurelia Studio, and Maison Vale.
+- Keep fictional-data, simulated-payment, and other project-specific limitations visible wherever relevant.
 - Use genuine, privacy-reviewed project screenshots from each source repository; preserve original PNGs in `public/projects/`.
 - Keep all projects clearly labeled as portfolio demonstrations; no commercial outcomes or paid client commissions are implied.
 
