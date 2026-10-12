@@ -23,3 +23,7 @@ The shared design system, responsive navigation, and route placeholders are impl
 ## 2026-10-10 — Preserve repository history
 
 The existing `.git` directory and initial commit are retained. Feature branches and pull requests are used for implementation; deployment remains outside TASK-002.
+
+## 2026-10-12 — Use honest visual placeholders until owner assets arrive
+
+The homepage uses abstract artwork explicitly labeled as a portrait placeholder and schematic project cards labeled as concept previews. No stock, generated, or unverified application imagery is presented as authentic. When supplied by the owner, the homepage portrait belongs at `public/images/profile-portrait.webp`; the placeholder remains until then.

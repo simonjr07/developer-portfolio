@@ -13,11 +13,11 @@
 - Add reusable header, footer, layout, navigation, link, heading, and card foundations.
 - Add accessible mobile navigation, route placeholders, and pull-request validation CI.
 
-## TASK-003 — Homepage
+## Completed: TASK-003 — Homepage
 
-- Build the complete homepage content and information architecture.
-- Add the owner's supplied authentic professional portrait.
-- Keep all positioning and experience claims factual and approved.
+- Build the responsive homepage with hero, demonstration-project previews, services, verified stack, process, about teaser, and contact CTA.
+- Keep all positioning and experience claims factual; project visuals are explicitly concept previews, not application screenshots.
+- The owner has not supplied an authentic portrait yet. The homepage uses an abstract placeholder; when supplied, add the portrait at `public/images/profile-portrait.webp` and replace the placeholder without generating or substituting a face.
 
 ## TASK-004 — Projects & Case Studies
 
