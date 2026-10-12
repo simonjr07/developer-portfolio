@@ -21,7 +21,7 @@ Open [http://localhost:3000](http://localhost:3000) to view the portfolio.
 
 ## Projects
 
-The `/projects` listing and `/projects/[slug]` case studies describe four portfolio demonstrations: NexaService, Copper Spoon, Aurelia Studio, and Maison Vale. Each project page distinguishes documented implementation from limitations and sandbox behavior. Source and live-demo links appear only when verified; NexaService has no live deployment.
+The `/projects` listing and `/projects/[slug]` case studies describe four portfolio demonstrations: NexaService, Copper Spoon, Aurelia Studio, and Maison Vale. Each project page distinguishes documented implementation from limitations and sandbox behavior. Source links and available live demonstrations are listed per project, with sandbox and fictional-data limitations clearly stated.
 
 ## Validation
 
