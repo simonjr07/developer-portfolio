@@ -16,6 +16,10 @@ No database, PostgreSQL, Prisma, Stripe, Auth.js, or general-purpose UI kit is i
 
 The project list is treated as demonstration work. Unknown URLs, results, testimonials, client relationships, and capabilities will not be invented.
 
+## 2026-10-10 — Establish the shell before content
+
+The shared design system, responsive navigation, and route placeholders are implemented before the full homepage, portrait, case studies, or contact content. This keeps TASK-002 focused on reusable infrastructure and reserves authored claims for their planned tasks.
+
 ## 2026-10-10 — Preserve repository history
 
-The existing `.git` directory and initial commit are retained. TASK-001 does not commit, push, or deploy changes.
+The existing `.git` directory and initial commit are retained. Feature branches and pull requests are used for implementation; deployment remains outside TASK-002.

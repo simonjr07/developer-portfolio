@@ -22,8 +22,8 @@ src/app/
 └── contact/page.tsx
 ```
 
-Shared presentation primitives may be added under `src/components/` when repeated patterns appear. Project content should stay data-driven, with a typed portfolio model under `src/data/` or `src/lib/` once the case-study task begins.
+Shared presentation primitives live under `src/components/` when a pattern repeats or needs isolated behavior. Project content should stay data-driven, with a typed portfolio model under `src/data/` or `src/lib/` beginning in TASK-004. The responsive shell is established in TASK-002; route placeholders are intentionally lightweight until their content tasks begin.
 
 ## Runtime boundaries
 
-V1 is static and content-led. No database, authentication, server actions, API routes, or secrets are required for TASK-001. Interactive behavior should be introduced only where it improves navigation or accessibility.
+V1 is static and content-led. No database, authentication, server actions, API routes, or secrets are required for the current shell or planned content tasks. Interactive behavior should be introduced only where it improves navigation or accessibility.
