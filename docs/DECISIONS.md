@@ -27,3 +27,9 @@ The existing `.git` directory and initial commit are retained. Feature branches 
 ## 2026-10-12 — Use honest visual placeholders until owner assets arrive
 
 The homepage uses abstract artwork explicitly labeled as a portrait placeholder and schematic project cards labeled as concept previews. No stock, generated, or unverified application imagery is presented as authentic. When supplied by the owner, the homepage portrait belongs at `public/images/profile-portrait.webp`; the placeholder remains until then.
+
+## 2026-10-12 — Source case studies from project repositories
+
+The four portfolio entries use implementation details documented in the owner's public source repositories and their README/case-study/testing/screenshot records. Claims are limited to those records; source-reported test and hosted-QA results are identified as such. Repository links are included for all four projects. The Copper Spoon, Aurelia Studio, and Maison Vale demo URLs are the URLs recorded by their source repositories and returned HTTP 200 during verification. NexaService is documented as local-only and has no live demo link.
+
+Authentic project screenshots are copied without recompression into `public/projects/` from the source repositories' curated screenshot sets: NexaService `docs/Images/homepage-why-nexaservice.png`, Copper Spoon `docs/screenshots/desktop-menu-hero.png`, Aurelia Studio `docs/screenshots/home-desktop.png`, and Maison Vale `docs/screenshots/01-homepage-desktop.png`. The captured UI is presented as project evidence, not as portfolio-site imagery; demos, fictional data, simulated payment, and known limitations remain clearly disclosed.
