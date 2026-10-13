@@ -28,11 +28,14 @@
 - Use genuine, privacy-reviewed project screenshots from each source repository; preserve original PNGs in `public/projects/`.
 - Keep all projects clearly labeled as portfolio demonstrations; no commercial outcomes or paid client commissions are implied.
 
-## TASK-005 — Services, About & Contact
+## Completed: TASK-005 — Services, About & Contact
 
-- Add service positioning, a factual about page, and a safe V1 contact path.
-- Add the larger authentic owner portrait supplied for this task.
-- Do not add credentials, email integrations, or a nonexistent Upwork link.
+- Add responsive service, about, and contact pages using the shared site shell and design primitives.
+- Describe a proposed engagement process and link service areas to the relevant verified portfolio demonstrations.
+- Reuse the abstract profile placeholder on the about page. The owner has not supplied an authentic portrait; retain the replacement path `public/images/profile-portrait.webp` for a future update.
+- Show an email action only when a valid, intentionally supplied `NEXT_PUBLIC_CONTACT_EMAIL` is configured. Otherwise explain that contact details are being finalized; no form or message delivery is implied.
+- No private address, credentials, email integration, or Upwork profile link is included. Configure the public contact address before launch if email contact is desired.
+- The configured-email action was not exercised because no public address is approved/configured. Automated browser viewport inspection was unavailable; production route and fallback smoke checks were run locally.
 
 ## TASK-006 — SEO, Performance & Analytics
 
