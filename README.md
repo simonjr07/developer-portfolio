@@ -1,6 +1,6 @@
-# Developer Portfolio
+# Simon Chikaobi — Full-Stack Web Developer
 
-Personal portfolio foundation for a full-stack web developer specializing in modern business web applications.
+Personal portfolio for Simon Chikaobi, a full-stack web developer specializing in modern business web applications.
 
 ## Stack
 
@@ -23,7 +23,7 @@ Open [http://localhost:3000](http://localhost:3000) to view the portfolio.
 
 The `/projects` listing and `/projects/[slug]` case studies describe four portfolio demonstrations: NexaService, Copper Spoon, Aurelia Studio, and Maison Vale. Each project page distinguishes documented implementation from limitations and sandbox behavior. Source links and available live demonstrations are listed per project, with sandbox and fictional-data limitations clearly stated.
 
-The `/services` and `/about` pages describe the work and current professional direction without implying paid client engagements. The `/contact` page shows an email action only when a public `NEXT_PUBLIC_CONTACT_EMAIL` value is intentionally configured; see [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md). No contact form or message-delivery service is configured.
+The `/services` and `/about` pages describe the work and current professional direction without implying paid client engagements. The `/contact` page provides the approved public work email, LinkedIn profile, and GitHub profile. `NEXT_PUBLIC_CONTACT_EMAIL` may be configured in the hosting build environment with the approved address; see [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md). No contact form or message-delivery service is configured.
 
 ## Validation
 

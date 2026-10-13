@@ -1,10 +1,10 @@
 # Deployment
 
-Deployment is intentionally out of scope until explicitly approved. No provider or domain has been configured. The contact destination is not set in this repository.
+Deployment is intentionally out of scope until explicitly approved. No provider or domain has been configured by this task.
 
 ## Public contact destination
 
-If email contact is desired at launch, intentionally configure `NEXT_PUBLIC_CONTACT_EMAIL` in the approved hosting provider's build environment. Use an address the owner has approved for public display. This variable is exposed to visitors and must not contain a secret or private address. When it is absent or invalid, `/contact` displays an honest fallback and no email action. Do not add a `.env` file or commit an address to the repository.
+The approved public work email is `simonchikaobi.work@gmail.com`. The contact page uses `NEXT_PUBLIC_CONTACT_EMAIL` when configured and otherwise falls back to this approved address. Before deployment, set `NEXT_PUBLIC_CONTACT_EMAIL=simonchikaobi.work@gmail.com` in the intended Vercel Preview and Production environments. This is public information, not a secret. Do not add or overwrite a local `.env` file for this task. Next.js inlines `NEXT_PUBLIC_` values at build time, so changing the Vercel value requires a new build and redeployment. Vercel was not configured or changed as part of TASK-005.1.
 
 ## Planned release path
 

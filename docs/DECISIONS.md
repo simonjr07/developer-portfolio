@@ -36,4 +36,8 @@ Authentic project screenshots are copied without recompression into `public/proj
 
 ## 2026-10-12 — Keep V1 contact destination owner-configured
 
-There is no approved public contact address or form backend. `/contact` renders an email action only for a valid `NEXT_PUBLIC_CONTACT_EMAIL` intentionally supplied by the owner; otherwise it shows a clear fallback. Because `NEXT_PUBLIC_` values are public, this is not a secret and must only contain an address approved for display. The portfolio does not collect, send, or claim delivery of messages.
+At the time of this decision, there was no approved public contact address or form backend. TASK-005.1 supersedes the address-availability portion after owner confirmation; the no-form/no-message-delivery boundary remains. Because `NEXT_PUBLIC_` values are public, they must only contain an address approved for display.
+
+## 2026-10-13 — Use owner-confirmed identity and contact profiles
+
+The owner confirmed Simon Chikaobi as the public portfolio identity, `simonchikaobi.work@gmail.com` as the public work email, LinkedIn at `https://www.linkedin.com/in/simon-chikaobi-286166373/`, and GitHub at `https://github.com/simonjr07`. The contact implementation keeps the existing `NEXT_PUBLIC_CONTACT_EMAIL` build-time configuration and uses the approved address as its fallback. Profiles are linked directly; no employment, qualification, client result, or testimonial claims are added. Deployment configuration remains a manual owner action and requires a new build/redeployment after any public build-time variable change.

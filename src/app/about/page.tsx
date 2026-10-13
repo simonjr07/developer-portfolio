@@ -7,7 +7,7 @@ import { SectionHeading } from "@/components/section-heading";
 import { SiteShell } from "@/components/site-shell";
 
 export const metadata: Metadata = {
-  title: "About | Developer Portfolio",
+  title: "About",
   description: "A full-stack web developer focused on modern business websites, applications, and useful workflows.",
 };
 

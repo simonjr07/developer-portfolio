@@ -33,9 +33,17 @@
 - Add responsive service, about, and contact pages using the shared site shell and design primitives.
 - Describe a proposed engagement process and link service areas to the relevant verified portfolio demonstrations.
 - Reuse the abstract profile placeholder on the about page. The owner has not supplied an authentic portrait; retain the replacement path `public/images/profile-portrait.webp` for a future update.
-- Show an email action only when a valid, intentionally supplied `NEXT_PUBLIC_CONTACT_EMAIL` is configured. Otherwise explain that contact details are being finalized; no form or message delivery is implied.
-- No private address, credentials, email integration, or Upwork profile link is included. Configure the public contact address before launch if email contact is desired.
-- The configured-email action was not exercised because no public address is approved/configured. Automated browser viewport inspection was unavailable; production route and fallback smoke checks were run locally.
+- At the time TASK-005 was completed, the email action required a valid `NEXT_PUBLIC_CONTACT_EMAIL`; no form or message delivery was implied.
+- Automated browser viewport inspection was unavailable; production route and fallback smoke checks were run locally.
+
+## Completed: TASK-005.1 — Portfolio Identity & Contact Completion
+
+- Applied the owner's confirmed name to the brand and root metadata, with concise inherited route titles.
+- Published the approved work email (`simonchikaobi.work@gmail.com`) as a mailto action, using `NEXT_PUBLIC_CONTACT_EMAIL` when configured and falling back to the approved address locally.
+- Added the exact confirmed LinkedIn and GitHub profile links to the contact page and footer; existing project repository links remain unchanged.
+- Updated README, deployment instructions, and decisions. No environment files, Vercel settings, or deployment were changed.
+- Verification: `npm run lint`, `npm run typecheck`, `npm run build`, and `git diff --check` passed. The contact page rendered in the local browser at a narrow mobile viewport; the generated email, LinkedIn, and GitHub destinations and accessible link names were inspected, and keyboard focus was visibly present. No dedicated automated test script is configured. Tablet/desktop viewport overrides were unavailable for this check.
+- Before deploying, set `NEXT_PUBLIC_CONTACT_EMAIL=simonchikaobi.work@gmail.com` in the intended Vercel build environments and redeploy so the build-time public value is current. This manual configuration was not performed by this task.
 
 ## TASK-006 — SEO, Performance & Analytics
 

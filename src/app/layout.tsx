@@ -4,9 +4,12 @@ import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Developer Portfolio",
+  title: {
+    default: "Simon Chikaobi | Full-Stack Web Developer",
+    template: "%s | Simon Chikaobi",
+  },
   description:
-    "Full-stack web developer specializing in modern business web applications.",
+    "Simon Chikaobi is a full-stack web developer specializing in modern business web applications.",
 };
 
 export default function RootLayout({

@@ -26,4 +26,4 @@ Shared presentation primitives live under `src/components/` when a pattern repea
 
 ## Runtime boundaries
 
-V1 is static and content-led. No database, authentication, server actions, API routes, or secret values are required. Contact may optionally use the explicitly public `NEXT_PUBLIC_CONTACT_EMAIL` build-time value to render a `mailto:` link; without a valid value the page shows a non-actionable fallback. This public address must be intentionally supplied and is not a secret. Interactive behavior should be introduced only where it improves navigation or accessibility.
+V1 is static and content-led. No database, authentication, server actions, API routes, or secret values are required. The contact page uses the owner-approved public email as its fallback and honors a valid `NEXT_PUBLIC_CONTACT_EMAIL` build-time value when configured; the variable is public and is not a secret. The page also links to the owner's confirmed LinkedIn and GitHub profiles. Interactive behavior should be introduced only where it improves navigation or accessibility.
