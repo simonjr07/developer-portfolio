@@ -19,11 +19,14 @@
 - Keep all positioning and experience claims factual; project visuals are explicitly concept previews, not application screenshots.
 - The owner has not supplied an authentic portrait yet. The homepage uses an abstract placeholder; when supplied, add the portrait at `public/images/profile-portrait.webp` and replace the placeholder without generating or substituting a face.
 
-## TASK-004 — Projects & Case Studies
+## Completed: TASK-004 — Projects Listing & Verified Case Studies
 
-- Create typed demonstration-project data for NexaService, Copper Spoon, Aurelia Studio, and Maison Vale.
-- Add `/projects` cards and verified `/projects/[slug]` case-study content.
-- Do not invent live URLs, GitHub URLs, testimonials, client results, or capabilities.
+- Add a central typed source for the four demonstration projects, used by the listing and dynamic case-study routes.
+- Document verified project workflows, features, technical approaches, and quality evidence; unknown or unsupported claims are omitted.
+- Use source repositories for all four projects and include the available hosted demos for NexaService, Copper Spoon, Aurelia Studio, and Maison Vale.
+- Keep fictional-data, simulated-payment, and other project-specific limitations visible wherever relevant.
+- Use genuine, privacy-reviewed project screenshots from each source repository; preserve original PNGs in `public/projects/`.
+- Keep all projects clearly labeled as portfolio demonstrations; no commercial outcomes or paid client commissions are implied.
 
 ## TASK-005 — Services, About & Contact
 

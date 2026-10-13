@@ -22,7 +22,7 @@ src/app/
 └── contact/page.tsx
 ```
 
-Shared presentation primitives live under `src/components/` when a pattern repeats or needs isolated behavior. Project content should stay data-driven, with a typed portfolio model under `src/data/` or `src/lib/` beginning in TASK-004. The responsive shell is established in TASK-002; route placeholders are intentionally lightweight until their content tasks begin.
+Shared presentation primitives live under `src/components/` when a pattern repeats or needs isolated behavior. The project listing and `/projects/[slug]` case studies derive from the typed, static source at `src/data/projects.ts`; screenshots are stored locally under `public/projects/`. The responsive shell is established in TASK-002, and remaining route placeholders are implemented by their planned content tasks.
 
 ## Runtime boundaries
 
