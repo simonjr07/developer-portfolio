@@ -5,7 +5,7 @@ import { SectionHeading } from "@/components/section-heading";
 import { SiteShell } from "@/components/site-shell";
 
 export const metadata: Metadata = {
-  title: "Contact | Developer Portfolio",
+  title: "Contact",
   description: "Share the business context, problem, and goals for a website or web application project.",
 };
 
@@ -18,7 +18,7 @@ const enquiryDetails = [
 ];
 
 function getPublicContactEmail() {
-  const value = process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim();
+  const value = process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim() || "simonchikaobi.work@gmail.com";
   if (!value || value.length > 254) return null;
 
   const match = /^([a-z0-9.!#$%&'*+\-/=_`{|}~]+)@([a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)+)$/i.exec(value);
@@ -60,20 +60,30 @@ export default function ContactPage() {
             <h2 className="mt-4 text-2xl font-semibold tracking-tight text-primary">A clear first note is enough.</h2>
             {contact ? (
               <>
-                <p className="mt-4 text-sm leading-7 text-secondary">Use the public email address below to share an enquiry. Your email application will open with a subject line; nothing is sent by this website.</p>
-                <div className="mt-6">
+                <p className="mt-4 text-sm leading-7 text-secondary">For a project enquiry, email is the best place to start. For professional details, visit LinkedIn or GitHub. This website does not send or store messages.</p>
+                <div className="mt-6 flex flex-col items-start gap-3">
                   <a
                     className="inline-flex min-h-11 items-center justify-center rounded-full bg-accent px-5 text-sm font-semibold text-background transition-colors hover:bg-[#9bc5ff]"
                     href={`mailto:${encodeURIComponent(contact.localPart)}@${contact.domain}?subject=${encodeURIComponent("Web project enquiry")}`}
+                    aria-label={`Email Simon Chikaobi at ${contact.address}`}
                   >
                     Email {contact.address}
+                  </a>
+                  <a className="inline-flex min-h-11 items-center text-sm text-accent underline-offset-4 hover:text-primary hover:underline" href="https://www.linkedin.com/in/simon-chikaobi-286166373/" rel="me" aria-label="LinkedIn profile for Simon Chikaobi">
+                    LinkedIn profile
+                  </a>
+                  <a className="inline-flex min-h-11 items-center text-sm text-accent underline-offset-4 hover:text-primary hover:underline" href="https://github.com/simonjr07" rel="me" aria-label="GitHub profile for Simon Chikaobi">
+                    GitHub profile
                   </a>
                 </div>
               </>
             ) : (
               <>
-                <p className="mt-4 text-sm leading-7 text-secondary">Direct contact details are being finalized. No contact address has been published here yet, and this page does not send or store messages.</p>
-                <p className="mt-5 rounded-xl border border-border bg-background/60 p-4 text-sm leading-6 text-secondary">Before launch, the owner should intentionally configure the public <code className="font-mono text-primary">NEXT_PUBLIC_CONTACT_EMAIL</code> value. It will be visible to site visitors.</p>
+                <p className="mt-4 text-sm leading-7 text-secondary">Email contact is temporarily unavailable. You can still connect through LinkedIn or GitHub. This website does not send or store messages.</p>
+                <div className="mt-6 flex flex-col items-start gap-3">
+                  <a className="inline-flex min-h-11 items-center text-sm text-accent underline-offset-4 hover:text-primary hover:underline" href="https://www.linkedin.com/in/simon-chikaobi-286166373/" rel="me" aria-label="LinkedIn profile for Simon Chikaobi">LinkedIn profile</a>
+                  <a className="inline-flex min-h-11 items-center text-sm text-accent underline-offset-4 hover:text-primary hover:underline" href="https://github.com/simonjr07" rel="me" aria-label="GitHub profile for Simon Chikaobi">GitHub profile</a>
+                </div>
               </>
             )}
           </Card>

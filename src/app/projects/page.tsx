@@ -5,7 +5,7 @@ import { SiteShell } from "@/components/site-shell";
 import { projects } from "@/data/projects";
 
 export const metadata: Metadata = {
-  title: "Projects | Developer Portfolio",
+  title: "Projects",
   description: "Explore four full-stack portfolio demonstrations, their verified features, technical decisions, and case studies.",
 };
 

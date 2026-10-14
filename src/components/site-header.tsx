@@ -42,7 +42,7 @@ export function SiteHeader() {
     <header className="relative border-b border-border/80 bg-background/90 backdrop-blur">
       <div className="mx-auto flex min-h-20 w-full max-w-6xl items-center justify-between px-5 sm:px-8 lg:px-10">
         <Link href="/" className="font-mono text-xs uppercase tracking-[0.24em] text-accent">
-          Developer Portfolio
+          Simon Chikaobi
         </Link>
 
         <nav aria-label="Primary navigation" className="hidden items-center gap-7 md:flex">

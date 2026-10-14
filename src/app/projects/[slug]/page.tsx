@@ -20,13 +20,13 @@ export async function generateMetadata({ params }: ProjectRouteProps): Promise<M
 
   if (!project) {
     return {
-      title: "Project not found | Developer Portfolio",
+      title: "Project not found",
       description: "This portfolio project could not be found.",
     };
   }
 
   return {
-    title: `${project.name} Case Study | Developer Portfolio`,
+    title: `${project.name} Case Study`,
     description: project.summary,
   };
 }
