@@ -56,7 +56,7 @@ export default function ContactPage() {
           </Card>
 
           <Card className="flex flex-col items-start justify-center p-6 sm:p-8">
-            <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">Start a conversation</p>
+            <p className="eyebrow">Start a conversation</p>
             <h2 className="mt-4 text-2xl font-semibold tracking-tight text-primary">A clear first note is enough.</h2>
             {contact ? (
               <>

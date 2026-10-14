@@ -71,7 +71,7 @@ export default function ServicesPage() {
           {services.map((service) => (
             <Card key={service.number} className="grid gap-6 p-6 sm:p-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-12">
               <div>
-                <p className="font-mono text-xs tracking-[0.18em] text-accent">{service.number} · SERVICE AREA</p>
+                <p className="eyebrow">{service.number} · Service area</p>
                 <h2 className="mt-4 text-2xl font-semibold tracking-tight text-primary">{service.title}</h2>
                 <p className="mt-4 text-sm leading-7 text-secondary">{service.problem}</p>
               </div>
