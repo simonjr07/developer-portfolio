@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ButtonLink } from "@/components/button-link";
 import { Card } from "@/components/card";
 import { Container } from "@/components/container";
+import { Eyebrow } from "@/components/eyebrow";
 import { SectionHeading } from "@/components/section-heading";
 import { SiteShell } from "@/components/site-shell";
 
@@ -67,11 +68,11 @@ export default function ServicesPage() {
           />
         </section>
 
-        <section aria-label="Service options" className="mt-12 grid gap-4 lg:mt-16">
+        <section aria-label="Service options" className="mt-12 grid gap-4 sm:gap-5 lg:mt-16">
           {services.map((service) => (
             <Card key={service.number} className="grid gap-6 p-6 sm:p-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-12">
               <div>
-                <p className="font-mono text-xs tracking-[0.18em] text-accent">{service.number} · SERVICE AREA</p>
+                <Eyebrow>{service.number} · Service area</Eyebrow>
                 <h2 className="mt-4 text-2xl font-semibold tracking-tight text-primary">{service.title}</h2>
                 <p className="mt-4 text-sm leading-7 text-secondary">{service.problem}</p>
               </div>
@@ -104,11 +105,11 @@ export default function ServicesPage() {
             title="Clear steps, from first conversation to handover."
             description="Every engagement is different. These are the steps I would use to make scope, progress, and review clear—not a claim about past client engagements."
           />
-          <ol className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <ol className="mt-10 grid gap-4 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {process.map((step) => (
               <li key={step.number}>
                 <Card className="h-full p-6">
-                  <span className="font-mono text-xs text-accent">{step.number}</span>
+                  <span className="font-mono text-xs font-medium text-accent">{step.number}</span>
                   <h3 className="mt-4 text-lg font-semibold text-primary">{step.title}</h3>
                   <p className="mt-3 text-sm leading-6 text-secondary">{step.detail}</p>
                 </Card>
@@ -117,7 +118,7 @@ export default function ServicesPage() {
           </ol>
         </section>
 
-        <section className="mt-16 rounded-3xl border border-border bg-surface px-6 py-10 sm:mt-20 sm:px-10 sm:py-12">
+        <section className="mt-20 rounded-3xl border border-border bg-surface px-6 py-10 sm:mt-24 sm:px-10 sm:py-12">
           <h2 className="text-2xl font-semibold tracking-tight text-primary">Not sure which service fits?</h2>
           <p className="mt-3 max-w-2xl text-sm leading-7 text-secondary">Start with the business problem and what you would like to change. We can clarify the scope together before deciding whether a project is a good fit.</p>
           <div className="mt-6"><ButtonLink href="/contact">Share a project brief</ButtonLink></div>

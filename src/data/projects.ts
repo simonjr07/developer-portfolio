@@ -3,7 +3,7 @@ export type PortfolioProject = {
   name: string;
   category: string;
   summary: string;
-  screenshot: { src: string; alt: string; caption: string };
+  screenshot: { src: string; alt: string; caption: string; width: number; height: number };
   scenario: string;
   workflow: string;
   features: readonly string[];
@@ -23,6 +23,8 @@ export const projects = [
     summary: "A fictional workplace and facility-services demo connecting a public service website to a private staff workspace.",
     screenshot: {
       src: "/projects/nexaservice.png",
+      width: 1895,
+      height: 874,
       alt: "NexaService public website section explaining its fictional workplace-service approach and three-part process.",
       caption: "Public-facing service explanation captured from the local demonstration app.",
     },
@@ -52,6 +54,8 @@ export const projects = [
     summary: "A fictional single-location restaurant ordering demo, pairing a customer menu and order flow with a protected staff workspace.",
     screenshot: {
       src: "/projects/copper-spoon.png",
+      width: 1896,
+      height: 867,
       alt: "Copper Spoon fictional restaurant ordering homepage with its menu hero, browse-menu action, and food photography.",
       caption: "Public menu screenshot from the hosted fictional restaurant demonstration.",
     },
@@ -81,6 +85,8 @@ export const projects = [
     summary: "A fictional beauty and wellness service demo with customer booking flows and staff and administrator operations.",
     screenshot: {
       src: "/projects/aurelia-studio.png",
+      width: 1893,
+      height: 872,
       alt: "Aurelia Studio fictional beauty and wellness homepage introducing services and booking-management actions.",
       caption: "Curated public homepage screenshot; the source project records a privacy review for its screenshot set.",
     },
@@ -110,6 +116,8 @@ export const projects = [
     summary: "A fictional premium fashion and lifestyle commerce demo focused on keeping prices, stock, payment state, and guest order access trustworthy.",
     screenshot: {
       src: "/projects/maison-vale.png",
+      width: 1920,
+      height: 1080,
       alt: "Maison Vale fictional apparel storefront with its autumn collection, product photography, and catalogue navigation.",
       caption: "Privacy-reviewed desktop capture from the Stripe sandbox portfolio deployment.",
     },
