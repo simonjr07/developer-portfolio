@@ -42,7 +42,7 @@ export default function AboutPage() {
             title="Thoughtful structure should support the real workflow."
             description="The demonstration projects give me a place to explore the trade-offs involved in building useful business software."
           />
-          <div className="mt-10 grid gap-4 md:grid-cols-3">
+          <div className="mt-10 grid gap-4 sm:gap-5 md:grid-cols-3">
             <Card className="h-full p-6">
               <h3 className="text-lg font-semibold text-primary">Understandable foundations</h3>
               <p className="mt-3 text-sm leading-7 text-secondary">Typed application code, clear boundaries, and data models that reflect the work help keep a system easier to reason about and extend.</p>
@@ -65,12 +65,12 @@ export default function AboutPage() {
             title="Four demonstrations, four different problem spaces."
             description="These are portfolio demonstration projects, not paid client commissions or software presented as being used by real businesses. Each case study separates documented functionality from its fictional data and limitations."
           />
-          <ul className="mt-10 grid gap-4 sm:grid-cols-2">
+          <ul className="mt-10 grid gap-4 sm:gap-5 sm:grid-cols-2">
             {demonstrations.map((project) => (
               <li key={project.href}>
                 <Card className="h-full p-6">
                   <h3 className="text-lg font-semibold">
-                    <Link href={project.href} className="rounded-sm text-primary underline decoration-border underline-offset-4 hover:text-accent">{project.name}</Link>
+                    <Link href={project.href} className="inline-flex min-h-11 items-center rounded-sm text-primary underline decoration-border underline-offset-4 transition-colors hover:text-accent">{project.name}</Link>
                   </h3>
                   <p className="mt-3 text-sm leading-6 text-secondary">{project.detail}</p>
                 </Card>

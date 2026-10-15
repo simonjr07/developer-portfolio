@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import { buttonLinkClassName } from "@/components/button-link";
 import { Card } from "@/components/card";
 import { Container } from "@/components/container";
+import { Eyebrow } from "@/components/eyebrow";
 import { SectionHeading } from "@/components/section-heading";
 import { SiteShell } from "@/components/site-shell";
 
@@ -42,7 +44,7 @@ export default function ContactPage() {
           />
         </section>
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10">
+        <div className="mt-12 grid gap-5 sm:gap-6 lg:mt-16 lg:grid-cols-[1.15fr_0.85fr] lg:gap-8">
           <Card className="p-6 sm:p-8">
             <h2 className="text-xl font-semibold text-primary">Helpful details to include</h2>
             <p className="mt-3 text-sm leading-6 text-secondary">Share what you can. We can clarify the rest in an initial conversation.</p>
@@ -56,23 +58,23 @@ export default function ContactPage() {
           </Card>
 
           <Card className="flex flex-col items-start justify-center p-6 sm:p-8">
-            <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">Start a conversation</p>
+            <Eyebrow>Start a conversation</Eyebrow>
             <h2 className="mt-4 text-2xl font-semibold tracking-tight text-primary">A clear first note is enough.</h2>
             {contact ? (
               <>
                 <p className="mt-4 text-sm leading-7 text-secondary">For a project enquiry, email is the best place to start. For professional details, visit LinkedIn or GitHub. This website does not send or store messages.</p>
                 <div className="mt-6 flex flex-col items-start gap-3">
                   <a
-                    className="inline-flex min-h-11 items-center justify-center rounded-full bg-accent px-5 text-sm font-semibold text-background transition-colors hover:bg-[#9bc5ff]"
+                    className={buttonLinkClassName("primary")}
                     href={`mailto:${encodeURIComponent(contact.localPart)}@${contact.domain}?subject=${encodeURIComponent("Web project enquiry")}`}
                     aria-label={`Email Simon Chikaobi at ${contact.address}`}
                   >
                     Email {contact.address}
                   </a>
-                  <a className="inline-flex min-h-11 items-center text-sm text-accent underline-offset-4 hover:text-primary hover:underline" href="https://www.linkedin.com/in/simon-chikaobi-286166373/" rel="me" aria-label="LinkedIn profile for Simon Chikaobi">
+                  <a className="inline-flex min-h-11 items-center rounded-sm text-sm text-accent underline-offset-4 transition-colors hover:text-primary hover:underline" href="https://www.linkedin.com/in/simon-chikaobi-286166373/" rel="me" aria-label="LinkedIn profile for Simon Chikaobi">
                     LinkedIn profile
                   </a>
-                  <a className="inline-flex min-h-11 items-center text-sm text-accent underline-offset-4 hover:text-primary hover:underline" href="https://github.com/simonjr07" rel="me" aria-label="GitHub profile for Simon Chikaobi">
+                  <a className="inline-flex min-h-11 items-center rounded-sm text-sm text-accent underline-offset-4 transition-colors hover:text-primary hover:underline" href="https://github.com/simonjr07" rel="me" aria-label="GitHub profile for Simon Chikaobi">
                     GitHub profile
                   </a>
                 </div>
@@ -81,8 +83,8 @@ export default function ContactPage() {
               <>
                 <p className="mt-4 text-sm leading-7 text-secondary">Email contact is temporarily unavailable. You can still connect through LinkedIn or GitHub. This website does not send or store messages.</p>
                 <div className="mt-6 flex flex-col items-start gap-3">
-                  <a className="inline-flex min-h-11 items-center text-sm text-accent underline-offset-4 hover:text-primary hover:underline" href="https://www.linkedin.com/in/simon-chikaobi-286166373/" rel="me" aria-label="LinkedIn profile for Simon Chikaobi">LinkedIn profile</a>
-                  <a className="inline-flex min-h-11 items-center text-sm text-accent underline-offset-4 hover:text-primary hover:underline" href="https://github.com/simonjr07" rel="me" aria-label="GitHub profile for Simon Chikaobi">GitHub profile</a>
+                  <a className="inline-flex min-h-11 items-center rounded-sm text-sm text-accent underline-offset-4 transition-colors hover:text-primary hover:underline" href="https://www.linkedin.com/in/simon-chikaobi-286166373/" rel="me" aria-label="LinkedIn profile for Simon Chikaobi">LinkedIn profile</a>
+                  <a className="inline-flex min-h-11 items-center rounded-sm text-sm text-accent underline-offset-4 transition-colors hover:text-primary hover:underline" href="https://github.com/simonjr07" rel="me" aria-label="GitHub profile for Simon Chikaobi">GitHub profile</a>
                 </div>
               </>
             )}

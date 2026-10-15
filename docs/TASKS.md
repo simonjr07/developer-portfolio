@@ -50,6 +50,17 @@
 - Review metadata, semantic structure, performance budgets, and analytics requirements.
 - Add only privacy-conscious, approved analytics configuration.
 
+## Completed: TASK-006.5 — Portfolio UI/UX Refinement
+
+- Standardised spacing and rhythm without a redesign or palette change: one card-grid gap scale, explicit card padding (no default padding baked into `Card`, so caller padding no longer competes with it), aligned subpage top padding, and a single heading scale per level via `SectionHeading` (page `h1`: `text-4xl → sm:text-5xl`; section `h2`: `text-3xl → sm:text-4xl`).
+- Added shared `Eyebrow` and `TechnologyBadge` primitives so eyebrow labels and technology pills are identical everywhere (homepage, cards, case studies, services, contact, 404); case-study stack is now shown as badges, and the contact email action reuses the shared `buttonLinkClassName` helper instead of copied classes.
+- Homepage selected-work now reuses the verified `src/data/projects.ts` source and the shared `ProjectCard` (as `h3` under the section heading) instead of a duplicated local list with non-interactive schematic previews.
+- Project cards navigate as one clear whole-card target (stretched link on the title, single keyboard stop, visible card-level focus/hover states, restrained arrow motion that respects reduced-motion); the live-demo link remains a separate target above it.
+- Project screenshots are rendered at their intrinsic aspect ratio (dimensions recorded in `src/data/projects.ts`) instead of a forced 16/9 `object-cover` frame that side-cropped three of the four captures; no screenshot content is cropped on cards or case studies.
+- Case studies aligned: numbered section eyebrows `01–05` (scope/evidence is now `05`), consistent section padding, card padding, gaps, and shared secondary buttons for live-demo/repository links.
+- Header is sticky with an active-page indication (`aria-current="page"` plus a visual marker, including section matching so case studies mark Projects active and the same indication in the mobile menu); the mobile menu closes on route change. Added a skip-to-content link, balanced heading wraps, and a footer built on the shared `Container` with full-height link targets.
+- The portrait placeholder was intentionally left unchanged in this task (see the blocking TASK-008 launch-audit item below). No SEO metadata, robots, sitemap, canonical, analytics, tracking, or social-sharing work was done here; TASK-006 remains a separate task.
+
 ## TASK-007 — Testing, CI/CD & Deployment
 
 - Expand automated checks, responsive smoke tests, and release workflows.
@@ -59,3 +70,8 @@
 
 - Review content accuracy, accessibility, responsive states, security boundaries, and release readiness.
 - Confirm no secrets, fabricated claims, dead links, or unfinished functionality are presented as complete.
+
+Launch-audit checklist:
+
+- [ ] **BLOCKING — Resolve the portrait placeholder before launch.** `ProfilePortraitPlaceholder` is still rendered on the homepage hero and the About page, visibly labelled as a placeholder. Before launch, either supply an approved professional photo at `public/images/profile-portrait.webp` and replace the placeholder with it, or replace the placeholder with a deliberate typography-led design. Do not launch with the placeholder visible, and do not generate or substitute a face. (Left pending intentionally by TASK-006.5; it does not block other UI work.)
+- [ ] Confirm the TASK-006 SEO work (separate from TASK-006.5) has been reviewed and applied on its own branch/stash before launch.
