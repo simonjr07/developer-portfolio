@@ -68,6 +68,8 @@ export default function OpenGraphImage() {
           </div>
           <div
             style={{
+              display: "flex",
+              flexDirection: "column",
               maxWidth: 1000,
               fontSize: 66,
               fontWeight: 700,
@@ -75,9 +77,8 @@ export default function OpenGraphImage() {
               letterSpacing: "-0.04em",
             }}
           >
-            Business websites.
-            <br />
-            Useful web applications.
+            <div>Business websites.</div>
+            <div>Useful web applications.</div>
           </div>
           <div style={{ color: "#cbd5e1", fontSize: 25, lineHeight: 1.4 }}>
             Web experiences built around real business workflows.
