@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/page-metadata";
 import Link from "next/link";
 import { ButtonLink } from "@/components/button-link";
 import { Card } from "@/components/card";
@@ -8,10 +8,11 @@ import { SectionHeading } from "@/components/section-heading";
 import { SiteShell } from "@/components/site-shell";
 import { projects } from "@/data/projects";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "About",
   description: "A full-stack web developer focused on modern business websites, applications, and useful workflows.",
-};
+  path: "/about",
+});
 
 const approach = [
   {
