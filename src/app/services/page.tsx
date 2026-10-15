@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/page-metadata";
 import Link from "next/link";
 import { ButtonLink } from "@/components/button-link";
 import { Card } from "@/components/card";
@@ -7,10 +7,11 @@ import { Eyebrow } from "@/components/eyebrow";
 import { SectionHeading } from "@/components/section-heading";
 import { SiteShell } from "@/components/site-shell";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Services",
   description: "Business websites and custom web applications shaped around useful, maintainable business workflows.",
-};
+  path: "/services",
+});
 
 const services = [
   {
