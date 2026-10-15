@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-border py-8">
-      <div className="mx-auto flex w-full max-w-6xl flex-col gap-5 px-5 py-2 text-sm text-secondary sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-10">
+    <footer className="border-t border-border py-10 sm:py-12">
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-5 text-sm text-secondary sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-10">
         <div>
           <p className="text-primary">Simon Chikaobi</p>
           <p className="mt-1">Full-stack web developer specializing in modern business web applications.</p>

@@ -21,7 +21,9 @@ function getPublicContactEmail() {
   const value = process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim() || "simonchikaobi.work@gmail.com";
   if (!value || value.length > 254) return null;
 
-  const match = /^([a-z0-9.!#$%&'*+\-/=_`{|}~]+)@([a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)+)$/i.exec(value);
+  const match = /^([a-z0-9.!#$%&'*+/=?^_`{|}~-]+)@([a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)+)$/i.exec(
+    value,
+  );
   if (!match) return null;
 
   return { address: value, localPart: match[1], domain: match[2] };
@@ -38,51 +40,103 @@ export default function ContactPage() {
             level="h1"
             eyebrow="Contact"
             title="Tell me what you’re looking to make work better."
-            description="If you’re considering a business website or web application, a little context is a useful place to begin. You don’t need a finished specification—just the problem you’re trying to solve."
+            description="If you’re considering a business website or web application, a little context is a useful place to begin. You don’t need a finished specificationjust the problem you’re trying to solve."
           />
         </section>
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10">
+        <div className="mt-10 grid gap-5 sm:gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10">
           <Card className="p-6 sm:p-8">
-            <h2 className="text-xl font-semibold text-primary">Helpful details to include</h2>
-            <p className="mt-3 text-sm leading-6 text-secondary">Share what you can. We can clarify the rest in an initial conversation.</p>
+            <p className="eyebrow">What to share</p>
+            <h2 className="mt-4 text-xl font-semibold tracking-tight text-primary">
+              A few details help me reply well.
+            </h2>
+            <p className="mt-3 text-sm leading-6 text-secondary">
+              Share what you can. We can clarify the rest together in an initial conversation.
+            </p>
             <ul className="mt-6 space-y-4">
               {enquiryDetails.map((detail) => (
                 <li key={detail} className="flex gap-3 text-sm leading-6 text-secondary">
-                  <span aria-hidden="true" className="mt-0.5 text-accent">—</span><span>{detail}</span>
+                  <span aria-hidden="true" className="mt-0.5 font-mono text-accent">
+
+                  </span>
+                  <span>{detail}</span>
                 </li>
               ))}
             </ul>
           </Card>
 
-          <Card className="flex flex-col items-start justify-center p-6 sm:p-8">
-            <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">Start a conversation</p>
+          <Card className="flex flex-col p-6 sm:p-8">
+            <p className="eyebrow">Start a conversation</p>
             <h2 className="mt-4 text-2xl font-semibold tracking-tight text-primary">A clear first note is enough.</h2>
             {contact ? (
               <>
-                <p className="mt-4 text-sm leading-7 text-secondary">For a project enquiry, email is the best place to start. For professional details, visit LinkedIn or GitHub. This website does not send or store messages.</p>
-                <div className="mt-6 flex flex-col items-start gap-3">
+                <p className="mt-4 text-sm leading-7 text-secondary">
+                  For a project enquiry, email is the best place to start. For professional context, LinkedIn and GitHub
+                  are open too. This website does not send or store messages.
+                </p>
+                <div className="mt-6">
                   <a
-                    className="inline-flex min-h-11 items-center justify-center rounded-full bg-accent px-5 text-sm font-semibold text-background transition-colors hover:bg-[#9bc5ff]"
+                    className="inline-flex min-h-11 w-full items-center justify-center rounded-full bg-accent px-5 text-sm font-semibold text-background transition-colors hover:bg-[#9bc5ff]"
                     href={`mailto:${encodeURIComponent(contact.localPart)}@${contact.domain}?subject=${encodeURIComponent("Web project enquiry")}`}
                     aria-label={`Email Simon Chikaobi at ${contact.address}`}
                   >
                     Email {contact.address}
                   </a>
-                  <a className="inline-flex min-h-11 items-center text-sm text-accent underline-offset-4 hover:text-primary hover:underline" href="https://www.linkedin.com/in/simon-chikaobi-286166373/" rel="me" aria-label="LinkedIn profile for Simon Chikaobi">
-                    LinkedIn profile
+                </div>
+                <div className="mt-4 space-y-3">
+                  <a
+                    href="https://www.linkedin.com/in/simon-chikaobi-286166373/"
+                    rel="me"
+                    aria-label="LinkedIn profile for Simon Chikaobi"
+                    className="flex items-center justify-between gap-4 rounded-xl border border-border bg-surface/60 px-4 py-3 transition-colors hover:border-accent"
+                  >
+                    <span className="font-mono text-xs uppercase tracking-[0.2em] text-secondary">LinkedIn</span>
+                    <span aria-hidden="true" className="text-sm text-accent">
+                      View profile →
+                    </span>
                   </a>
-                  <a className="inline-flex min-h-11 items-center text-sm text-accent underline-offset-4 hover:text-primary hover:underline" href="https://github.com/simonjr07" rel="me" aria-label="GitHub profile for Simon Chikaobi">
-                    GitHub profile
+                  <a
+                    href="https://github.com/simonjr07"
+                    rel="me"
+                    aria-label="GitHub profile for Simon Chikaobi"
+                    className="flex items-center justify-between gap-4 rounded-xl border border-border bg-surface/60 px-4 py-3 transition-colors hover:border-accent"
+                  >
+                    <span className="font-mono text-xs uppercase tracking-[0.2em] text-secondary">GitHub</span>
+                    <span aria-hidden="true" className="text-sm text-accent">
+                      View profile →
+                    </span>
                   </a>
                 </div>
               </>
             ) : (
               <>
-                <p className="mt-4 text-sm leading-7 text-secondary">Email contact is temporarily unavailable. You can still connect through LinkedIn or GitHub. This website does not send or store messages.</p>
-                <div className="mt-6 flex flex-col items-start gap-3">
-                  <a className="inline-flex min-h-11 items-center text-sm text-accent underline-offset-4 hover:text-primary hover:underline" href="https://www.linkedin.com/in/simon-chikaobi-286166373/" rel="me" aria-label="LinkedIn profile for Simon Chikaobi">LinkedIn profile</a>
-                  <a className="inline-flex min-h-11 items-center text-sm text-accent underline-offset-4 hover:text-primary hover:underline" href="https://github.com/simonjr07" rel="me" aria-label="GitHub profile for Simon Chikaobi">GitHub profile</a>
+                <p className="mt-4 text-sm leading-7 text-secondary">
+                  Email contact is temporarily unavailable. You can still connect through LinkedIn or GitHub. This website
+                  does not send or store messages.
+                </p>
+                <div className="mt-6 space-y-3">
+                  <a
+                    href="https://www.linkedin.com/in/simon-chikaobi-286166373/"
+                    rel="me"
+                    aria-label="LinkedIn profile for Simon Chikaobi"
+                    className="flex items-center justify-between gap-4 rounded-xl border border-border bg-surface/60 px-4 py-3 transition-colors hover:border-accent"
+                  >
+                    <span className="font-mono text-xs uppercase tracking-[0.2em] text-secondary">LinkedIn</span>
+                    <span aria-hidden="true" className="text-sm text-accent">
+                      View profile →
+                    </span>
+                  </a>
+                  <a
+                    href="https://github.com/simonjr07"
+                    rel="me"
+                    aria-label="GitHub profile for Simon Chikaobi"
+                    className="flex items-center justify-between gap-4 rounded-xl border border-border bg-surface/60 px-4 py-3 transition-colors hover:border-accent"
+                  >
+                    <span className="font-mono text-xs uppercase tracking-[0.2em] text-secondary">GitHub</span>
+                    <span aria-hidden="true" className="text-sm text-accent">
+                      View profile →
+                    </span>
+                  </a>
                 </div>
               </>
             )}

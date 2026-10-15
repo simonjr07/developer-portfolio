@@ -22,6 +22,16 @@
   --font-mono: var(--font-geist-mono), "Courier New", monospace;
 }
 
+@layer components {
+  .eyebrow {
+    @apply font-mono text-xs uppercase tracking-[0.2em] text-accent;
+  }
+
+  .tech-badge {
+    @apply inline-flex items-center rounded-full border border-border bg-surface/60 px-3 py-1 text-xs text-secondary;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
