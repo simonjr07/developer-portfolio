@@ -10,6 +10,7 @@ import { ProjectScreenshot } from "@/components/project-screenshot";
 import { SiteShell } from "@/components/site-shell";
 import { TechnologyBadge } from "@/components/technology-badge";
 import { getProjectBySlug, projects } from "@/data/projects";
+import { createPageMetadata } from "@/lib/page-metadata";
 
 type ProjectRouteProps = { params: Promise<{ slug: string }> };
 
@@ -28,10 +29,12 @@ export async function generateMetadata({ params }: ProjectRouteProps): Promise<M
     };
   }
 
-  return {
+  return createPageMetadata({
     title: `${project.name} Case Study`,
+    socialTitle: `${project.name} Case Study | Simon Chikaobi`,
     description: project.summary,
-  };
+    path: `/projects/${project.slug}`,
+  });
 }
 
 /**
