@@ -74,5 +74,5 @@
 
 Launch-audit checklist:
 
-- [ ] **BLOCKING — Resolve the portrait placeholder before launch.** `ProfilePortraitPlaceholder` is still rendered on the homepage hero and the About page, visibly labelled as a placeholder. Before launch, either supply an approved professional photo at `public/images/profile-portrait.webp` and replace the placeholder with it, or replace the placeholder with a deliberate typography-led design. Do not launch with the placeholder visible, and do not generate or substitute a face. (Left pending intentionally by TASK-006.5; it does not block other UI work.)
+- [x] **Resolve the portrait placeholder before launch.** Removed the placeholder from the homepage and About page and replaced the two-column portrait layout with a typography-led presentation. No photo was generated or substituted.
 - [ ] Confirm the TASK-006 SEO work (separate from TASK-006.5) has been reviewed and applied on its own branch/stash before launch.
