@@ -43,7 +43,7 @@ export const metadata: Metadata = {
       ? {
           images: [
             {
-              url: new URL("/opengraph-image", siteUrl).toString(),
+              url: new URL("/social-card", siteUrl).toString(),
               width: 1200,
               height: 630,
               alt: "Simon Chikaobi — Full-Stack Web Developer building business websites and useful web applications.",
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     title: siteTitle,
     description: siteDescription,
     ...(siteUrl
-      ? { images: [new URL("/opengraph-image", siteUrl).toString()] }
+      ? { images: [new URL("/social-card", siteUrl).toString()] }
       : {}),
   },
 };
