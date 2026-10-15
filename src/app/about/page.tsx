@@ -4,7 +4,6 @@ import { ButtonLink } from "@/components/button-link";
 import { Card } from "@/components/card";
 import { Container } from "@/components/container";
 import { Eyebrow } from "@/components/eyebrow";
-import { ProfilePortraitPlaceholder } from "@/components/profile-portrait-placeholder";
 import { SectionHeading } from "@/components/section-heading";
 import { SiteShell } from "@/components/site-shell";
 import { projects } from "@/data/projects";
@@ -33,7 +32,7 @@ export default function AboutPage() {
   return (
     <SiteShell>
       <Container className="py-16 sm:py-24">
-        <section aria-label="About the developer" className="grid items-start gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
+        <section aria-label="About the developer" className="max-w-4xl">
           <div>
             <SectionHeading
               level="h1"
@@ -47,7 +46,6 @@ export default function AboutPage() {
               <ButtonLink href="/contact" variant="secondary">Get in touch</ButtonLink>
             </div>
           </div>
-          <ProfilePortraitPlaceholder className="lg:mt-2" />
         </section>
 
         <section aria-label="Engineering approach" className="mt-20 border-t border-border pt-16 sm:mt-28 sm:pt-20">
