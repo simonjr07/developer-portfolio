@@ -1,15 +1,69 @@
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
+import { getSiteUrl } from "@/lib/site-url";
 import "./globals.css";
 
+const siteUrl = getSiteUrl();
+const siteTitle = "Simon Chikaobi | Full-Stack Web Developer";
+const siteDescription =
+  "Simon Chikaobi builds modern business websites and web applications, from booking and ordering experiences to custom business tools.";
+
 export const metadata: Metadata = {
+  ...(siteUrl
+    ? {
+        metadataBase: siteUrl,
+        alternates: { canonical: "/" },
+      }
+    : {}),
   title: {
-    default: "Simon Chikaobi | Full-Stack Web Developer",
+    default: siteTitle,
     template: "%s | Simon Chikaobi",
   },
-  description:
-    "Simon Chikaobi is a full-stack web developer specializing in modern business web applications.",
+  description: siteDescription,
+  applicationName: "Simon Chikaobi Portfolio",
+  authors: [{ name: "Simon Chikaobi" }],
+  creator: "Simon Chikaobi",
+  publisher: "Simon Chikaobi",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    siteName: "Simon Chikaobi",
+    title: siteTitle,
+    description: siteDescription,
+    ...(siteUrl
+      ? {
+          url: siteUrl.toString(),
+          images: [
+            {
+              url: new URL("/opengraph-image", siteUrl).toString(),
+              width: 1200,
+              height: 630,
+              alt: "Simon Chikaobi — Full-Stack Web Developer building business websites and useful web applications.",
+            },
+          ],
+        }
+      : {}),
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteTitle,
+    description: siteDescription,
+    ...(siteUrl
+      ? { images: [new URL("/opengraph-image", siteUrl).toString()] }
+      : {}),
+  },
 };
 
 export default function RootLayout({
