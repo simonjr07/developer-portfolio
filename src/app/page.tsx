@@ -1,3 +1,4 @@
+import { createPageMetadata } from "@/lib/page-metadata";
 import { ButtonLink } from "@/components/button-link";
 import { Card } from "@/components/card";
 import { Container } from "@/components/container";
@@ -7,6 +8,11 @@ import { ProjectCard } from "@/components/project-card";
 import { SiteShell } from "@/components/site-shell";
 import { TechnologyBadge } from "@/components/technology-badge";
 import { projects } from "@/data/projects";
+
+export const metadata = createPageMetadata({
+  description: "Simon Chikaobi builds modern business websites and web applications, from booking and ordering experiences to custom business tools.",
+  path: "/",
+});
 
 const services = [
   { title: "Business websites", description: "Clear, considered websites that help a business explain what it does and make the next step easy." },
