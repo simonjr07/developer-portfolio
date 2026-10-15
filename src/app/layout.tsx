@@ -10,12 +10,7 @@ const siteDescription =
   "Simon Chikaobi builds modern business websites and web applications, from booking and ordering experiences to custom business tools.";
 
 export const metadata: Metadata = {
-  ...(siteUrl
-    ? {
-        metadataBase: siteUrl,
-        alternates: { canonical: "/" },
-      }
-    : {}),
+  ...(siteUrl ? { metadataBase: siteUrl } : {}),
   title: {
     default: siteTitle,
     template: "%s | Simon Chikaobi",
@@ -46,7 +41,6 @@ export const metadata: Metadata = {
     description: siteDescription,
     ...(siteUrl
       ? {
-          url: siteUrl.toString(),
           images: [
             {
               url: new URL("/opengraph-image", siteUrl).toString(),
