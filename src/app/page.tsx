@@ -56,7 +56,7 @@ export default function Home() {
         </section>
 
         <section id="selected-work" className="scroll-mt-24 border-t border-border py-20 sm:py-28">
-          <SectionHeading eyebrow="Selected work" title="Ideas shaped into useful digital experiences." description="A selection of portfolio demonstrations exploring common business needs. These are demonstrations, not paid client commissions." />
+          <SectionHeading eyebrow="Selected work" title="Ideas shaped into useful digital experiences." description="A selection of demo projects exploring common business needs. Each case study explains the scope and boundaries of the work." />
           <div className="mt-10 grid gap-4 sm:grid-cols-2 sm:gap-5">
             {projects.map((project) => (
               <ProjectCard key={project.slug} project={project} headingLevel="h3" />
