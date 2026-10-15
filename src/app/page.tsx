@@ -3,7 +3,6 @@ import { Card } from "@/components/card";
 import { Container } from "@/components/container";
 import { Eyebrow } from "@/components/eyebrow";
 import { SectionHeading } from "@/components/section-heading";
-import { ProfilePortraitPlaceholder } from "@/components/profile-portrait-placeholder";
 import { ProjectCard } from "@/components/project-card";
 import { SiteShell } from "@/components/site-shell";
 import { TechnologyBadge } from "@/components/technology-badge";
@@ -24,26 +23,40 @@ const process = [
   ["04", "Refine", "Review the result together and prepare a considered handoff."],
 ];
 
+const projectTypes = ["Business websites", "Booking & ordering", "Custom business tools"];
+
 export default function Home() {
   return (
     <SiteShell>
       <Container>
-        <section className="grid items-center gap-12 py-16 sm:py-24 lg:min-h-[calc(100svh-5rem)] lg:grid-cols-[1.15fr_0.85fr] lg:gap-16 lg:py-20">
-          <div>
-            <Eyebrow>Full-Stack Web Developer</Eyebrow>
-            <h1 className="mt-5 max-w-3xl text-4xl font-semibold leading-[1.08] tracking-tight text-primary sm:text-5xl lg:text-6xl">Building modern websites and applications for ambitious businesses.</h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-secondary">I design and build considered digital experiences that help businesses work better and move forward with confidence.</p>
+        <section className="flex items-center py-16 sm:py-24 lg:min-h-[calc(100svh-5rem)] lg:py-20">
+          <div className="max-w-4xl">
+            <Eyebrow>Full-Stack Web Developer · Business Web Applications</Eyebrow>
+            <h1 className="mt-5 max-w-4xl text-4xl font-semibold leading-[1.08] tracking-tight text-primary sm:text-5xl lg:text-7xl">
+              I build business websites and the tools behind them.
+            </h1>
+            <p className="mt-6 max-w-3xl text-lg leading-8 text-secondary sm:text-xl">
+              From customer-facing websites to booking, ordering, and internal workflows, I build practical web experiences that make everyday business tasks clearer and easier.
+            </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <ButtonLink href="/projects">Explore my work</ButtonLink>
-              <ButtonLink href="/contact" variant="secondary">Let&apos;s work together</ButtonLink>
+              <ButtonLink href="/contact">Start a project</ButtonLink>
+              <ButtonLink href="/projects" variant="secondary">Explore selected work</ButtonLink>
             </div>
-            <p className="mt-8 font-mono text-xs tracking-wide text-secondary">Thoughtful design. Useful technology. Built for real work.</p>
+            <ul className="mt-8 flex flex-wrap gap-2" aria-label="Types of projects">
+              {projectTypes.map((item) => (
+                <li key={item} className="rounded-full border border-border px-3 py-2 text-sm text-secondary">
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <p className="mt-6 font-mono text-xs tracking-wide text-secondary">
+              Clear scope. Thoughtful implementation. Practical handoff.
+            </p>
           </div>
-          <ProfilePortraitPlaceholder />
         </section>
 
         <section id="selected-work" className="scroll-mt-24 border-t border-border py-20 sm:py-28">
-          <SectionHeading eyebrow="Selected work" title="Ideas shaped into useful digital experiences." description="A selection of portfolio demonstration projects exploring common business needs. These are demonstrations, not paid client commissions." />
+          <SectionHeading eyebrow="Selected work" title="Ideas shaped into useful digital experiences." description="A selection of portfolio demonstrations exploring common business needs. These are demonstrations, not paid client commissions." />
           <div className="mt-10 grid gap-4 sm:grid-cols-2 sm:gap-5">
             {projects.map((project) => (
               <ProjectCard key={project.slug} project={project} headingLevel="h3" />
