@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { buttonLinkClassName } from "@/components/button-link";
 
 const navigation = [
   { href: "/projects", label: "Projects" },
@@ -50,16 +51,16 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/80 bg-background/90 backdrop-blur">
-      <div className="mx-auto flex min-h-20 w-full max-w-6xl items-center justify-between px-5 sm:px-8 lg:px-10">
+      <div className="mx-auto flex min-h-20 w-full max-w-6xl items-center justify-between gap-4 px-5 sm:px-8 lg:px-10">
         <Link
           href="/"
           aria-current={pathname === "/" ? "page" : undefined}
-          className="inline-flex min-h-11 items-center rounded-sm font-mono text-xs uppercase tracking-[0.24em] text-accent"
+          className="inline-flex min-h-11 shrink-0 items-center rounded-sm font-mono text-xs uppercase tracking-[0.24em] text-accent"
         >
           Simon Chikaobi
         </Link>
 
-        <nav aria-label="Primary navigation" className="hidden items-center gap-7 md:flex">
+        <nav aria-label="Primary navigation" className="hidden items-center gap-5 lg:flex xl:gap-7">
           {navigation.map((item) => {
             const active = isActivePath(pathname, item.href);
             return (
@@ -78,10 +79,14 @@ export function SiteHeader() {
           })}
         </nav>
 
+        <Link href="/contact" className={buttonLinkClassName("primary", "hidden lg:inline-flex")}>
+          Start a project
+        </Link>
+
         <button
           ref={menuButtonRef}
           type="button"
-          className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-full border border-border text-primary transition-colors hover:border-accent hover:text-accent md:hidden"
+          className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-full border border-border text-primary transition-colors hover:border-accent hover:text-accent lg:hidden"
           aria-expanded={isMenuOpen}
           aria-controls="mobile-navigation"
           aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
@@ -92,7 +97,7 @@ export function SiteHeader() {
       </div>
 
       {isMenuOpen ? (
-        <nav ref={menuRef} id="mobile-navigation" aria-label="Mobile navigation" className="absolute inset-x-0 top-full z-10 border-b border-border bg-surface px-5 py-4 shadow-2xl shadow-black/30 md:hidden">
+        <nav ref={menuRef} id="mobile-navigation" aria-label="Mobile navigation" className="absolute inset-x-0 top-full z-10 border-b border-border bg-surface px-5 py-4 shadow-2xl shadow-black/30 lg:hidden">
           <div className="mx-auto flex max-w-6xl flex-col gap-1">
             {navigation.map((item) => {
               const active = isActivePath(pathname, item.href);
@@ -111,6 +116,13 @@ export function SiteHeader() {
                 </Link>
               );
             })}
+            <Link
+              href="/contact"
+              onClick={() => setIsMenuOpen(false)}
+              className={buttonLinkClassName("primary", "mt-3 w-full")}
+            >
+              Start a project
+            </Link>
           </div>
         </nav>
       ) : null}
