@@ -23,6 +23,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return pages.map((page) => ({
     ...page,
-    changeFrequency: "monthly",
+    changeFrequency: "monthly" as const,
   }));
 }
