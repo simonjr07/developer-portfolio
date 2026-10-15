@@ -17,7 +17,7 @@ export function createPageMetadata({
   const siteUrl = getSiteUrl();
   const canonicalUrl = siteUrl ? new URL(path, siteUrl).toString() : undefined;
   const imageUrl = siteUrl
-    ? new URL("/opengraph-image", siteUrl).toString()
+    ? new URL("/social-card", siteUrl).toString()
     : undefined;
   const resolvedSocialTitle =
     socialTitle ??
