@@ -47,8 +47,14 @@
 
 ## TASK-006 — SEO, Performance & Analytics
 
-- Review metadata, semantic structure, performance budgets, and analytics requirements.
-- Add only privacy-conscious, approved analytics configuration.
+- [x] Add descriptive root metadata, conditional canonical URL, Open Graph/Twitter metadata, and large-image social sharing.
+- [x] Add a generated 1200×630 Open Graph image plus generated site and Apple touch icons.
+- [x] Add a sitemap for the known public routes and case studies; do not emit guessed origins.
+- [x] Add robots rules and a custom root 404 page.
+- [x] Document the production origin requirement in `docs/DEPLOYMENT.md`.
+- [ ] Set `NEXT_PUBLIC_SITE_URL` to the approved production origin and verify canonical metadata, `/sitemap.xml`, `/robots.txt`, and social previews after deployment.
+- [ ] Review performance budgets and semantic/accessibility checks as part of the launch audit.
+- [ ] Decide whether analytics are necessary; add only privacy-conscious, explicitly approved analytics configuration.
 
 ## Completed: TASK-006.5 — Portfolio UI/UX Refinement
 
@@ -75,4 +81,4 @@
 Launch-audit checklist:
 
 - [x] **Resolve the portrait placeholder before launch.** Removed the placeholder from the homepage and About page and replaced the two-column portrait layout with a typography-led presentation. No photo was generated or substituted.
-- [ ] Confirm the TASK-006 SEO work (separate from TASK-006.5) has been reviewed and applied on its own branch/stash before launch.
+- [ ] Confirm the remaining TASK-006 launch items are complete, including the approved production origin and live SEO checks.
