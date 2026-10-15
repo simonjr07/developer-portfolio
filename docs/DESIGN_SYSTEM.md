@@ -31,3 +31,13 @@ Geist Sans is the default reading and interface face. Geist Mono is reserved for
 ## Component guidance
 
 No component framework is planned. TASK-002 provides local `Container`, `SectionHeading`, `Card`, `ButtonLink`, `SiteHeader`, `SiteFooter`, and `SiteShell` components. Keep visual variants close to the component and tokens centralized in `globals.css`. The mobile menu restores focus on close, responds to Escape, and respects reduced-motion preferences.
+
+TASK-006.5 refinements to keep consistent:
+
+- Use the shared `Eyebrow` for every mono uppercase micro-label and `TechnologyBadge` (inside a `<ul>`) for every technology pill; do not hand-copy their classes.
+- `SectionHeading` owns the heading scale: page `h1` is `text-4xl → sm:text-5xl`, section `h2` is `text-3xl → sm:text-4xl`. Case-study internal headings sit one step below at `text-2xl`.
+- `Card` carries no default padding; each caller states its padding explicitly (`p-6` for content cards, `p-6 sm:p-8` for large panels, `p-3 sm:p-4` for media cards). Card grids use `gap-4 sm:gap-5`.
+- Plain anchors that cannot use Next `Link` (e.g. `mailto:`) reuse `buttonLinkClassName` from `button-link.tsx` rather than duplicating button classes.
+- Project screenshots render at their intrinsic aspect ratio (dimensions in `src/data/projects.ts`); do not reintroduce a fixed-ratio `object-cover` frame, which crops capture content.
+- Interactive project cards use the stretched-link pattern: one keyboard stop per card, card-level `hover:`/`focus-within:` border state, and the live-demo link kept separately targetable above the overlay.
+- Case-study sections use the `CaseSection` sticky heading rail: eyebrow + title in a `md:sticky md:top-28` left column, content in the right column; the rail stacks normally on mobile. Contact profile destinations (LinkedIn/GitHub) are presented as bordered rows with a "View profile →" affordance, and primary contact actions span the panel width.
