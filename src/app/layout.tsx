@@ -25,12 +25,14 @@ export const metadata: Metadata = {
   authors: [{ name: "Simon Chikaobi" }],
   creator: "Simon Chikaobi",
   publisher: "Simon Chikaobi",
+  // Avoid indexing local builds or deployments that have not been given
+  // an explicit, approved public origin.
   robots: {
-    index: true,
-    follow: true,
+    index: Boolean(siteUrl),
+    follow: Boolean(siteUrl),
     googleBot: {
-      index: true,
-      follow: true,
+      index: Boolean(siteUrl),
+      follow: Boolean(siteUrl),
       "max-image-preview": "large",
       "max-snippet": -1,
       "max-video-preview": -1,
