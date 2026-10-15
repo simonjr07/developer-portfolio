@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/page-metadata";
 import { buttonLinkClassName } from "@/components/button-link";
 import { CopyEmailButton } from "@/components/copy-email-button";
 import { Card } from "@/components/card";
@@ -7,10 +7,11 @@ import { Eyebrow } from "@/components/eyebrow";
 import { SectionHeading } from "@/components/section-heading";
 import { SiteShell } from "@/components/site-shell";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Contact",
   description: "Share the business context, problem, and goals for a website or web application project.",
-};
+  path: "/contact",
+});
 
 const enquiryDetails = [
   "A little about the business or project context.",

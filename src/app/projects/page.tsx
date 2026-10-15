@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/page-metadata";
 import { Container } from "@/components/container";
 import { ProjectCard } from "@/components/project-card";
 import { SectionHeading } from "@/components/section-heading";
 import { SiteShell } from "@/components/site-shell";
 import { projects } from "@/data/projects";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Projects",
   description: "Explore four full-stack portfolio demonstrations, their verified features, technical decisions, and case studies.",
-};
+  path: "/projects",
+});
 
 export default function ProjectsPage() {
   return (
