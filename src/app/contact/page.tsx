@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { buttonLinkClassName } from "@/components/button-link";
+import { CopyEmailButton } from "@/components/copy-email-button";
 import { Card } from "@/components/card";
 import { Container } from "@/components/container";
 import { Eyebrow } from "@/components/eyebrow";
@@ -84,14 +85,15 @@ export default function ContactPage() {
             {contact ? (
               <>
                 <p className="mt-4 text-sm leading-7 text-secondary">For a project enquiry, email is the best place to start. For professional context, LinkedIn and GitHub are open too. This website does not send or store messages.</p>
-                <div className="mt-6">
+                <div className="mt-6 grid gap-3 sm:grid-cols-2">
                   <a
                     className={buttonLinkClassName("primary", "w-full")}
                     href={`mailto:${encodeURIComponent(contact.localPart)}@${contact.domain}?subject=${encodeURIComponent("Web project enquiry")}`}
                     aria-label={`Email Simon Chikaobi at ${contact.address}`}
                   >
-                    Email {contact.address}
+                    Email me
                   </a>
+                  <CopyEmailButton email={contact.address} />
                 </div>
                 <div className="mt-4 space-y-3">
                   <ProfileRow href={LINKEDIN_URL} label="LinkedIn" ariaLabel="LinkedIn profile for Simon Chikaobi" />
