@@ -1,6 +1,8 @@
 import { ImageResponse } from "next/og";
 
-export const runtime = "edge";
+// Next 16: the Edge Runtime is deprecated and is incompatible with
+// `force-static` (it disables static generation for this route), so the
+// social card uses the default Node.js runtime and stays static.
 export const dynamic = "force-static";
 
 export async function GET() {
