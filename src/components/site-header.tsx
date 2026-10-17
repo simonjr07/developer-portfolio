@@ -79,7 +79,7 @@ export function SiteHeader() {
           })}
         </nav>
 
-        <Link href="/contact" className={buttonLinkClassName("primary", "hidden lg:inline-flex")}>
+        <Link href="/contact" className={buttonLinkClassName("primary", "max-lg:hidden")}>
           Start a project
         </Link>
 
