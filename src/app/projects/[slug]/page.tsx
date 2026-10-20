@@ -121,6 +121,43 @@ export default async function ProjectCaseStudy({ params }: ProjectRouteProps) {
             <div className="mt-8 grid gap-4 sm:gap-5">
               {project.engineering.map((item) => <Card key={item.title} className="h-full p-6"><h3 className="text-base font-semibold text-primary">{item.title}</h3><p className="mt-3 text-sm leading-6 text-secondary">{item.detail}</p></Card>)}
             </div>
+
+            {project.operationsScreenshot ? (
+              <div className="mt-8">
+                <h3 className="text-sm font-semibold text-primary">Operational interface</h3>
+                <p className="mt-1 text-sm text-secondary">Verified internal workspace and administrative interface from the repository:</p>
+                <div className="mt-4">
+                  <ProjectScreenshot {...project.operationsScreenshot} sizes="(min-width: 1024px) 768px, 100vw" />
+                </div>
+              </div>
+            ) : null}
+
+            {project.documentation && project.documentation.length > 0 ? (
+              <div className="mt-8 border-t border-border pt-8">
+                <h3 className="text-sm font-semibold text-primary">Repository documentation</h3>
+                <p className="mt-1 text-sm text-secondary">Direct links to verified technical specifications and verification suites in the repository:</p>
+                <div className="mt-4 grid gap-3 sm:grid-cols-3">
+                  {project.documentation.map((doc) => (
+                    <a
+                      key={doc.title}
+                      href={doc.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="group flex flex-col justify-between rounded-lg border border-border bg-surface p-4 transition-colors hover:border-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+                    >
+                      <div>
+                        <div className="flex items-center justify-between text-sm font-medium text-primary group-hover:text-accent">
+                          <span>{doc.title}.md</span>
+                          <span aria-hidden="true" className="text-xs text-secondary transition-transform group-hover:translate-x-0.5">↗</span>
+                        </div>
+                        <p className="mt-2 text-xs leading-5 text-secondary">{doc.description}</p>
+                      </div>
+                      <span className="mt-3 text-[11px] font-medium text-accent">View source file</span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            ) : null}
           </CaseSection>
 
           <CaseSection id="quality-heading" label="04 · Quality" title="Testing and verification">

@@ -1,9 +1,16 @@
+export type ProjectDoc = {
+  title: string;
+  url: string;
+  description: string;
+};
+
 export type PortfolioProject = {
   slug: string;
   name: string;
   category: string;
   summary: string;
   screenshot: { src: string; alt: string; caption: string; width: number; height: number };
+  operationsScreenshot?: { src: string; alt: string; caption: string; width: number; height: number };
   scenario: string;
   workflow: string;
   features: readonly string[];
@@ -12,6 +19,7 @@ export type PortfolioProject = {
   quality: string;
   boundaries: readonly string[];
   repository: string;
+  documentation?: readonly ProjectDoc[];
   liveDemo?: { url: string; note: string };
 };
 
@@ -27,6 +35,13 @@ export const projects = [
       height: 874,
       alt: "NexaService public website section explaining its fictional workplace-service approach and three-part process.",
       caption: "Public-facing service explanation captured from the local demonstration app.",
+    },
+    operationsScreenshot: {
+      src: "/projects/nexaservice-operations.png",
+      width: 1895,
+      height: 872,
+      alt: "NexaService staff workspace showing enquiry overview dashboard metrics and navigation.",
+      caption: "Staff lead overview dashboard captured from the verified source repository.",
     },
     scenario: "A visitor needs to understand a service offering and send an enquiry. A staff team needs a controlled way to review, qualify, and assign the resulting lead.",
     workflow: "Visitors browse published pages and can submit an explicitly fictional enquiry without an account. Staff review leads, update their status, and add private notes; administrators can also assign leads and manage published content and staff accounts.",
@@ -45,6 +60,11 @@ export const projects = [
     quality: "The source project documents Vitest domain and PostgreSQL integration coverage, plus CI checks for migrations, generated Prisma Client, lint, types, tests, and build. Browser end-to-end tests are planned, not installed.",
     boundaries: ["This is a fictional portfolio project, not an operating business or paid client commission.", "The repository documents local development and CI; the hosted demonstration is provided separately through the live-demo link.", "The enquiry form is for fictional demonstration data and must not be used for genuine customer enquiries."],
     repository: "https://github.com/simonjr07/nexaservice",
+    documentation: [
+      { title: "Architecture", url: "https://github.com/simonjr07/nexaservice/blob/main/docs/ARCHITECTURE.md", description: "System design, boundaries, server actions, and security model." },
+      { title: "Database", url: "https://github.com/simonjr07/nexaservice/blob/main/docs/DATABASE.md", description: "PostgreSQL schema, Prisma models, constraints, and audit trails." },
+      { title: "Testing", url: "https://github.com/simonjr07/nexaservice/blob/main/docs/TESTING.md", description: "Vitest unit, integration coverage, and CI pipeline checks." },
+    ],
     liveDemo: { url: "https://nexaservice-flax.vercel.app/", note: "Fictional demonstration; do not submit real customer information." },
   },
   {
@@ -58,6 +78,13 @@ export const projects = [
       height: 867,
       alt: "Copper Spoon fictional restaurant ordering homepage with its menu hero, browse-menu action, and food photography.",
       caption: "Public menu screenshot from the hosted fictional restaurant demonstration.",
+    },
+    operationsScreenshot: {
+      src: "/projects/copper-spoon-operations.png",
+      width: 1893,
+      height: 668,
+      alt: "Copper Spoon restaurant operations overview showing daily order metrics and queue status distribution.",
+      caption: "Restaurant staff operational view captured from the verified source repository.",
     },
     scenario: "Restaurant guests need to discover menu items, make choices, and place an order. Staff need a dependable queue that reflects the order that was actually submitted.",
     workflow: "Guests browse and configure menu items, keep a cart, then submit pickup or delivery details without creating an account. Staff review and progress orders; administrators manage menu content and staff access.",
@@ -76,6 +103,11 @@ export const projects = [
     quality: "The source project documents Vitest coverage for pricing, validation, checkout idempotency, snapshots, transitions, concurrency, authorization, and data minimization. GitHub Actions applies migrations against PostgreSQL 17 and runs lint, typecheck, tests, and build. Hosted QA is documented; a browser end-to-end suite is not configured.",
     boundaries: ["Copper Spoon is a fictional restaurant demonstration, not a real restaurant or paid client commission.", "Payment choices are simulated; the app does not collect card data or process real payments.", "The demo does not include customer accounts, driver management, or multi-restaurant support."],
     repository: "https://github.com/simonjr07/copper-spoon",
+    documentation: [
+      { title: "Architecture", url: "https://github.com/simonjr07/copper-spoon/blob/main/docs/ARCHITECTURE.md", description: "Domain model, transactional boundaries, and state management." },
+      { title: "Database", url: "https://github.com/simonjr07/copper-spoon/blob/main/docs/DATABASE.md", description: "Relational data design, snapshots, and optimistic locking." },
+      { title: "Testing", url: "https://github.com/simonjr07/copper-spoon/blob/main/docs/TESTING.md", description: "Automated Vitest test suites, pricing validation, and concurrency checks." },
+    ],
     liveDemo: { url: "https://copper-spoon-seven.vercel.app", note: "Fictional demo; payment choices are simulated." },
   },
   {
@@ -89,6 +121,13 @@ export const projects = [
       height: 872,
       alt: "Aurelia Studio fictional beauty and wellness homepage introducing services and booking-management actions.",
       caption: "Curated public homepage screenshot; the source project records a privacy review for its screenshot set.",
+    },
+    operationsScreenshot: {
+      src: "/projects/aurelia-studio-operations.png",
+      width: 1894,
+      height: 872,
+      alt: "Aurelia Studio operational workspace overview showing daily schedule overview and appointment metrics.",
+      caption: "Business operations and schedule overview captured from the verified source repository.",
     },
     scenario: "A service business needs customers to discover services, check availability, and manage appointments, while staff and administrators coordinate schedules and operations.",
     workflow: "Customers choose a service and professional, view availability, book, and manage eligible appointments. Staff work with scoped appointments and schedules; administrators control services, assignments, availability, blocked time, and reporting.",
@@ -107,6 +146,11 @@ export const projects = [
     quality: "The source case study reports 151 passing tests across 32 files with PostgreSQL integration enabled, including time-zone, DST, availability, authorization, and concurrent-write coverage. It also records lint, typecheck, production-build, hosted workflow, responsive, and focus checks. These are source-project reported results, not re-run for this portfolio page.",
     boundaries: ["Aurelia Studio represents a fictional service business and is not a paid client engagement.", "The source project does not claim real customers, revenue, performance benchmarks, penetration testing, or accessibility certification."],
     repository: "https://github.com/simonjr07/aurelia-studio",
+    documentation: [
+      { title: "Architecture", url: "https://github.com/simonjr07/aurelia-studio/blob/main/docs/ARCHITECTURE.md", description: "Availability calculation engine, time-zone handling, and role isolation." },
+      { title: "Database", url: "https://github.com/simonjr07/aurelia-studio/blob/main/docs/DATABASE.md", description: "PostgreSQL exclusion constraints, scheduling models, and historical snapshots." },
+      { title: "Testing", url: "https://github.com/simonjr07/aurelia-studio/blob/main/docs/TESTING.md", description: "151 automated tests covering DST, timezones, concurrency, and validation." },
+    ],
     liveDemo: { url: "https://aurelia-studio-orcin.vercel.app", note: "Fictional appointment-booking demonstration with fictional data." },
   },
   {
@@ -120,6 +164,13 @@ export const projects = [
       height: 1080,
       alt: "Maison Vale fictional apparel storefront with its autumn collection, product photography, and catalogue navigation.",
       caption: "Privacy-reviewed desktop capture from the Stripe sandbox portfolio deployment.",
+    },
+    operationsScreenshot: {
+      src: "/projects/maison-vale-operations.png",
+      width: 1920,
+      height: 1080,
+      alt: "Maison Vale operations analytics dashboard showing verified gross sales, refunds, and order metrics.",
+      caption: "Operations analytics and sales overview captured from the verified source repository.",
     },
     scenario: "A calm storefront still needs conservative commerce rules: browser cart data can go stale, stock may change during checkout, payment notifications can repeat, and order details must not be exposed through a public reference alone.",
     workflow: "Guests browse products and variants, use a cart that stores only variant IDs and quantities, and check out through Stripe-hosted test mode. A signed webhook—not the browser redirect—establishes payment state. Guests can look up a masked order using its reference and matching checkout email; staff and administrators manage catalogue, inventory, orders, and reporting.",
@@ -138,6 +189,11 @@ export const projects = [
     quality: "The source project documents unit and PostgreSQL integration coverage for authorization, inventory races, checkout totals, payment idempotency, rollback, guest-order isolation, and admin workflows. Its recorded verification includes lint, typecheck, migrations, tests, production build, image validation, whitespace checks, and a separate hosted QA record.",
     boundaries: ["Maison Vale is fictional; no commercial, customer, revenue, or conversion outcomes are claimed.", "Stripe is in sandbox/test mode only; the storefront cannot accept real payments.", "The demo uses USD, U.S.-only checkout, and zero recorded tax; it does not provide live tax calculation, automated refunds, or carrier tracking."],
     repository: "https://github.com/simonjr07/maison-vale",
+    documentation: [
+      { title: "Architecture", url: "https://github.com/simonjr07/maison-vale/blob/main/docs/ARCHITECTURE.md", description: "Stripe webhook verification, idempotent order processing, and guest session security." },
+      { title: "Database", url: "https://github.com/simonjr07/maison-vale/blob/main/docs/DATABASE.md", description: "Immutable inventory movements, order lifecycle schemas, and relational constraints." },
+      { title: "Testing", url: "https://github.com/simonjr07/maison-vale/blob/main/docs/TESTING.md", description: "Integration test suites for checkout races, payment idempotency, and fulfillment." },
+    ],
     liveDemo: { url: "https://maison-vale-six.vercel.app", note: "Stripe sandbox only; not for real purchases or sensitive customer data." },
   },
 ] satisfies readonly PortfolioProject[];
