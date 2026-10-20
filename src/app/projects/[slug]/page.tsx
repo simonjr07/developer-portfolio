@@ -115,9 +115,16 @@ export default async function ProjectCaseStudy({ params }: ProjectRouteProps) {
 
           <CaseSection id="engineering-heading" label="03 · Engineering" title="Technical approach and decisions">
             <p className="max-w-3xl text-sm leading-7 text-secondary">The source project documents this stack:</p>
-            <ul className="mt-4 flex flex-wrap gap-2" aria-label={`${project.name} technologies`}>
-              {project.technologies.map((technology) => <TechnologyBadge key={technology}>{technology}</TechnologyBadge>)}
-            </ul>
+            <div className="mt-6 grid gap-6 sm:grid-cols-3 sm:gap-5">
+              {project.technologyGroups.map((group) => (
+                <div key={group.label}>
+                  <p className="font-mono text-xs font-medium uppercase tracking-[0.24em] text-accent">{group.label}</p>
+                  <ul className="mt-3 flex flex-wrap gap-2" aria-label={`${project.name} ${group.label} technologies`}>
+                    {group.technologies.map((technology) => <TechnologyBadge key={technology}>{technology}</TechnologyBadge>)}
+                  </ul>
+                </div>
+              ))}
+            </div>
             <div className="mt-8 grid gap-4 sm:gap-5">
               {project.engineering.map((item) => <Card key={item.title} className="h-full p-6"><h3 className="text-base font-semibold text-primary">{item.title}</h3><p className="mt-3 text-sm leading-6 text-secondary">{item.detail}</p></Card>)}
             </div>

@@ -4,6 +4,11 @@ export type ProjectDoc = {
   description: string;
 };
 
+export type ProjectTechnologyGroup = {
+  label: "Frontend" | "Backend & Data" | "Validation & Testing";
+  technologies: readonly string[];
+};
+
 export type PortfolioProject = {
   slug: string;
   name: string;
@@ -14,7 +19,7 @@ export type PortfolioProject = {
   scenario: string;
   workflow: string;
   features: readonly string[];
-  technologies: readonly string[];
+  technologyGroups: readonly ProjectTechnologyGroup[];
   engineering: readonly { title: string; detail: string }[];
   quality: string;
   boundaries: readonly string[];
@@ -51,7 +56,11 @@ export const projects = [
       "Administrator controls for assignment, services, testimonials, settings, and staff accounts.",
       "Operational dashboard counts that describe enquiry activity, not revenue or confirmed sales.",
     ],
-    technologies: ["Next.js App Router", "React", "TypeScript", "Tailwind CSS", "PostgreSQL", "Prisma", "Auth.js", "Zod", "Vitest"],
+      technologyGroups: [
+      { label: "Frontend", technologies: ["Next.js App Router", "React", "TypeScript", "Tailwind CSS"] },
+      { label: "Backend & Data", technologies: ["PostgreSQL", "Prisma", "Auth.js"] },
+      { label: "Validation & Testing", technologies: ["Zod", "Vitest"] },
+    ],
     engineering: [
       { title: "One application, clear boundaries", detail: "The public site and private workspace share one Next.js application; server actions and server-only data access keep sensitive decisions on the server." },
       { title: "Server-enforced roles", detail: "Protected requests recheck the active user, and administrator-only operations enforce authorization on the server rather than relying on hidden controls." },
@@ -94,7 +103,11 @@ export const projects = [
       "Non-sequential public order code with an order status and event timeline.",
       "Role-protected order queue, controlled status changes, menu administration, and staff management.",
     ],
-    technologies: ["Next.js App Router", "React", "TypeScript", "Tailwind CSS", "PostgreSQL", "Prisma", "Auth.js", "Zod", "Vitest"],
+    technologyGroups: [
+      { label: "Frontend", technologies: ["Next.js App Router", "React", "TypeScript", "Tailwind CSS"] },
+      { label: "Backend & Data", technologies: ["PostgreSQL", "Prisma", "Auth.js"] },
+      { label: "Validation & Testing", technologies: ["Zod", "Vitest"] },
+    ],
     engineering: [
       { title: "Server-authoritative checkout", detail: "The server rechecks availability and recalculates prices instead of trusting the browser cart." },
       { title: "Historically accurate orders", detail: "Order item and option snapshots preserve what was submitted when the menu later changes." },
@@ -137,7 +150,11 @@ export const projects = [
       "Staff appointment workflows and scoped schedule management.",
       "Administrator tools for services, staff, assignments, schedules, blocked time, and aggregate analytics.",
     ],
-    technologies: ["Next.js App Router", "React", "TypeScript", "Tailwind CSS", "PostgreSQL", "Prisma", "Auth.js", "Zod", "Vitest"],
+    technologyGroups: [
+      { label: "Frontend", technologies: ["Next.js App Router", "React", "TypeScript", "Tailwind CSS"] },
+      { label: "Backend & Data", technologies: ["PostgreSQL", "Prisma", "Auth.js"] },
+      { label: "Validation & Testing", technologies: ["Zod", "Vitest"] },
+    ],
     engineering: [
       { title: "Time-aware availability", detail: "Availability considers service duration, staff assignments, recurring windows, blocked time, existing bookings, booking policies, and the studio time zone." },
       { title: "Concurrency-safe bookings", detail: "Create and reschedule operations recheck state in a transaction; half-open intervals and a PostgreSQL exclusion constraint guard against overlapping active bookings." },
@@ -180,7 +197,11 @@ export const projects = [
       "U.S.-only guest checkout through Stripe-hosted Checkout in test mode.",
       "Privacy-aware guest order lookup, product and inventory administration, fulfillment workflows, and read-only analytics.",
     ],
-    technologies: ["Next.js App Router", "React", "TypeScript", "Tailwind CSS", "PostgreSQL", "Prisma", "Auth.js", "Stripe test mode", "Vitest"],
+      technologyGroups: [
+      { label: "Frontend", technologies: ["Next.js App Router", "React", "TypeScript", "Tailwind CSS"] },
+      { label: "Backend & Data", technologies: ["PostgreSQL", "Prisma", "Auth.js", "Stripe test mode"] },
+      { label: "Validation & Testing", technologies: ["Vitest"] },
+    ],
     engineering: [
       { title: "Payment truth from signed webhooks", detail: "Raw-body signature verification and idempotent event handling prevent a browser return or repeated webhook from acting as payment proof twice." },
       { title: "Transactional inventory", detail: "Payment finalization, variant decrements, immutable movements, and order advancement are committed together; inventory conflicts leave a truthful review state." },

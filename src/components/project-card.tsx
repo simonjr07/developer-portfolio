@@ -35,7 +35,7 @@ export function ProjectCard({ project, headingLevel = "h2" }: ProjectCardProps) 
         </Heading>
         <p className="mt-3 text-sm leading-6 text-secondary">{project.summary}</p>
         <ul className="mt-4 flex flex-wrap gap-2" aria-label={`${project.name} technologies`}>
-          {project.technologies.slice(0, 4).map((technology) => (
+          {project.technologyGroups.flatMap((group) => group.technologies).slice(0, 4).map((technology) => (
             <TechnologyBadge key={technology}>{technology}</TechnologyBadge>
           ))}
         </ul>
