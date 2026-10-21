@@ -168,7 +168,7 @@ export default function ContactPage() {
                   Direct email goes straight to my inbox—no intermediaries or unmonitored forms. For professional context, LinkedIn and GitHub are open too.
                 </p>
                 <p className="mt-3 text-sm leading-6 text-secondary">
-                  Based in <span className="font-medium text-primary">Lagos, Nigeria (UTC+1)</span> · Available for remote collaboration.
+                  Based in <span className="font-medium text-primary">Lagos, Nigeria (WAT)</span> · Available for international remote collaboration.
                 </p>
 
                 <div className="mt-6 rounded-xl border border-border bg-surface/60 p-4">

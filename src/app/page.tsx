@@ -20,7 +20,20 @@ const services = [
   { title: "E-commerce & operations", description: "Thoughtful storefront and business-tool experiences designed around how people actually work." },
 ];
 
-const stack = ["Next.js", "React", "TypeScript", "Tailwind CSS", "Node.js"];
+const stackGroups = [
+  {
+    label: "Frontend",
+    technologies: ["Next.js App Router", "React", "TypeScript", "Tailwind CSS"],
+  },
+  {
+    label: "Backend & data",
+    technologies: ["Node.js", "PostgreSQL", "Prisma", "Auth.js"],
+  },
+  {
+    label: "Validation, testing, and delivery",
+    technologies: ["Zod", "Vitest", "GitHub Actions"],
+  },
+];
 
 const process = [
   ["01", "Understand", "Align on the business, its people, and the problem worth solving."],
@@ -42,7 +55,7 @@ export default function Home() {
               I build business websites and the tools behind them.
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-secondary sm:text-xl">
-              From customer-facing websites to booking, ordering, and internal workflows, I build practical web experiences that make everyday business tasks clearer and easier.
+              From customer-facing websites to booking, ordering, and internal workflows, I build practical web experiences for small and medium-sized businesses, startups, founders, and teams—experiences that make everyday business tasks clearer and easier.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <ButtonLink href="/contact">Start a project</ButtonLink>
@@ -55,14 +68,17 @@ export default function Home() {
                 </li>
               ))}
             </ul>
-            <p className="mt-6 font-mono text-xs tracking-wide text-secondary">
+            <p className="mt-6 text-sm leading-6 text-secondary">
+              Based in Lagos, Nigeria (WAT) · Available for international remote collaboration.
+            </p>
+            <p className="mt-2 font-mono text-xs tracking-wide text-secondary">
               Clear scope. Thoughtful implementation. Practical handoff.
             </p>
           </div>
         </section>
 
         <section id="selected-work" className="scroll-mt-24 border-t border-border py-20 sm:py-28">
-          <SectionHeading eyebrow="Selected work" title="Ideas shaped into useful digital experiences." description="A selection of demo projects exploring common business needs. Each case study explains the scope and boundaries of the work." />
+          <SectionHeading eyebrow="Selected work" title="Ideas shaped into useful digital experiences." description="Four independent demonstrations of common business workflows. Each case study explains the scope and boundaries of the work." />
           <div className="mt-10 grid gap-4 sm:grid-cols-2 sm:gap-5">
             {projects.map((project) => (
               <ProjectCard key={project.slug} project={project} headingLevel="h3" />
@@ -80,10 +96,17 @@ export default function Home() {
         </section>
 
         <section className="border-t border-border py-20 sm:py-28">
-          <SectionHeading eyebrow="Tools I work with" title="A focused modern web stack." description="The foundations used across this portfolio: a component-driven frontend with a typed, maintainable codebase." />
-          <ul className="mt-8 flex flex-wrap gap-2" aria-label="Technologies">
-            {stack.map((item) => <TechnologyBadge key={item}>{item}</TechnologyBadge>)}
-          </ul>
+          <SectionHeading eyebrow="Tools I work with" title="A focused modern web stack." description="A representative view of the technologies used across the demonstrations, spanning the interface, server-side data, and verification. Each project uses the subset that fits its scope." />
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {stackGroups.map((group) => (
+              <div key={group.label}>
+                <p className="font-mono text-xs font-medium uppercase tracking-[0.24em] text-accent">{group.label}</p>
+                <ul className="mt-3 flex flex-wrap gap-2" aria-label={group.label}>
+                  {group.technologies.map((item) => <TechnologyBadge key={item}>{item}</TechnologyBadge>)}
+                </ul>
+              </div>
+            ))}
+          </div>
         </section>
 
         <section className="border-t border-border py-20 sm:py-28">

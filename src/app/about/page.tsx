@@ -41,7 +41,7 @@ export default function AboutPage() {
               title="I build modern web applications around useful business workflows."
               description="I’m a full-stack web developer focused on business websites and applications: the public experiences that explain a service, and the tools that help a team manage the work behind it."
             />
-            <p className="mt-6 max-w-2xl text-base leading-8 text-secondary">My current direction is to work with business owners, startups, and software teams to turn a clear problem into a thoughtful, maintainable web product. I’m interested in software that is practical to use and understandable to change—not complexity for its own sake.</p>
+            <p className="mt-6 max-w-2xl text-base leading-8 text-secondary">I focus on turning a clear problem into a thoughtful, maintainable web product for small and medium-sized businesses, startups, founders, and teams. I’m interested in software that is practical to use and understandable to change—not complexity for its own sake.</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <ButtonLink href="/projects">View my work</ButtonLink>
               <ButtonLink href="/contact" variant="secondary">Get in touch</ButtonLink>
@@ -72,7 +72,7 @@ export default function AboutPage() {
             level="h2"
             eyebrow="The portfolio"
             title="Four demonstrations, four different problem spaces."
-            description="These are portfolio demonstration projects, not paid client commissions or software presented as being used by real businesses. Each case study separates documented functionality from its fictional data and limitations."
+            description="These are independent portfolio demonstrations. Each case study separates documented functionality from its fictional data and limitations."
           />
           <ul className="mt-10 grid gap-4 sm:gap-5 sm:grid-cols-2">
             {projects.map((project) => (

@@ -14,12 +14,14 @@ export type PortfolioProject = {
   name: string;
   category: string;
   summary: string;
+  roleScope: string;
   screenshot: { src: string; alt: string; caption: string; width: number; height: number };
   operationsScreenshot?: { src: string; alt: string; caption: string; width: number; height: number };
   scenario: string;
   workflow: string;
   features: readonly string[];
   technologyGroups: readonly ProjectTechnologyGroup[];
+  featuredTechnologies: readonly string[];
   engineering: readonly { title: string; detail: string }[];
   quality: string;
   boundaries: readonly string[];
@@ -33,7 +35,8 @@ export const projects = [
     slug: "nexaservice",
     name: "NexaService",
     category: "Business website · Lead management dashboard",
-    summary: "A fictional workplace and facility-services demo connecting a public service website to a private staff workspace.",
+    summary: "A workplace and facility-services website paired with a private staff workspace for reviewing, qualifying, and assigning enquiries.",
+    roleScope: "Self-initiated portfolio project by Simon Chikaobi. Designed and built the public service site and private staff workspace, including the lead workflow, role-based access, and server-side data model.",
     screenshot: {
       src: "/projects/nexaservice.png",
       width: 1895,
@@ -61,13 +64,14 @@ export const projects = [
       { label: "Backend & Data", technologies: ["PostgreSQL", "Prisma", "Auth.js"] },
       { label: "Validation & Testing", technologies: ["Zod", "Vitest"] },
     ],
+    featuredTechnologies: ["Next.js App Router", "TypeScript", "PostgreSQL", "Auth.js"],
     engineering: [
       { title: "One application, clear boundaries", detail: "The public site and private workspace share one Next.js application; server actions and server-only data access keep sensitive decisions on the server." },
       { title: "Server-enforced roles", detail: "Protected requests recheck the active user, and administrator-only operations enforce authorization on the server rather than relying on hidden controls." },
       { title: "Preserved lead history", detail: "Relational constraints and non-destructive publication/account states retain historical lead links and note authorship." },
     ],
     quality: "The source project documents Vitest domain and PostgreSQL integration coverage, plus CI checks for migrations, generated Prisma Client, lint, types, tests, and build. Browser end-to-end tests are planned, not installed.",
-    boundaries: ["This is a fictional portfolio project, not an operating business or paid client commission.", "The repository documents local development and CI; the hosted demonstration is provided separately through the live-demo link.", "The enquiry form is for fictional demonstration data and must not be used for genuine customer enquiries."],
+    boundaries: ["This is a fictional demonstration, not an operating business.", "The repository documents local development and CI; the hosted demonstration is provided separately through the live-demo link.", "The enquiry form is for fictional demonstration data and must not be used for genuine customer enquiries."],
     repository: "https://github.com/simonjr07/nexaservice",
     documentation: [
       { title: "Architecture", url: "https://github.com/simonjr07/nexaservice/blob/main/docs/ARCHITECTURE.md", description: "System design, boundaries, server actions, and security model." },
@@ -80,7 +84,8 @@ export const projects = [
     slug: "copper-spoon",
     name: "Copper Spoon",
     category: "Restaurant ordering · Staff operations",
-    summary: "A fictional single-location restaurant ordering demo, pairing a customer menu and order flow with a protected staff workspace.",
+    summary: "A single-location restaurant ordering experience that pairs a customer menu with a protected staff workspace for managing the order queue.",
+    roleScope: "Self-initiated portfolio project by Simon Chikaobi. Designed and built the customer menu and ordering flow, protected staff order queue, menu administration, and transactional checkout rules.",
     screenshot: {
       src: "/projects/copper-spoon.png",
       width: 1896,
@@ -108,13 +113,14 @@ export const projects = [
       { label: "Backend & Data", technologies: ["PostgreSQL", "Prisma", "Auth.js"] },
       { label: "Validation & Testing", technologies: ["Zod", "Vitest"] },
     ],
+    featuredTechnologies: ["Next.js App Router", "PostgreSQL", "Prisma", "Auth.js"],
     engineering: [
       { title: "Server-authoritative checkout", detail: "The server rechecks availability and recalculates prices instead of trusting the browser cart." },
       { title: "Historically accurate orders", detail: "Order item and option snapshots preserve what was submitted when the menu later changes." },
       { title: "Atomic workflow changes", detail: "Idempotency, serializable transactions, optimistic concurrency, and transactional status events protect order creation and operations." },
     ],
     quality: "The source project documents Vitest coverage for pricing, validation, checkout idempotency, snapshots, transitions, concurrency, authorization, and data minimization. GitHub Actions applies migrations against PostgreSQL 17 and runs lint, typecheck, tests, and build. Hosted QA is documented; a browser end-to-end suite is not configured.",
-    boundaries: ["Copper Spoon is a fictional restaurant demonstration, not a real restaurant or paid client commission.", "Payment choices are simulated; the app does not collect card data or process real payments.", "The demo does not include customer accounts, driver management, or multi-restaurant support."],
+    boundaries: ["Copper Spoon is a fictional restaurant demonstration, not a real restaurant.", "Payment choices are simulated; the app does not collect card data or process real payments.", "The demo does not include customer accounts, driver management, or multi-restaurant support."],
     repository: "https://github.com/simonjr07/copper-spoon",
     documentation: [
       { title: "Architecture", url: "https://github.com/simonjr07/copper-spoon/blob/main/docs/ARCHITECTURE.md", description: "Domain model, transactional boundaries, and state management." },
@@ -127,7 +133,8 @@ export const projects = [
     slug: "aurelia-studio",
     name: "Aurelia Studio",
     category: "Appointment booking · Business operations",
-    summary: "A fictional beauty and wellness service demo with customer booking flows and staff and administrator operations.",
+    summary: "A beauty and wellness booking experience that covers customer appointments, staff scheduling, and administrator operations.",
+    roleScope: "Self-initiated portfolio project by Simon Chikaobi. Designed and built the customer booking experience, availability engine, staff scheduling, and administrator operations.",
     screenshot: {
       src: "/projects/aurelia-studio.png",
       width: 1893,
@@ -155,13 +162,14 @@ export const projects = [
       { label: "Backend & Data", technologies: ["PostgreSQL", "Prisma", "Auth.js"] },
       { label: "Validation & Testing", technologies: ["Zod", "Vitest"] },
     ],
+    featuredTechnologies: ["Next.js App Router", "TypeScript", "PostgreSQL", "Prisma"],
     engineering: [
       { title: "Time-aware availability", detail: "Availability considers service duration, staff assignments, recurring windows, blocked time, existing bookings, booking policies, and the studio time zone." },
       { title: "Concurrency-safe bookings", detail: "Create and reschedule operations recheck state in a transaction; half-open intervals and a PostgreSQL exclusion constraint guard against overlapping active bookings." },
       { title: "Stable booking history", detail: "Service details are snapshotted onto bookings, while UTC instants and studio-local date boundaries serve distinct timekeeping needs." },
     ],
     quality: "The source case study reports 151 passing tests across 32 files with PostgreSQL integration enabled, including time-zone, DST, availability, authorization, and concurrent-write coverage. It also records lint, typecheck, production-build, hosted workflow, responsive, and focus checks. These are source-project reported results, not re-run for this portfolio page.",
-    boundaries: ["Aurelia Studio represents a fictional service business and is not a paid client engagement.", "The source project does not claim real customers, revenue, performance benchmarks, penetration testing, or accessibility certification."],
+    boundaries: ["Aurelia Studio represents a fictional service business, not a real studio.", "The source project does not claim real customers, revenue, performance benchmarks, penetration testing, or accessibility certification."],
     repository: "https://github.com/simonjr07/aurelia-studio",
     documentation: [
       { title: "Architecture", url: "https://github.com/simonjr07/aurelia-studio/blob/main/docs/ARCHITECTURE.md", description: "Availability calculation engine, time-zone handling, and role isolation." },
@@ -174,7 +182,8 @@ export const projects = [
     slug: "maison-vale",
     name: "Maison Vale",
     category: "Premium e-commerce · Inventory operations",
-    summary: "A fictional premium fashion and lifestyle commerce demo focused on keeping prices, stock, payment state, and guest order access trustworthy.",
+    summary: "A premium fashion and lifestyle storefront built around trustworthy pricing, inventory, payment state, and guest order access.",
+    roleScope: "Self-initiated portfolio project by Simon Chikaobi. Designed and built the storefront, guest checkout, Stripe webhook handling, inventory administration, and order operations.",
     screenshot: {
       src: "/projects/maison-vale.png",
       width: 1920,
@@ -202,13 +211,14 @@ export const projects = [
       { label: "Backend & Data", technologies: ["PostgreSQL", "Prisma", "Auth.js", "Stripe test mode"] },
       { label: "Validation & Testing", technologies: ["Vitest"] },
     ],
+    featuredTechnologies: ["Next.js App Router", "TypeScript", "PostgreSQL", "Stripe test mode"],
     engineering: [
       { title: "Payment truth from signed webhooks", detail: "Raw-body signature verification and idempotent event handling prevent a browser return or repeated webhook from acting as payment proof twice." },
       { title: "Transactional inventory", detail: "Payment finalization, variant decrements, immutable movements, and order advancement are committed together; inventory conflicts leave a truthful review state." },
       { title: "Limited guest access", detail: "Order lookup requires a reference and matching checkout email, then creates a short-lived, one-order session with masked public details." },
     ],
     quality: "The source project documents unit and PostgreSQL integration coverage for authorization, inventory races, checkout totals, payment idempotency, rollback, guest-order isolation, and admin workflows. Its recorded verification includes lint, typecheck, migrations, tests, production build, image validation, whitespace checks, and a separate hosted QA record.",
-    boundaries: ["Maison Vale is fictional; no commercial, customer, revenue, or conversion outcomes are claimed.", "Stripe is in sandbox/test mode only; the storefront cannot accept real payments.", "The demo uses USD, U.S.-only checkout, and zero recorded tax; it does not provide live tax calculation, automated refunds, or carrier tracking."],
+    boundaries: ["Maison Vale is a fictional demonstration; no commercial, customer, revenue, or conversion outcomes are claimed.", "Stripe is in sandbox/test mode only; the storefront cannot accept real payments.", "The demo uses USD, U.S.-only checkout, and zero recorded tax; it does not provide live tax calculation, automated refunds, or carrier tracking."],
     repository: "https://github.com/simonjr07/maison-vale",
     documentation: [
       { title: "Architecture", url: "https://github.com/simonjr07/maison-vale/blob/main/docs/ARCHITECTURE.md", description: "Stripe webhook verification, idempotent order processing, and guest session security." },
