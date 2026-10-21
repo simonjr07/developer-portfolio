@@ -20,7 +20,7 @@ export default function ProjectsPage() {
             level="h1"
             eyebrow="Selected work"
             title="Projects built to explore real business workflows."
-            description="Each entry is a portfolio demonstration, not a paid client commission. The case studies describe what the source projects document and distinguish sandbox or fictional workflows from real-world business outcomes."
+            description="Each entry is an independent portfolio demonstration. The case studies describe documented functionality and distinguish sandbox or fictional workflows from real-world business outcomes."
           />
         </section>
 

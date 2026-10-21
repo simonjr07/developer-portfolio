@@ -17,22 +17,22 @@ const services = [
   {
     number: "01",
     title: "Business websites and landing pages",
-    problem: "Give people a clear understanding of what a business offers and a useful next step, without making them work to find it.",
-    deliverables: ["Responsive service and company pages", "Clear content structure and calls to action", "Enquiry flows and content areas suited to the business"],
+    problem: "Give people a clear understanding of what a business offers and a useful next step, backed by reliable server-side enquiry handling.",
+    deliverables: ["Responsive service and company pages", "Clear content structure and calls to action", "Server-side enquiry handling with validation", "Content and data models suited to the business"],
     examples: [{ name: "NexaService", href: "/projects/nexaservice" }],
   },
   {
     number: "02",
     title: "Custom web applications and dashboards",
-    problem: "Bring a repeatable business process into one purpose-built interface when generic tools do not fit the workflow.",
-    deliverables: ["Role-aware staff and admin experiences", "Searchable operational queues and status flows", "Carefully modeled records and useful summaries"],
+    problem: "Bring a repeatable business process into one purpose-built interface, with server-side rules, role-aware access, and a data model that reflects how the work actually happens.",
+    deliverables: ["Role-aware staff and admin experiences", "Searchable operational queues, status flows, and useful summaries", "Server-side application logic and business rules", "Relational data models with authentication and authorization"],
     examples: [{ name: "NexaService", href: "/projects/nexaservice" }, { name: "Copper Spoon", href: "/projects/copper-spoon" }],
   },
   {
     number: "03",
     title: "Booking, ordering, and commerce workflows",
-    problem: "Make multi-step customer journeys easier to complete while keeping availability, order details, pricing, and operational handoff coherent.",
-    deliverables: ["Service discovery and appointment booking", "Menu, cart, and order-management flows", "Product catalogues and inventory-aware commerce"],
+    problem: "Make multi-step customer journeys easier to complete while keeping availability, order details, pricing, and operational handoff coherent, with server-side validation and transactional rules.",
+    deliverables: ["Service discovery and appointment booking", "Menu, cart, and order-management flows", "Product catalogues and inventory-aware commerce", "Server-side validation, pricing, availability, and order-state rules"],
     examples: [
       { name: "Aurelia Studio", href: "/projects/aurelia-studio" },
       { name: "Copper Spoon", href: "/projects/copper-spoon" },
@@ -42,8 +42,8 @@ const services = [
   {
     number: "04",
     title: "Improvements to existing applications",
-    problem: "Make an existing product easier to use, extend a workflow, or improve the structure of a codebase without losing sight of the current system.",
-    deliverables: ["Scoped interface or workflow improvements", "Integration and data-flow work agreed during discovery", "Testing, documentation, and a maintainable handover"],
+    problem: "Make an existing product easier to use, extend a workflow, or improve the structure of its codebase, including server-side and data-layer work, without losing sight of the current system.",
+    deliverables: ["Scoped interface or workflow improvements", "API and data-flow integration, scoped during discovery", "Database, authentication, and authorization improvements", "Validation, testing, documentation, and a maintainable handover"],
     examples: [{ name: "See engineering decisions across the case studies", href: "/projects" }],
   },
 ];
@@ -65,7 +65,7 @@ export default function ServicesPage() {
             level="h1"
             eyebrow="Services"
             title="Practical web work, shaped around how your business operates."
-            description="From a clear business website to the custom workflows behind it, I can help plan and build modern web experiences around a real need. The right scope starts with understanding the problem—not choosing a technology first."
+            description="From the customer-facing website to the server-side workflows behind it, I can help small and medium-sized businesses, startups, founders, and teams plan and build modern web experiences around a real need. The right scope starts with understanding the problem—not choosing a technology first."
           />
         </section>
 
@@ -104,7 +104,7 @@ export default function ServicesPage() {
             level="h2"
             eyebrow="A proposed working process"
             title="Clear steps, from first conversation to handover."
-            description="Every engagement is different. These are the steps I would use to make scope, progress, and review clear—not a claim about past client engagements."
+            description="Every engagement is different. These are the steps I would use to make scope, progress, and review clear."
           />
           <ol className="mt-10 grid gap-4 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {process.map((step) => (

@@ -87,6 +87,9 @@ export default async function ProjectCaseStudy({ params }: ProjectRouteProps) {
           <Eyebrow>Portfolio demonstration · {project.category}</Eyebrow>
           <h1 className="mt-5 text-4xl font-semibold leading-[1.08] tracking-tight text-primary sm:text-5xl lg:text-6xl">{project.name}</h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-secondary">{project.summary}</p>
+          <p className="mt-4 max-w-3xl text-sm leading-6 text-secondary">
+            <span className="font-medium text-primary">Role and scope:</span> {project.roleScope}
+          </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <ButtonLink href="/contact">Discuss a project</ButtonLink>
             {project.liveDemo ? <ButtonLink href={project.liveDemo.url} variant="secondary" target="_blank" rel="noreferrer">View live demonstration</ButtonLink> : null}

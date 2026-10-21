@@ -24,7 +24,12 @@ export function ProjectCard({ project, headingLevel = "h2" }: ProjectCardProps) 
     <Card className="group relative flex h-full flex-col p-3 transition-colors focus-within:border-accent/50 hover:border-accent/50 sm:p-4">
       <ProjectScreenshot {...project.screenshot} sizes="(min-width: 768px) 50vw, 100vw" />
       <div className="flex flex-1 flex-col px-1 pb-1 pt-5">
-        <Eyebrow>{project.category}</Eyebrow>
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="rounded-full border border-border bg-surface px-2.5 py-1 font-mono text-xs uppercase tracking-[0.16em] text-secondary">
+            Demo project
+          </span>
+          <Eyebrow>{project.category}</Eyebrow>
+        </div>
         <Heading className="mt-2 text-2xl font-semibold tracking-tight text-primary">
           <Link
             href={`/projects/${project.slug}`}
@@ -35,7 +40,7 @@ export function ProjectCard({ project, headingLevel = "h2" }: ProjectCardProps) 
         </Heading>
         <p className="mt-3 text-sm leading-6 text-secondary">{project.summary}</p>
         <ul className="mt-4 flex flex-wrap gap-2" aria-label={`${project.name} technologies`}>
-          {project.technologyGroups.flatMap((group) => group.technologies).slice(0, 4).map((technology) => (
+          {project.featuredTechnologies.map((technology) => (
             <TechnologyBadge key={technology}>{technology}</TechnologyBadge>
           ))}
         </ul>
