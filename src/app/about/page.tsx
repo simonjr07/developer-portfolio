@@ -1,12 +1,10 @@
 import { createPageMetadata } from "@/lib/page-metadata";
-import Link from "next/link";
 import { ButtonLink } from "@/components/button-link";
 import { Card } from "@/components/card";
 import { Container } from "@/components/container";
 import { Eyebrow } from "@/components/eyebrow";
 import { SectionHeading } from "@/components/section-heading";
 import { SiteShell } from "@/components/site-shell";
-import { projects } from "@/data/projects";
 
 export const metadata = createPageMetadata({
   title: "About",
@@ -67,32 +65,14 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section aria-label="Portfolio demonstrations" className="mt-20 border-t border-border pt-16 sm:mt-28 sm:pt-20">
+        <section aria-label="Portfolio overview" className="mt-20 border-t border-border pt-16 sm:mt-28 sm:pt-20">
           <SectionHeading
             level="h2"
             eyebrow="The portfolio"
-            title="Four demonstrations, four different problem spaces."
-            description="These are independent portfolio demonstrations. Each case study separates documented functionality from its fictional data and limitations."
+            title="See how the work is put together."
+            description="The Projects page collects independent demonstrations of business websites, dashboards, and workflow-focused applications. Each case study separates documented functionality from its fictional data and limitations."
           />
-          <ul className="mt-10 grid gap-4 sm:gap-5 sm:grid-cols-2">
-            {projects.map((project) => (
-              <li key={project.slug}>
-                <Card className="flex h-full flex-col p-6">
-                  <Eyebrow>{project.category}</Eyebrow>
-                  <h3 className="mt-3 text-lg font-semibold">
-                    <Link href={`/projects/${project.slug}`} className="inline-flex min-h-11 items-center rounded-sm text-primary underline decoration-border underline-offset-4 transition-colors hover:text-accent">{project.name}</Link>
-                  </h3>
-                  <p className="mt-3 text-sm leading-6 text-secondary">{project.summary}</p>
-                  <div className="mt-auto pt-5">
-                    <Link href={`/projects/${project.slug}`} className="inline-flex min-h-11 items-center gap-1.5 rounded-sm text-sm font-medium text-accent transition-colors hover:text-primary">
-                      View case study
-                      <span aria-hidden="true">→</span>
-                    </Link>
-                  </div>
-                </Card>
-              </li>
-            ))}
-          </ul>
+          <div className="mt-8"><ButtonLink href="/projects" variant="secondary">Explore all projects</ButtonLink></div>
         </section>
 
         <section className="mt-20 rounded-3xl border border-border bg-surface px-6 py-12 text-center sm:mt-24 sm:px-12 sm:py-16">

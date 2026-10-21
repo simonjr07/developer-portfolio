@@ -1,4 +1,5 @@
 import { createPageMetadata } from "@/lib/page-metadata";
+import { ButtonLink } from "@/components/button-link";
 import { Container } from "@/components/container";
 import { ProjectCard } from "@/components/project-card";
 import { SectionHeading } from "@/components/section-heading";
@@ -27,6 +28,14 @@ export default function ProjectsPage() {
         <div className="mt-12 grid gap-4 sm:gap-5 md:grid-cols-2 lg:mt-16">
           {projects.map((project) => <ProjectCard key={project.slug} project={project} />)}
         </div>
+
+        <section className="mt-16 flex flex-col items-start justify-between gap-5 border-t border-border pt-8 sm:mt-20 sm:flex-row sm:items-center">
+          <div>
+            <h2 className="text-lg font-semibold text-primary">Have a project in mind?</h2>
+            <p className="mt-1 max-w-xl text-sm leading-6 text-secondary">Tell me about the workflow or business problem you want to improve.</p>
+          </div>
+          <ButtonLink href="/contact">Get in touch</ButtonLink>
+        </section>
       </Container>
     </SiteShell>
   );
