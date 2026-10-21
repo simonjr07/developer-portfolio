@@ -44,6 +44,9 @@ const process = [
 
 const projectTypes = ["Business websites", "Booking & ordering", "Custom business tools"];
 
+const featuredProjectSlugs = ["nexaservice", "copper-spoon", "maison-vale"];
+const featuredProjects = projects.filter((project) => featuredProjectSlugs.includes(project.slug));
+
 export default function Home() {
   return (
     <SiteShell>
@@ -78,9 +81,9 @@ export default function Home() {
         </section>
 
         <section id="selected-work" className="scroll-mt-24 border-t border-border py-20 sm:py-28">
-          <SectionHeading eyebrow="Selected work" title="Ideas shaped into useful digital experiences." description="Four independent demonstrations of common business workflows. Each case study explains the scope and boundaries of the work." />
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 sm:gap-5">
-            {projects.map((project) => (
+          <SectionHeading eyebrow="Selected work" title="Ideas shaped into useful digital experiences." description="Three independent demonstrations of common business workflows. Each case study explains the scope and boundaries of the work." />
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
+            {featuredProjects.map((project) => (
               <ProjectCard key={project.slug} project={project} headingLevel="h3" />
             ))}
           </div>
