@@ -36,7 +36,7 @@ At every viewport, the checks cover:
 - A visible, unclipped `h1`.
 - A visible primary action that stays inside the viewport.
 - Visible main content and the appropriate desktop or mobile navigation.
-- No visible interactive element extending beyond the viewport.
+- No visible interactive element within `main` (`main a`, `main button`) extending beyond the viewport. Header and footer interactive controls are not yet included in this containment assertion; page-level horizontal overflow is still checked. Expanding the assertion to header and footer controls is planned.
 
 The mobile navigation is additionally opened at 320px, 390px, and 768px to verify that its links are visible and usable, that Escape closes it and restores focus to the menu button, and that following a link closes it.
 

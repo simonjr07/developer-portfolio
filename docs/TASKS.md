@@ -19,6 +19,8 @@
 - Keep all positioning and experience claims factual; project visuals are explicitly concept previews, not application screenshots.
 - The owner has not supplied an authentic portrait yet. The homepage uses an abstract placeholder; when supplied, add the portrait at `public/images/profile-portrait.webp` and replace the placeholder without generating or substituting a face.
 
+> Historical note: the concept-preview and portrait-placeholder statements above describe TASK-003 at completion. They are superseded by TASK-004's verified project screenshots and TASK-008's portrait removal.
+
 ## Completed: TASK-004 — Projects Listing & Verified Case Studies
 
 - Add a central typed source for the four demonstration projects, used by the listing and dynamic case-study routes.
@@ -35,6 +37,8 @@
 - Reuse the abstract profile placeholder on the about page. The owner has not supplied an authentic portrait; retain the replacement path `public/images/profile-portrait.webp` for a future update.
 - At the time TASK-005 was completed, the email action required a valid `NEXT_PUBLIC_CONTACT_EMAIL`; no form or message delivery was implied.
 - Automated browser viewport inspection was unavailable; production route and fallback smoke checks were run locally.
+
+> Historical note: the abstract-placeholder requirement above was superseded by TASK-008, which removed the portrait treatment from the homepage and About page.
 
 ## Completed: TASK-005.1 — Portfolio Identity & Contact Completion
 
@@ -68,6 +72,8 @@
 - The portrait placeholder was intentionally left unchanged in this task (see the blocking TASK-008 launch-audit item below). No SEO metadata, robots, sitemap, canonical, analytics, tracking, or social-sharing work was done here; TASK-006 remains a separate task.
 - Combined best-of follow-up: ported the earlier refinement's sticky case-study section headings (`CaseSection` rail, `md:sticky`), About calls to action (intro actions, data-driven approach/demonstration cards, closing CTA panel), and contact profile rows ("View profile →", full-width email action, "What to share / A few details help me reply well") onto the TASK-006.5 foundations above. The earlier version's whole-file reformatting and its "full-stack" → "fullstack" wording changes were deliberately not adopted, and no verified content, routes, or links changed.
 
+> Historical note: the placeholder status above was superseded by TASK-008, which removed the placeholder from the homepage and About page.
+
 ## TASK-007 — Testing, CI/CD & Deployment
 
 - [x] Add a Playwright browser suite for all public routes, project case studies, and the custom 404 response.
@@ -86,3 +92,56 @@ Launch-audit checklist:
 
 - [x] **Resolve the portrait placeholder before launch.** Removed the placeholder from the homepage and About page and replaced the two-column portrait layout with a typography-led presentation. No photo was generated or substituted.
 - [ ] Confirm the remaining TASK-006 launch items are complete, including the approved production origin and live SEO checks.
+
+### TASK-008 audit follow-up register
+
+The read-only TASK-008 audit is complete. Documentation items checked below were resolved by TASK-008A; all unchecked items remain open. No production configuration, deployment, external-link verification, measured performance review, or accessibility/cross-browser certification has been performed.
+
+#### Documentation and testing
+
+- [x] Reconcile `docs/ARCHITECTURE.md` and `docs/DECISIONS.md` with the actual portrait-free presentation and real project screenshots.
+- [x] Correct the responsive-test documentation so it accurately describes the selectors and elements actually tested.
+- [x] Add the missing `npm run test:e2e` step to the README validation instructions or link to the complete testing instructions.
+- [ ] Add a test for invalid project slugs.
+- [ ] Add tests for copy-email success and failure behavior.
+- [ ] Add or extend metadata, robots, and sitemap tests.
+- [ ] Improve responsive assertions to cover header/footer interactive controls where appropriate.
+
+#### Source-level review and verification
+
+- [ ] Review explicit metadata for the root and project-level 404 pages.
+- [ ] Decide whether the production site-origin helper should require HTTPS.
+- [ ] Perform a measured performance review when an appropriate environment is available.
+- [ ] Plan a deeper accessibility review and cross-browser checks beyond the existing Chromium smoke suite.
+- [ ] Verify external destinations when network checks are appropriate; distinguish source-level correctness from confirmed reachability.
+
+#### Configuration and decisions
+
+- [ ] Obtain approval for the production origin and hosting/domain choices.
+- [ ] Set `NEXT_PUBLIC_SITE_URL` to the approved production origin in the intended production environment before the production build.
+- [ ] Configure `NEXT_PUBLIC_CONTACT_EMAIL=simonchikaobi.work@gmail.com` in the intended Vercel Preview and Production environments before deployment.
+- [ ] Verify canonical metadata, sitemap, robots, Open Graph/Twitter metadata, and social previews after deployment.
+- [ ] Explicitly decide whether privacy-conscious analytics are needed. Do not install or configure analytics without approval.
+
+## TASK-009 — Launch Readiness
+
+Preparation, configuration planning, decisions, and release checklist only. This task does not deploy the site or change hosting settings.
+
+- [ ] Complete the open documentation, testing, and source-level follow-ups recorded under TASK-008.
+- [ ] Confirm owner approval for the production origin, domain, and hosting provider.
+- [ ] Record the approved production values and configuration plan for `NEXT_PUBLIC_SITE_URL` and `NEXT_PUBLIC_CONTACT_EMAIL`.
+- [ ] Decide whether privacy-conscious analytics are needed; do not add them without explicit approval.
+- [ ] Prepare the release checklist, including post-deployment SEO, external-link, performance, accessibility, and cross-browser verification.
+- [ ] Confirm that documentation distinguishes verified source behavior from unverified production behavior.
+
+## TASK-010 — Production Deployment & Live Verification
+
+Approval-gated. Do not deploy until the owner explicitly approves TASK-010.
+
+- [ ] Obtain explicit owner approval before deployment.
+- [ ] Configure the approved production origin, host, domain, and environment values.
+- [ ] Build and deploy only after approval and configuration are complete.
+- [ ] Verify canonical metadata, `/sitemap.xml`, `/robots.txt`, Open Graph/Twitter metadata, and social previews on the live origin.
+- [ ] Verify external destinations and production 404 behavior when live checks are appropriate.
+- [ ] Run production smoke checks and record measured performance and accessibility/cross-browser results.
+- [ ] Mark post-deployment checks complete only after they have been performed against the approved deployment.
