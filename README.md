@@ -31,8 +31,11 @@ The `/services` and `/about` pages describe the work and current professional di
 npm run lint
 npm run typecheck
 npm run build
+npm run test:e2e
 git diff --check
 ```
+
+`npm run test:e2e` runs Playwright against the production build and requires Chromium to be installed. See [`docs/TESTING.md`](docs/TESTING.md) for the full setup and verification sequence.
 
 The product direction, architecture, design system, roadmap, testing, deployment, and decisions are documented in [`docs/`](docs/).
 
