@@ -44,6 +44,10 @@ At the time of this decision, there was no approved public contact address or fo
 
 The owner confirmed Simon Chikaobi as the public portfolio identity, `simonchikaobi.work@gmail.com` as the public work email, LinkedIn at `https://www.linkedin.com/in/simon-chikaobi-286166373/`, and GitHub at `https://github.com/simonjr07`. The contact implementation keeps the existing `NEXT_PUBLIC_CONTACT_EMAIL` build-time configuration and uses the approved address as its fallback. Profiles are linked directly; no employment, qualification, client result, or testimonial claims are added. Deployment configuration remains a manual owner action and requires a new build/redeployment after any public build-time variable change.
 
+## 2026-10-22 — Present operational evidence and repository documentation
+
+Case studies may include an optional, verified internal-workspace screenshot and optional direct links to the source repository's technical documentation. Public-facing screenshots and repository links remain the primary evidence; internal operations views and documentation links supplement them without adding unsupported claims. Images are copied byte-for-byte from the source repositories, and documentation labels and descriptions must reflect files that exist on the repository's `main` branch.
+
 ## 2026-10-22 — Integrate the owner-supplied profile portrait
 
 The owner supplied an authentic portrait for the homepage and About page. The source image is converted without changing its identity, using an already available tool, to `public/images/profile-portrait.webp` at its original 1086×1448 aspect ratio. The shared `ProfilePortrait` component renders it with Next.js Image in both locations, reserves the intrinsic dimensions to prevent layout shift, and uses descriptive alternative text. No stock or generated face is substituted. The earlier portrait-free presentation was a response to the missing owner asset, not a permanent design decision.
