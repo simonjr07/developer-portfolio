@@ -135,20 +135,26 @@ The read-only TASK-008 audit is complete. Documentation items checked below were
 - Outcome: technical verification passed. No application or test defects were found, and no source/test changes were required. This task updates the roadmap only.
 - Limitations: Production deployment, live-domain verification, production environment configuration, measured performance review, deeper accessibility/cross-browser review, external-link reachability, and the analytics decision remain open and were not performed here. TASK-009 and TASK-010 are not complete.
 
-## TASK-009 — Launch Readiness
+## TASK-009 — Launch Readiness (preparation audit complete; approvals pending)
 
-Preparation, configuration planning, decisions, and release checklist only. This task does not deploy the site or change hosting settings.
+Preparation, configuration planning, decisions, and release checklist only. This task
+does not deploy the site or change hosting settings. The full audit, evidence, and
+decision register are in [LAUNCH_READINESS.md](LAUNCH_READINESS.md).
 
-- [ ] Complete the open documentation, testing, and source-level follow-ups recorded under TASK-008.
+- [x] Complete the TASK-008 documentation follow-ups, including testing/README accuracy, 404 metadata, and the HTTPS site-origin policy.
+- [x] Audit hosting/origin, environment/security, analytics, performance, accessibility, browser/device, external-link, and content-readiness areas.
+- [x] Verify the public external HTTP destinations that could be checked; record LinkedIn's bot-blocked response and the runtime Gmail action separately.
+- [x] Record local build, bundle, image, dependency, and browser-suite measurements without presenting them as production measurements.
+- [x] Prepare the post-deployment release checklist for SEO, external links, performance, accessibility, and cross-browser verification.
+- [x] Confirm that documentation distinguishes verified source behavior from unverified production behavior.
 - [ ] Confirm owner approval for the production origin, domain, and hosting provider.
 - [ ] Record the approved production values and configuration plan for `NEXT_PUBLIC_SITE_URL` and `NEXT_PUBLIC_CONTACT_EMAIL`.
 - [ ] Decide whether privacy-conscious analytics are needed; do not add them without explicit approval.
-- [ ] Prepare the release checklist, including post-deployment SEO, external-link, performance, accessibility, and cross-browser verification.
-- [ ] Confirm that documentation distinguishes verified source behavior from unverified production behavior.
 
 ## TASK-010 — Production Deployment & Live Verification
 
-Approval-gated. Do not deploy until the owner explicitly approves TASK-010.
+Approval-gated. Do not deploy until the owner explicitly approves TASK-010. Follow the
+handoff and post-deployment checklist in [LAUNCH_READINESS.md](LAUNCH_READINESS.md).
 
 - [ ] Obtain explicit owner approval before deployment.
 - [ ] Configure the approved production origin, host, domain, and environment values.
