@@ -123,6 +123,18 @@ The read-only TASK-008 audit is complete. Documentation items checked below were
 - [ ] Verify canonical metadata, sitemap, robots, Open Graph/Twitter metadata, and social previews after deployment.
 - [ ] Explicitly decide whether privacy-conscious analytics are needed. Do not install or configure analytics without approval.
 
+## Completed: TASK-008D — Final Technical Verification
+
+- [x] Confirmed the task branch is based on `b1e8f57`, the merge of TASK-008C PR #22.
+- [x] Reviewed the public routes, project case studies, 404 behavior, metadata/canonical/robots policy, site-origin validation, sitemap, contact copy behavior, responsive coverage, and CI workflow.
+- [x] Ran `npm ci`, `npm run lint`, `npm run typecheck`, and `git diff --check` in an isolated worktree.
+- [x] Ran the production build and full Playwright suite in the isolated worktree with `NEXT_PUBLIC_SITE_URL=https://portfolio.test`; 43 tests passed.
+- [x] Confirmed missing and invalid public HTTP origins fail closed: robots disallows crawling, the sitemap is empty, and canonical/site social-image metadata is omitted.
+- [x] Confirmed the configured test origin is used consistently for canonical URLs, Open Graph/Twitter metadata, robots, and sitemap output.
+- [x] Confirmed PR #22's `validate` check passed. The workflow is pull-request-only, so no check is attached to the `main` merge commit.
+- Outcome: technical verification passed. No application or test defects were found, and no source/test changes were required. This task updates the roadmap only.
+- Limitations: Production deployment, live-domain verification, production environment configuration, measured performance review, deeper accessibility/cross-browser review, external-link reachability, and the analytics decision remain open and were not performed here. TASK-009 and TASK-010 are not complete.
+
 ## TASK-009 — Launch Readiness
 
 Preparation, configuration planning, decisions, and release checklist only. This task does not deploy the site or change hosting settings.
