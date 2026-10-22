@@ -70,8 +70,12 @@
 
 ## TASK-007 — Testing, CI/CD & Deployment
 
-- Expand automated checks, responsive smoke tests, and release workflows.
-- Prepare deployment documentation and deploy only with explicit approval.
+- [x] Add a Playwright browser suite for all public routes, project case studies, and the custom 404 response.
+- [x] Add responsive checks at 320px, 390px, 768px, 1024px, and 1440px, including overflow, navigation, primary-action, mobile-menu, and keyboard-focus checks.
+- [x] Verify the approved contact destinations and core navigation and project-card links without contacting external services.
+- [x] Run the browser suite against a production build and extend the pull-request workflow with browser installation and test execution.
+- [x] Document the local commands, coverage, CI behavior, and limitations in `docs/TESTING.md`.
+- [ ] Deployment, hosting-provider setup, domain configuration, and production release remain pending explicit approval.
 
 ## TASK-008 — Final Launch Audit
 
