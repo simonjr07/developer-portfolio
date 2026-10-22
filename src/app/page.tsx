@@ -4,13 +4,14 @@ import { Card } from "@/components/card";
 import { Container } from "@/components/container";
 import { Eyebrow } from "@/components/eyebrow";
 import { SectionHeading } from "@/components/section-heading";
+import { ProfilePortrait } from "@/components/profile-portrait";
 import { ProjectCard } from "@/components/project-card";
 import { SiteShell } from "@/components/site-shell";
 import { TechnologyBadge } from "@/components/technology-badge";
 import { projects } from "@/data/projects";
 
 export const metadata = createPageMetadata({
-  description: "Simon Chikaobi builds modern business websites and web applications, from booking and ordering experiences to custom business tools.",
+  description: "Simon Chikaobi is a full-stack web developer specializing in modern business web applications, from customer-facing websites to booking, ordering, and internal tools.",
   path: "/",
 });
 
@@ -51,16 +52,19 @@ export default function Home() {
   return (
     <SiteShell>
       <Container>
-        <section className="flex items-center py-16 sm:py-24 lg:min-h-[calc(100svh-5rem)] lg:py-20">
-          <div className="max-w-4xl">
-            <Eyebrow>Full-Stack Web Developer · Business Web Applications</Eyebrow>
-            <h1 className="mt-5 max-w-4xl text-4xl font-semibold leading-[1.08] tracking-tight text-primary sm:text-5xl lg:text-7xl">
+        <section className="grid items-center gap-10 py-16 sm:py-24 lg:min-h-[calc(100svh-5rem)] lg:grid-cols-[minmax(0,1fr)_22rem] lg:gap-14 lg:py-20">
+          <div className="max-w-4xl lg:col-start-1 lg:row-start-1">
+            <Eyebrow>Full-Stack Web Developer</Eyebrow>
+            <h1 className="mt-5 max-w-4xl text-4xl font-semibold leading-[1.08] tracking-tight text-primary sm:text-5xl lg:text-6xl xl:text-7xl">
               I build business websites and the tools behind them.
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-secondary sm:text-xl">
-              From customer-facing websites to booking, ordering, and internal workflows, I build practical web experiences for small and medium-sized businesses, startups, founders, and teams—experiences that make everyday business tasks clearer and easier.
+              I’m Simon, a full-stack web developer specializing in modern business web applications. I build customer-facing websites and the booking, ordering, and operational tools behind them for small and medium-sized businesses, startups, founders, and teams.
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          </div>
+          <ProfilePortrait eager className="mx-auto w-full max-w-xs lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mx-0 lg:max-w-none lg:self-center" />
+          <div className="lg:col-start-1 lg:row-start-2">
+            <div className="flex flex-col gap-3 sm:flex-row">
               <ButtonLink href="/contact">Start a project</ButtonLink>
               <ButtonLink href="/projects" variant="secondary">Explore selected work</ButtonLink>
             </div>
@@ -120,7 +124,7 @@ export default function Home() {
         </section>
 
         <section className="grid items-center gap-10 border-t border-border py-20 sm:py-28 md:grid-cols-[1fr_auto]">
-          <div><SectionHeading eyebrow="A little about me" title="A practical partner for your next web project." description="I’m a full-stack web developer focused on modern business websites and applications. I care about clear communication, thoughtful details, and technology that serves a real purpose." /><div className="mt-7"><ButtonLink href="/about" variant="secondary">More about me</ButtonLink></div></div>
+          <div><SectionHeading eyebrow="A little about me" title="A practical partner for your next web project." description="I approach each project as a practical collaboration: understand the business, shape a focused scope, and build web software the team can understand and maintain." /><div className="mt-7"><ButtonLink href="/about" variant="secondary">More about me</ButtonLink></div></div>
           <div className="hidden size-28 items-center justify-center rounded-full border border-accent/30 font-mono text-3xl text-accent md:flex" aria-hidden="true">&lt;/&gt;</div>
         </section>
 
