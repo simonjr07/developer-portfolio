@@ -1,6 +1,6 @@
 # Deployment
 
-Deployment is intentionally out of scope until explicitly approved. No provider or domain has been configured by this task.
+Deployment is intentionally out of scope until explicitly approved. No provider or domain has been configured by this task. For the current readiness audit, evidence, owner decisions, and TASK-010 handoff, see [LAUNCH_READINESS.md](LAUNCH_READINESS.md).
 
 ## Public contact destination
 
