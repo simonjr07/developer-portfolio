@@ -28,6 +28,10 @@ The suite requests `/`, `/services`, `/about`, `/contact`, `/projects`, and all 
 
 An unknown URL must return HTTP 404 and render the custom not-found page with working homepage and projects links. A nonexistent project URL must also return HTTP 404, render the project-specific not-found heading, avoid rendering a valid case study, and expose a browse-all-projects link to `/projects`.
 
+### Case-study evidence
+
+All four case studies are checked for an operational-interface screenshot and repository documentation links. The image must load from its verified local asset path, expose the documented alternative text, width, height, and caption, preserve its source aspect ratio, and remain within the viewport at 320px and 1440px. Documentation links must match the project repository, open in a new tab, and include their title, description, and source-file cue. Metadata checks also require each documentation URL to be unique and scoped to that project's `docs/` directory on the `main` branch.
+
 ### Metadata, robots, and sitemap
 
 The suite checks the homepage title and description and the case-study page title and description. It also checks that root and project 404 responses expose explicit not-found titles, descriptions, and social titles, omit canonical/Open Graph URLs, and include noindex/nofollow robots and Googlebot metadata. With a test-only origin configured, it additionally checks canonical URLs, Open Graph and Twitter metadata, the social-card URL, robots indexing rules and sitemap reference, and sitemap entries for the five public routes and four known case studies. These checks verify generated output for the synthetic test origin only; they do not verify a live domain, deployment, or production configuration.

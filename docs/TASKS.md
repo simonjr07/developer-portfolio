@@ -179,3 +179,15 @@ Pre-deployment content and presentation work. TASK-010 remains approval-gated.
 - [x] Inspected the homepage and About page at 390px and 1440px; no horizontal overflow or portrait distortion, and no unrelated project imagery was changed.
 - Remaining personal-representation information, not present in the repository or supplied task, was intentionally not invented: years of experience, employment history, education or certifications, client names or outcomes, testimonials, pricing, and measured business results. The owner must supply and verify any of these before they are added.
 - No deployment, production environment changes, domain configuration, analytics, or unrelated redesign was performed.
+
+## Completed: TASK-013 — Case Study Enhancements
+
+Pre-deployment case-study evidence work. TASK-010 remains approval-gated.
+
+- [x] Verified that the four operational screenshots already present on `main` are byte-for-byte identical to the reviewed source files: NexaService `docs/Images/dashboard-lead-summary.png`, Copper Spoon `docs/screenshots/desktop-admin-dashboard.png`, Aurelia Studio `docs/screenshots/admin-overview-desktop.png`, and Maison Vale `docs/screenshots/08-admin-dashboard.png`. They were retained unchanged rather than duplicated.
+- [x] Retained the Architecture, Database, and Testing links for every project and added the remaining verified documentation links: NexaService `docs/API.md`, Copper Spoon `docs/DECISIONS.md`, and Maison Vale `docs/SECURITY.md`.
+- [x] Kept `operationsScreenshot` and `documentation` optional, with the existing case-study conditionals leaving projects without either field unchanged.
+- [x] Added browser coverage for all four case studies: loaded local screenshots, alternative text, reserved width and height, source aspect ratio, captions, repository-scoped documentation URLs, external-link behavior, and 320px/1440px overflow and viewport checks.
+- [x] Validation in an isolated worktree: `npm ci`, `npm run lint`, `npm run typecheck`, production build with `NEXT_PUBLIC_SITE_URL=https://portfolio.test`, and the full Playwright suite (56 passed).
+- [x] No database/schema changes, dependencies, navigation changes, redesign, deployment, production configuration, or unrelated content changes.
+- TASK-010 remains approval-gated. Priority 3 contact-flow work and Priority 4 technical-proof gaps remain open.

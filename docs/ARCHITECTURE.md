@@ -22,7 +22,7 @@ src/app/
 └── contact/page.tsx
 ```
 
-Shared presentation primitives live under `src/components/` when a pattern repeats or needs isolated behavior. The project listing and `/projects/[slug]` case studies derive from the typed, static source at `src/data/projects.ts`; project screenshots are stored locally under `public/projects/`. The services, about, and contact routes use the shared design primitives. The homepage and About page combine typography-led copy with the owner-supplied portrait at `public/images/profile-portrait.webp`, rendered through the shared `ProfilePortrait` component at its intrinsic 3:4 aspect ratio.
+Shared presentation primitives live under `src/components/` when a pattern repeats or needs isolated behavior. The project listing and `/projects/[slug]` case studies derive from the typed, static source at `src/data/projects.ts`; project screenshots are stored locally under `public/projects/`. Each case study can also present an optional, verified operations screenshot and optional links to repository documentation; the four demonstration projects currently provide both. The services, about, and contact routes use the shared design primitives. The homepage and About page combine typography-led copy with the owner-supplied portrait at `public/images/profile-portrait.webp`, rendered through the shared `ProfilePortrait` component at its intrinsic 3:4 aspect ratio.
 
 ## Runtime boundaries
 
