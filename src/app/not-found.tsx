@@ -1,7 +1,14 @@
+import type { Metadata } from "next";
 import { ButtonLink } from "@/components/button-link";
 import { Container } from "@/components/container";
 import { Eyebrow } from "@/components/eyebrow";
 import { SiteShell } from "@/components/site-shell";
+import { createNotFoundMetadata } from "@/lib/page-metadata";
+
+export const metadata: Metadata = createNotFoundMetadata(
+  "Page not found",
+  "The requested page could not be found.",
+);
 
 export default function NotFound() {
   return (

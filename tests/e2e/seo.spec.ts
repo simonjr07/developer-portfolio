@@ -1,4 +1,4 @@
-import { expect, test } from "@playwright/test";
+import { expect, test, type Page } from "@playwright/test";
 
 const SITE_TITLE = "Simon Chikaobi | Full-Stack Web Developer";
 const SITE_DESCRIPTION =
@@ -30,6 +30,44 @@ function getConfiguredTestOrigin() {
 
 const testSiteOrigin = getConfiguredTestOrigin();
 
+async function expectNotFoundMetadata(
+  page: Page,
+  title: string,
+  description: string,
+) {
+  const socialTitle = `${title} | Simon Chikaobi`;
+
+  await expect(page).toHaveTitle(socialTitle);
+  await expect(page.locator('meta[name="description"]')).toHaveAttribute(
+    "content",
+    description,
+  );
+  await expect(page.locator('meta[property="og:title"]').first()).toHaveAttribute(
+    "content",
+    socialTitle,
+  );
+  await expect(page.locator('meta[name="twitter:title"]').first()).toHaveAttribute(
+    "content",
+    socialTitle,
+  );
+  await expect(page.locator('link[rel="canonical"]')).toHaveCount(0);
+  await expect(page.locator('meta[property="og:url"]')).toHaveCount(0);
+
+  for (const name of ["robots", "googlebot"]) {
+    const values = await page
+      .locator(`meta[name="${name}"]`)
+      .evaluateAll((elements) =>
+        elements.map((element) => element.getAttribute("content") ?? ""),
+      );
+
+    expect(values.length).toBeGreaterThan(0);
+    for (const value of values) {
+      expect(value).toContain("noindex");
+      expect(value).not.toContain("index, follow");
+    }
+  }
+}
+
 function requireTestSiteOrigin() {
   if (!testSiteOrigin) {
     throw new Error(
@@ -58,6 +96,24 @@ test.describe("document metadata", () => {
     await expect(page.locator('meta[name="description"]')).toHaveAttribute(
       "content",
       /workplace and facility-services website/i,
+    );
+  });
+
+  test("unknown routes expose explicit noindex metadata", async ({ page }) => {
+    await page.goto("/this-page-does-not-exist");
+    await expectNotFoundMetadata(
+      page,
+      "Page not found",
+      "The requested page could not be found.",
+    );
+  });
+
+  test("unknown project slugs expose explicit noindex metadata", async ({ page }) => {
+    await page.goto("/projects/does-not-exist");
+    await expectNotFoundMetadata(
+      page,
+      "Project not found",
+      "This portfolio project could not be found.",
     );
   });
 });

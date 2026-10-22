@@ -30,7 +30,11 @@ An unknown URL must return HTTP 404 and render the custom not-found page with wo
 
 ### Metadata, robots, and sitemap
 
-The suite checks the homepage title and description and the case-study page title and description. With a test-only origin configured, it also checks canonical URLs, Open Graph and Twitter metadata, the social-card URL, robots indexing rules and sitemap reference, and sitemap entries for the five public routes and four known case studies. These checks verify generated output for the synthetic test origin only; they do not verify a live domain, deployment, or production configuration.
+The suite checks the homepage title and description and the case-study page title and description. It also checks that root and project 404 responses expose explicit not-found titles, descriptions, and social titles, omit canonical/Open Graph URLs, and include noindex/nofollow robots and Googlebot metadata. With a test-only origin configured, it additionally checks canonical URLs, Open Graph and Twitter metadata, the social-card URL, robots indexing rules and sitemap reference, and sitemap entries for the five public routes and four known case studies. These checks verify generated output for the synthetic test origin only; they do not verify a live domain, deployment, or production configuration.
+
+### Site-origin policy
+
+Playwright also runs Node-level checks for `getSiteUrl()` in `tests/e2e/site-url.spec.ts`. Missing, blank, malformed, non-HTTP, and plain-HTTP public origins must fail closed. HTTPS origins are normalized to their origin with any path removed, while HTTP remains available for `localhost`, `127.0.0.1`, and `[::1]` development hosts.
 
 ### Responsive coverage
 

@@ -10,7 +10,7 @@ import { ProjectScreenshot } from "@/components/project-screenshot";
 import { SiteShell } from "@/components/site-shell";
 import { TechnologyBadge } from "@/components/technology-badge";
 import { getProjectBySlug, projects } from "@/data/projects";
-import { createPageMetadata } from "@/lib/page-metadata";
+import { createNotFoundMetadata, createPageMetadata } from "@/lib/page-metadata";
 
 type ProjectRouteProps = { params: Promise<{ slug: string }> };
 
@@ -23,10 +23,10 @@ export async function generateMetadata({ params }: ProjectRouteProps): Promise<M
   const project = getProjectBySlug(slug);
 
   if (!project) {
-    return {
-      title: "Project not found",
-      description: "This portfolio project could not be found.",
-    };
+    return createNotFoundMetadata(
+      "Project not found",
+      "This portfolio project could not be found.",
+    );
   }
 
   return createPageMetadata({
