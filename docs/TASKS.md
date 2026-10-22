@@ -163,3 +163,19 @@ handoff and post-deployment checklist in [LAUNCH_READINESS.md](LAUNCH_READINESS.
 - [ ] Verify external destinations and production 404 behavior when live checks are appropriate.
 - [ ] Run production smoke checks and record measured performance and accessibility/cross-browser results.
 - [ ] Mark post-deployment checks complete only after they have been performed against the approved deployment.
+
+## Completed: TASK-011 — Profile Portrait & Professional Representation
+
+Pre-deployment content and presentation work. TASK-010 remains approval-gated.
+
+- [x] Integrated the owner-supplied portrait at `public/images/profile-portrait.webp` (1086×1448, 89,802 bytes), converted without altering identity using the already-installed image tooling. No stock or generated face was substituted.
+- [x] Added the shared `ProfilePortrait` component using Next.js Image, an intrinsic 3:4 ratio, reserved dimensions, responsive sizing, eager loading with high fetch priority only in the homepage hero, and descriptive alternative text.
+- [x] Used the portrait in the homepage hero and the About-page introduction. The mobile homepage places it after the concise introduction and before the primary actions; the About layout stacks it after the intro copy on small screens.
+- [x] Applied the agreed positioning, “Full-Stack Web Developer specializing in modern business web applications,” and clarified the business workflows the portfolio demonstrates without implying paid client work.
+- [x] Kept the homepage introduction concise and expanded the About copy around customer-facing websites, booking, ordering, dashboards, internal operations, and remote international collaboration.
+- [x] Updated the homepage and About metadata descriptions and standardized the footer positioning capitalization.
+- [x] Added browser coverage for both portraits at 390px and 1440px, including the expected source, alternative text, loaded natural dimensions, and intrinsic aspect ratio without horizontal clipping.
+- [x] Validation in an isolated worktree: `npm ci`, `npm run lint`, `npm run typecheck`, production build with `NEXT_PUBLIC_SITE_URL=https://portfolio.test`, and the full Playwright suite (47 passed).
+- [x] Inspected the homepage and About page at 390px and 1440px; no horizontal overflow or portrait distortion, and no unrelated project imagery was changed.
+- Remaining personal-representation information, not present in the repository or supplied task, was intentionally not invented: years of experience, employment history, education or certifications, client names or outcomes, testimonials, pricing, and measured business results. The owner must supply and verify any of these before they are added.
+- No deployment, production environment changes, domain configuration, analytics, or unrelated redesign was performed.

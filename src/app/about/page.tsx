@@ -3,12 +3,13 @@ import { ButtonLink } from "@/components/button-link";
 import { Card } from "@/components/card";
 import { Container } from "@/components/container";
 import { Eyebrow } from "@/components/eyebrow";
+import { ProfilePortrait } from "@/components/profile-portrait";
 import { SectionHeading } from "@/components/section-heading";
 import { SiteShell } from "@/components/site-shell";
 
 export const metadata = createPageMetadata({
   title: "About",
-  description: "A full-stack web developer focused on modern business websites, applications, and useful workflows.",
+  description: "Simon Chikaobi is a full-stack web developer specializing in modern business web applications, from customer-facing websites to booking, ordering, and internal tools.",
   path: "/about",
 });
 
@@ -31,20 +32,22 @@ export default function AboutPage() {
   return (
     <SiteShell>
       <Container className="py-16 sm:py-24">
-        <section aria-label="About the developer" className="max-w-4xl">
+        <section aria-label="About the developer" className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-14">
           <div>
             <SectionHeading
               level="h1"
               eyebrow="About"
               title="I build modern web applications around useful business workflows."
-              description="I’m a full-stack web developer focused on business websites and applications: the public experiences that explain a service, and the tools that help a team manage the work behind it."
+              description="I’m a full-stack web developer specializing in modern business web applications. I build the public-facing website and the tools behind it—from service discovery and booking to ordering, dashboards, and internal operations."
             />
-            <p className="mt-6 max-w-2xl text-base leading-8 text-secondary">I focus on turning a clear problem into a thoughtful, maintainable web product for small and medium-sized businesses, startups, founders, and teams. I’m interested in software that is practical to use and understandable to change—not complexity for its own sake.</p>
+            <p className="mt-6 max-w-2xl text-base leading-8 text-secondary">My focus is on turning a clear business problem into a practical, maintainable web product. That might mean helping customers understand an offer and take the next step, giving a team one place to manage requests and schedules, or replacing a manual workflow with a clearer application experience.</p>
+            <p className="mt-4 max-w-2xl text-base leading-8 text-secondary">I’m based in Lagos, Nigeria (WAT) and available for remote collaboration with businesses internationally.</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <ButtonLink href="/projects">View my work</ButtonLink>
               <ButtonLink href="/contact" variant="secondary">Get in touch</ButtonLink>
             </div>
           </div>
+          <ProfilePortrait className="mx-auto w-full max-w-xs lg:mx-0 lg:max-w-none" />
         </section>
 
         <section aria-label="Engineering approach" className="mt-20 border-t border-border pt-16 sm:mt-28 sm:pt-20">

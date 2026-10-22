@@ -7,7 +7,7 @@ export function SiteFooter() {
       <Container className="flex flex-col gap-5 py-2 text-sm text-secondary sm:flex-row sm:items-center sm:justify-between">
         <div>
           <p className="font-medium text-primary">Simon Chikaobi</p>
-          <p className="mt-1 leading-6">Full-stack web developer specializing in modern business web applications.</p>
+          <p className="mt-1 leading-6">Full-Stack Web Developer specializing in modern business web applications.</p>
         </div>
         <nav aria-label="Contact and social links" className="flex flex-wrap items-center gap-x-5 gap-y-2">
           <Link href="/contact" className="inline-flex min-h-11 items-center rounded-sm px-1 text-accent transition-colors hover:text-primary">Start a conversation</Link>

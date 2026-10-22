@@ -2,7 +2,7 @@ import { expect, test, type Page } from "@playwright/test";
 
 const SITE_TITLE = "Simon Chikaobi | Full-Stack Web Developer";
 const SITE_DESCRIPTION =
-  "Simon Chikaobi builds modern business websites and web applications, from booking and ordering experiences to custom business tools.";
+  "Simon Chikaobi is a full-stack web developer specializing in modern business web applications, from customer-facing websites to booking, ordering, and internal tools.";
 const SOCIAL_CARD_PATH = "/social-card";
 const PUBLIC_ROUTES = [
   "/",

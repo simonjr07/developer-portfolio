@@ -28,7 +28,7 @@ The existing `.git` directory and initial commit are retained. Feature branches 
 
 The homepage uses abstract artwork explicitly labeled as a portrait placeholder and schematic project cards labeled as concept previews. No stock, generated, or unverified application imagery is presented as authentic. When supplied by the owner, the homepage portrait belongs at `public/images/profile-portrait.webp`; the placeholder remains until then.
 
-**Superseded by TASK-004 and TASK-008:** the portfolio now uses actual project screenshots, and the portrait placeholder has been removed from the homepage and About page in favour of typography-led presentations. The earlier decision is retained here as historical context.
+**Superseded by TASK-004, TASK-008, and TASK-011:** the portfolio now uses actual project screenshots. The placeholder was removed when no authentic portrait was available, and TASK-011 later added the owner-supplied portrait alongside the typography-led copy. The earlier decision is retained here as historical context.
 
 ## 2026-10-12 — Source case studies from project repositories
 
@@ -43,3 +43,7 @@ At the time of this decision, there was no approved public contact address or fo
 ## 2026-10-13 — Use owner-confirmed identity and contact profiles
 
 The owner confirmed Simon Chikaobi as the public portfolio identity, `simonchikaobi.work@gmail.com` as the public work email, LinkedIn at `https://www.linkedin.com/in/simon-chikaobi-286166373/`, and GitHub at `https://github.com/simonjr07`. The contact implementation keeps the existing `NEXT_PUBLIC_CONTACT_EMAIL` build-time configuration and uses the approved address as its fallback. Profiles are linked directly; no employment, qualification, client result, or testimonial claims are added. Deployment configuration remains a manual owner action and requires a new build/redeployment after any public build-time variable change.
+
+## 2026-10-22 — Integrate the owner-supplied profile portrait
+
+The owner supplied an authentic portrait for the homepage and About page. The source image is converted without changing its identity, using an already available tool, to `public/images/profile-portrait.webp` at its original 1086×1448 aspect ratio. The shared `ProfilePortrait` component renders it with Next.js Image in both locations, reserves the intrinsic dimensions to prevent layout shift, and uses descriptive alternative text. No stock or generated face is substituted. The earlier portrait-free presentation was a response to the missing owner asset, not a permanent design decision.

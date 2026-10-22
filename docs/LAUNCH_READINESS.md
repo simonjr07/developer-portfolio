@@ -18,6 +18,14 @@ replace `docs/DEPLOYMENT.md`, `docs/TESTING.md`, or `docs/TASKS.md`.
 - No hosting provider, domain, DNS record, production environment, or deployment has
   been selected or configured.
 
+### Post-audit update: TASK-011
+
+The owner supplied an authentic portrait after this audit. It is stored at
+`public/images/profile-portrait.webp` (1086×1448, 89,802 bytes) and is used on the
+homepage and About page. The build-size and image-delivery observations below predate
+this asset and should be remeasured in TASK-010. No deployment, production
+configuration, or launch approval has changed.
+
 ## A. Hosting, domain, and site origin
 
 ### Current behavior

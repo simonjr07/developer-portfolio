@@ -50,6 +50,8 @@ At every viewport, the checks cover:
 
 The mobile navigation is additionally opened at 320px, 390px, and 768px to verify that its links are visible and usable, that Escape closes it and restores focus to the menu button, and that following a link closes it.
 
+A dedicated portrait check verifies that the homepage hero and About page load `profile-portrait.webp`, expose the expected alternative text, reserve the loaded natural dimensions, preserve the source 3:4 aspect ratio, and remain within the viewport at 390px and 1440px.
+
 ### Contact, navigation, and focus
 
 The contact checks verify the approved `mailto:` destination and subject, the LinkedIn profile URL, and the GitHub profile URL. Copy-email tests stub `navigator.clipboard.writeText` to resolve and reject in isolated tests, then verify the success feedback or the manual-copy fallback. They do not use the real system clipboard or require browser permission. No test sends email, submits customer data, or contacts external services.
