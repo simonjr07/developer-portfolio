@@ -28,30 +28,32 @@ export async function expectInteractiveElementsWithinViewport(
   page: Page,
   viewportWidth: number,
 ) {
-  const clipped = await page.locator("main a, main button").evaluateAll(
-    (elements, width) =>
-      elements.flatMap((element) => {
-        const rect = element.getBoundingClientRect();
-        const style = window.getComputedStyle(element);
-        const isHidden =
-          style.display === "none" ||
-          style.visibility === "hidden" ||
-          rect.width === 0 ||
-          rect.height === 0;
+  const clipped = await page
+    .locator("header a, header button, main a, main button, footer a, footer button")
+    .evaluateAll(
+      (elements, width) =>
+        elements.flatMap((element) => {
+          const rect = element.getBoundingClientRect();
+          const style = window.getComputedStyle(element);
+          const isHidden =
+            style.display === "none" ||
+            style.visibility === "hidden" ||
+            rect.width === 0 ||
+            rect.height === 0;
 
-        if (isHidden) return [];
-        if (rect.left >= -1 && rect.right <= width + 1) return [];
+          if (isHidden) return [];
+          if (rect.left >= -1 && rect.right <= width + 1) return [];
 
-        return [
-          {
-            text: (element.textContent ?? "").trim().slice(0, 80),
-            left: rect.left,
-            right: rect.right,
-          },
-        ];
-      }),
-    viewportWidth,
-  );
+          return [
+            {
+              text: (element.textContent ?? "").trim().slice(0, 80),
+              left: rect.left,
+              right: rect.right,
+            },
+          ];
+        }),
+      viewportWidth,
+    );
 
   expect(clipped).toEqual([]);
 }

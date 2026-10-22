@@ -58,4 +58,18 @@ test.describe("public routes", () => {
     await expect(page.getByRole("link", { name: "Back to homepage" })).toBeVisible();
     await expect(page.getByRole("link", { name: "Explore projects" })).toBeVisible();
   });
+
+  test("unknown project slugs render the project 404 page", async ({ page }) => {
+    const response = await page.goto("/projects/does-not-exist");
+    expect(response?.status()).toBe(404);
+
+    const pageHeading = page.getByRole("heading", { level: 1 });
+    await expect(pageHeading).toHaveCount(1);
+    await expect(pageHeading).toHaveText(/That case study isn.t here\./i);
+    await expect(page.locator("#scenario-heading")).toHaveCount(0);
+
+    const projectsLink = page.getByRole("link", { name: "Browse all projects" });
+    await expect(projectsLink).toBeVisible();
+    await expect(projectsLink).toHaveAttribute("href", "/projects");
+  });
 });
