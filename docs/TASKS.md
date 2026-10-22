@@ -95,7 +95,7 @@ Launch-audit checklist:
 
 ### TASK-008 audit follow-up register
 
-The read-only TASK-008 audit is complete. Documentation items checked below were resolved by TASK-008A and testing items by TASK-008B; all unchecked items remain open. No production configuration, deployment, external-link verification, measured performance review, or accessibility/cross-browser certification has been performed.
+The read-only TASK-008 audit is complete. Documentation items checked below were resolved by TASK-008A, testing items by TASK-008B, and the 404 metadata/site-origin policy review by TASK-008C; all unchecked items remain open. No production configuration, deployment, external-link verification, measured performance review, or accessibility/cross-browser certification has been performed.
 
 #### Documentation and testing
 
@@ -109,8 +109,8 @@ The read-only TASK-008 audit is complete. Documentation items checked below were
 
 #### Source-level review and verification
 
-- [ ] Review explicit metadata for the root and project-level 404 pages.
-- [ ] Decide whether the production site-origin helper should require HTTPS.
+- [x] Review explicit metadata for the root and project-level 404 pages. Added explicit not-found titles, descriptions, social metadata, and noindex/nofollow robots rules without canonical URLs.
+- [x] Decide whether the production site-origin helper should require HTTPS. Public origins now require HTTPS; plain HTTP is accepted only for loopback development hosts, and missing or invalid values fail closed.
 - [ ] Perform a measured performance review when an appropriate environment is available.
 - [ ] Plan a deeper accessibility review and cross-browser checks beyond the existing Chromium smoke suite.
 - [ ] Verify external destinations when network checks are appropriate; distinguish source-level correctness from confirmed reachability.

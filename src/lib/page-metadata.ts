@@ -8,6 +8,35 @@ type PageMetadataOptions = {
   socialTitle?: string;
 };
 
+export function createNotFoundMetadata(title: string, description: string): Metadata {
+  const socialTitle = `${title} | Simon Chikaobi`;
+
+  return {
+    title,
+    description,
+    robots: {
+      index: false,
+      follow: false,
+      googleBot: {
+        index: false,
+        follow: false,
+      },
+    },
+    openGraph: {
+      type: "website",
+      locale: "en_US",
+      siteName: "Simon Chikaobi",
+      title: socialTitle,
+      description,
+    },
+    twitter: {
+      card: "summary",
+      title: socialTitle,
+      description,
+    },
+  };
+}
+
 export function createPageMetadata({
   title,
   description,
