@@ -95,17 +95,17 @@ Launch-audit checklist:
 
 ### TASK-008 audit follow-up register
 
-The read-only TASK-008 audit is complete. Documentation items checked below were resolved by TASK-008A; all unchecked items remain open. No production configuration, deployment, external-link verification, measured performance review, or accessibility/cross-browser certification has been performed.
+The read-only TASK-008 audit is complete. Documentation items checked below were resolved by TASK-008A and testing items by TASK-008B; all unchecked items remain open. No production configuration, deployment, external-link verification, measured performance review, or accessibility/cross-browser certification has been performed.
 
 #### Documentation and testing
 
 - [x] Reconcile `docs/ARCHITECTURE.md` and `docs/DECISIONS.md` with the actual portrait-free presentation and real project screenshots.
 - [x] Correct the responsive-test documentation so it accurately describes the selectors and elements actually tested.
 - [x] Add the missing `npm run test:e2e` step to the README validation instructions or link to the complete testing instructions.
-- [ ] Add a test for invalid project slugs.
-- [ ] Add tests for copy-email success and failure behavior.
-- [ ] Add or extend metadata, robots, and sitemap tests.
-- [ ] Improve responsive assertions to cover header/footer interactive controls where appropriate.
+- [x] Add a test for invalid project slugs.
+- [x] Add tests for copy-email success and failure behavior.
+- [x] Add or extend metadata, robots, and sitemap tests.
+- [x] Improve responsive assertions to cover header/footer interactive controls where appropriate.
 
 #### Source-level review and verification
 

@@ -11,6 +11,9 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    env:
+      # Test-only origin for deterministic SEO assertions; never a deployed domain.
+      NEXT_PUBLIC_SITE_URL: https://portfolio.test
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
