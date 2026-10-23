@@ -26,6 +26,17 @@ homepage and About page. The build-size and image-delivery observations below pr
 this asset and should be remeasured in TASK-010. No deployment, production
 configuration, or launch approval has changed.
 
+### Post-audit update: TASK-013 and TASK-014
+
+TASK-013 added three verified documentation links, bringing the current total to fifteen,
+and added case-study evidence coverage. TASK-014 clarified the Lagos `WAT, UTC+1`
+context and the prefilled email template, then rechecked the current public destinations:
+the GitHub profile, four repositories, four hosted demonstrations, and fifteen
+documentation links returned HTTP 200, while LinkedIn returned its expected automated
+bot-protection response (999). These are source-level checks, not live-domain or
+production verification. No deployment, provider, domain, environment, or analytics
+configuration has changed.
+
 ## A. Hosting, domain, and site origin
 
 ### Current behavior

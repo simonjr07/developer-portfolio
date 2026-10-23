@@ -165,10 +165,10 @@ export default function ContactPage() {
             {contact ? (
               <>
                 <p className="mt-4 text-sm leading-7 text-secondary">
-                  Direct email goes straight to my inbox—no intermediaries or unmonitored forms. For professional context, LinkedIn and GitHub are open too.
+                  Direct email goes straight to my inbox—no intermediaries or unmonitored forms. Both email options open a prefilled message with prompts for your project, goals, timeline, and constraints. For professional context, LinkedIn and GitHub are open too.
                 </p>
                 <p className="mt-3 text-sm leading-6 text-secondary">
-                  Based in <span className="font-medium text-primary">Lagos, Nigeria (WAT)</span> · Available for international remote collaboration.
+                  Based in <span className="font-medium text-primary">Lagos, Nigeria (WAT, UTC+1)</span> · Available for international remote collaboration.
                 </p>
 
                 <div className="mt-6 rounded-xl border border-border bg-surface/60 p-4">
