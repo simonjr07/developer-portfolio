@@ -2,6 +2,8 @@ import { expect, test, type Locator } from "@playwright/test";
 
 const LINKEDIN_URL = "https://www.linkedin.com/in/simon-chikaobi-286166373/";
 const GITHUB_URL = "https://github.com/simonjr07";
+const EMAIL = "simonchikaobi.work@gmail.com";
+const EMAIL_SUBJECT = "Web project enquiry";
 
 const navigation = [
   {
@@ -38,20 +40,56 @@ test.describe("contact and navigation", () => {
     await page.goto("/contact");
     await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
 
-    const emailAction = page.locator('a[href^="mailto:"]').first();
+    const emailAction = page.getByRole("link", {
+      name: `Email Simon Chikaobi at ${EMAIL}`,
+    });
     await expect(emailAction).toBeVisible();
+    await expect(page.getByText(EMAIL, { exact: true })).toBeVisible();
     const emailHref = await emailAction.getAttribute("href");
     expect(emailHref).toBeTruthy();
     if (!emailHref) return;
 
-    expect(
-      emailHref.startsWith("mailto:simonchikaobi.work@gmail.com?"),
-    ).toBe(true);
+    expect(emailHref.startsWith(`mailto:${EMAIL}?`)).toBe(true);
     const mailto = new URL(emailHref);
-    expect(mailto.searchParams.get("subject")).toBe("Web project enquiry");
-    expect(mailto.searchParams.get("body")).toContain(
-      "potential web development project",
+    expect(mailto.searchParams.get("subject")).toBe(EMAIL_SUBJECT);
+    const emailBody = mailto.searchParams.get("body");
+    expect(emailBody).toContain("potential web development project");
+    for (const prompt of [
+      "Project or business:",
+      "What I need help with:",
+      "Main goal or problem to solve:",
+      "Existing website or system, if applicable:",
+      "Preferred timeline:",
+      "Budget or other constraints, if known:",
+    ]) {
+      expect(emailBody).toContain(prompt);
+    }
+
+    const gmailAction = page.getByRole("link", {
+      name: "Open pre-filled enquiry in Gmail (new window)",
+    });
+    await expect(gmailAction).toBeVisible();
+    await expect(gmailAction).toHaveAttribute("target", "_blank");
+    await expect(gmailAction).toHaveAttribute("rel", "noreferrer");
+    const gmailHref = await gmailAction.getAttribute("href");
+    expect(gmailHref).toBeTruthy();
+    if (!gmailHref) return;
+
+    const gmail = new URL(gmailHref);
+    expect(gmail.origin).toBe("https://mail.google.com");
+    expect(gmail.searchParams.get("view")).toBe("cm");
+    expect(gmail.searchParams.get("fs")).toBe("1");
+    expect(gmail.searchParams.get("to")).toBe(EMAIL);
+    expect(gmail.searchParams.get("su")).toBe(EMAIL_SUBJECT);
+    expect(gmail.searchParams.get("body")).toContain(
+      "Main goal or problem to solve:",
     );
+
+    await expect(
+      page.getByText(
+        /Both email options open a prefilled message with prompts for your project, goals, timeline, and constraints\./,
+      ),
+    ).toBeVisible();
 
     await expect(
       page
@@ -63,6 +101,22 @@ test.describe("contact and navigation", () => {
         .getByRole("link", { name: "GitHub profile for Simon Chikaobi" })
         .first(),
     ).toHaveAttribute("href", GITHUB_URL);
+  });
+
+  test("remote working context is clear on the primary introduction pages", async ({
+    page,
+  }) => {
+    for (const path of ["/", "/about", "/contact"]) {
+      await page.goto(path);
+      await expect(
+        page
+          .getByText(/Lagos, Nigeria \(WAT, UTC\+1\)/)
+          .first(),
+      ).toBeVisible();
+      await expect(
+        page.getByText(/international remote collaboration|remote collaboration with businesses internationally/i).first(),
+      ).toBeVisible();
+    }
   });
 
   test("primary navigation resolves to each page", async ({ page }) => {

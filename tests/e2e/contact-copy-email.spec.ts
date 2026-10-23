@@ -39,6 +39,26 @@ test.describe("copy email address", () => {
     );
   });
 
+  test("can be operated with the keyboard and announces success", async ({
+    page,
+  }) => {
+    await stubClipboard(page, "success");
+    await page.goto("/contact");
+
+    const copyButton = page.getByRole("button", { name: "Copy email address" });
+    await expect(copyButton).toHaveAttribute("type", "button");
+    await copyButton.focus();
+    await expect(copyButton).toBeFocused();
+    await page.keyboard.press("Enter");
+
+    await expect(
+      page.getByRole("button", { name: "Email address copied" }),
+    ).toBeFocused();
+    await expect(page.locator('[aria-live="polite"]')).toHaveText(
+      "The email address is on your clipboard.",
+    );
+  });
+
   test("shows manual-copy fallback when the clipboard write rejects", async ({ page }) => {
     await stubClipboard(page, "failure");
     await page.goto("/contact");

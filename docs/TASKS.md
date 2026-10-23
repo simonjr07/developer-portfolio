@@ -190,4 +190,28 @@ Pre-deployment case-study evidence work. TASK-010 remains approval-gated.
 - [x] Added browser coverage for all four case studies: loaded local screenshots, alternative text, reserved width and height, source aspect ratio, captions, repository-scoped documentation URLs, external-link behavior, and 320px/1440px overflow and viewport checks.
 - [x] Validation in an isolated worktree: `npm ci`, `npm run lint`, `npm run typecheck`, production build with `NEXT_PUBLIC_SITE_URL=https://portfolio.test`, and the full Playwright suite (56 passed).
 - [x] No database/schema changes, dependencies, navigation changes, redesign, deployment, production configuration, or unrelated content changes.
-- TASK-010 remains approval-gated. Priority 3 contact-flow work and Priority 4 technical-proof gaps remain open.
+- TASK-010 remains approval-gated. Priority 3 contact-flow work and Priority 4 technical-proof gaps remained open at TASK-013 completion; TASK-014 closes the identified source-level gaps.
+
+## Completed: TASK-014 — Contact Flow & Technical Proof Gap Closure
+
+Pre-deployment gap closure. TASK-010 remains approval-gated.
+
+### Priority 3 — contact flow
+
+- [x] Retained the working direct email action, Gmail compose action, copy-email control, manual-copy fallback, LinkedIn and GitHub links, enquiry guidance, and collaboration steps. No form, backend, email-delivery service, CRM, or dependency was added.
+- [x] Confirmed the email action uses the approved address, the `Web project enquiry` subject, and all prefilled prompts; confirmed the Gmail action opens a prefilled message with the same recipient, subject, and template. No email was sent.
+- [x] Clarified on the Contact page that both email options open a prefilled enquiry, and made the working time zone explicit as `Lagos, Nigeria (WAT, UTC+1)` on the homepage, About page, and Contact page.
+- [x] Added regression coverage for the direct-email and Gmail destinations, template fields, accessible names, profile links, remote-working context, keyboard copy activation, success announcement, and clipboard-failure fallback.
+
+### Priority 4 — technical proof
+
+- [x] No source-level gap required a change. The homepage categorizes the stack; every project exposes a verified source repository and hosted demonstration; each case study documents scope, implementation, testing/CI evidence, documentation, and limitations; and project cards and case-study labels distinguish portfolio demonstrations from paid client work.
+- [x] Added regression coverage requiring all four case studies to expose their source repository, live demonstration, demonstration label, role/scope statement, and hosted-demo limitation note.
+- [x] Rechecked the current public destinations: the GitHub profile, four repositories, four hosted demonstrations, and fifteen documentation links returned HTTP 200. LinkedIn returned its expected bot-protection response (999) and still requires manual confirmation in a normal browser.
+
+### Validation and remaining work
+
+- [x] Validation in the isolated TASK-014 worktree: `npm ci`, `npm run lint`, `npm run typecheck`, production build with `NEXT_PUBLIC_SITE_URL=https://portfolio.test`, the full Playwright suite (59 passed), and `git diff --check`.
+- [x] Responsive coverage passed at 320px, 390px, 768px, 1024px, and 1440px.
+- [x] No deployment, production environment or provider change, domain configuration, analytics, backend service, or unrelated redesign was performed.
+- Remaining launch work is outside these source-level priorities: live-domain and production contact verification, manual LinkedIn confirmation, measured production performance, deeper accessibility/screen-reader review, and cross-browser/device testing. These remain TASK-010 or post-deployment checks.

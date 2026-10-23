@@ -76,7 +76,7 @@ export default function Home() {
               ))}
             </ul>
             <p className="mt-6 text-sm leading-6 text-secondary">
-              Based in Lagos, Nigeria (WAT) · Available for international remote collaboration.
+              Based in Lagos, Nigeria (WAT, UTC+1) · Available for international remote collaboration.
             </p>
             <p className="mt-2 font-mono text-xs tracking-wide text-secondary">
               Clear scope. Thoughtful implementation. Practical handoff.

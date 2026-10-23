@@ -41,7 +41,7 @@ export default function AboutPage() {
               description="I’m a full-stack web developer specializing in modern business web applications. I build the public-facing website and the tools behind it—from service discovery and booking to ordering, dashboards, and internal operations."
             />
             <p className="mt-6 max-w-2xl text-base leading-8 text-secondary">My focus is on turning a clear business problem into a practical, maintainable web product. That might mean helping customers understand an offer and take the next step, giving a team one place to manage requests and schedules, or replacing a manual workflow with a clearer application experience.</p>
-            <p className="mt-4 max-w-2xl text-base leading-8 text-secondary">I’m based in Lagos, Nigeria (WAT) and available for remote collaboration with businesses internationally.</p>
+            <p className="mt-4 max-w-2xl text-base leading-8 text-secondary">I’m based in Lagos, Nigeria (WAT, UTC+1) and available for remote collaboration with businesses internationally.</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <ButtonLink href="/projects">View my work</ButtonLink>
               <ButtonLink href="/contact" variant="secondary">Get in touch</ButtonLink>

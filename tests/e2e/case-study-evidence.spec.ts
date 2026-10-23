@@ -11,6 +11,43 @@ function escapeRegExp(value: string) {
   return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
+test("case studies expose verified repository and hosted demonstration links", async ({
+  page,
+}) => {
+  for (const project of projects) {
+    await gotoAndExpectHeading(
+      page,
+      `/projects/${project.slug}`,
+      new RegExp(`^${escapeRegExp(project.name)}$`),
+    );
+
+    await expect(page.getByText(/Portfolio demonstration/).first()).toBeVisible();
+    await expect(page.getByText(/Role and scope:/)).toBeVisible();
+
+    const repositoryLink = page.getByRole("link", {
+      name: "Source repository",
+    });
+    await expect(repositoryLink).toBeVisible();
+    await expect(repositoryLink).toHaveAttribute("href", project.repository);
+    await expect(repositoryLink).toHaveAttribute("target", "_blank");
+    await expect(repositoryLink).toHaveAttribute("rel", "noreferrer");
+
+    expect(project.liveDemo).toBeDefined();
+    if (!project.liveDemo) continue;
+
+    const demoLink = page.getByRole("link", {
+      name: "View live demonstration",
+    });
+    await expect(demoLink).toBeVisible();
+    await expect(demoLink).toHaveAttribute("href", project.liveDemo.url);
+    await expect(demoLink).toHaveAttribute("target", "_blank");
+    await expect(demoLink).toHaveAttribute("rel", "noreferrer");
+    await expect(
+      page.getByText(project.liveDemo.note, { exact: true }),
+    ).toBeVisible();
+  }
+});
+
 test("case-study evidence metadata is complete and repository-scoped", () => {
   expect(projects).toHaveLength(4);
 
