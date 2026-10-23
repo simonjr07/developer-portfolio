@@ -117,7 +117,7 @@ export default function ContactPage() {
             level="h1"
             eyebrow="Contact"
             title="Tell me what you’re looking to make work better."
-            description="If you’re considering a business website, web application, internal tool, or improvements to existing software, a little context is a useful place to begin. You don’t need a finished specification—just the problem you’re trying to solve."
+            description="If you’re considering a business website, web application, internal tool, or improvements to existing software, a little context is a useful place to begin. You don’t need a finished specification, just the problem you’re trying to solve."
           />
         </section>
 

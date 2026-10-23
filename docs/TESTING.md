@@ -30,7 +30,7 @@ An unknown URL must return HTTP 404 and render the custom not-found page with wo
 
 ### Case-study evidence
 
-All four case studies are checked for an operational-interface screenshot, repository documentation links, and access to their verified source repository and hosted demonstration. The image must load from its verified local asset path, expose the documented alternative text, width, height, and caption, preserve its source aspect ratio, and remain within the viewport at 320px and 1440px. Documentation links must match the project repository, open in a new tab, and include their title, description, and source-file cue. Metadata checks also require each documentation URL to be unique and scoped to that project's `docs/` directory on the `main` branch. Repository and demo links must match the project data, open in a new tab, and retain their demonstration/limitation notes.
+All four case studies are checked for an operational-interface screenshot, repository documentation links, and access to their verified source repository and hosted demonstration. The image must load from its verified local asset path, expose the documented alternative text, width, height, and caption, preserve its source aspect ratio, and remain within the viewport at 320px and 1440px. Documentation links must match the project repository, open in a new tab, and include their title, description, and source-file cue. Metadata checks also require each documentation URL to be unique and scoped to that project's `docs/` directory on the `main` branch. Repository and demo links must match the project data, open in a new tab, and retain their demonstration/limitation notes. Each case study must also show the portfolio-demonstration label and its role/scope statement.
 
 ### Metadata, robots, and sitemap
 
@@ -58,7 +58,7 @@ A dedicated portrait check verifies that the homepage hero and About page load `
 
 ### Contact, navigation, and focus
 
-The contact checks verify the approved `mailto:` destination, subject, prefilled prompts, accessible name, direct-address presentation, Gmail compose URL and template, LinkedIn profile URL, GitHub profile URL, and the explicit Lagos/UTC+1 remote-working context on the homepage, About page, and Contact page. Copy-email tests stub `navigator.clipboard.writeText` to resolve and reject in isolated tests, then verify keyboard activation, the success announcement, or the manual-copy fallback. They do not use the real system clipboard or require browser permission. No test sends email, submits customer data, or contacts external services.
+The contact checks verify the approved `mailto:` recipient, subject, prefilled prompts and accessible name, direct-address presentation, Gmail compose URL with the same recipient/subject/template, LinkedIn profile URL, GitHub profile URL, and the explicit Lagos/UTC+1 remote-working context on the homepage, About page, and Contact page. Copy-email tests stub `navigator.clipboard.writeText` to resolve and reject in isolated tests, then verify keyboard activation, the success announcement, or the manual-copy failure feedback. They do not use the real system clipboard or require browser permission. No test sends email, submits customer data, or contacts external services.
 
 Navigation checks open each primary navigation destination and each project card's case study. Keyboard checks confirm visible focus on the skip link, brand link, mobile menu button, and desktop navigation.
 
