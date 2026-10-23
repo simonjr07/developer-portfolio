@@ -213,5 +213,6 @@ Pre-deployment gap closure. TASK-010 remains approval-gated.
 
 - [x] Validation in the isolated TASK-014 worktree: `npm ci`, `npm run lint`, `npm run typecheck`, production build with `NEXT_PUBLIC_SITE_URL=https://portfolio.test`, the full Playwright suite (59 passed), and `git diff --check`.
 - [x] Responsive coverage passed at 320px, 390px, 768px, 1024px, and 1440px.
+- [x] Integrated the owner's local Contact-page wording edit (a comma instead of an em dash in the introductory sentence) without replacing the TASK-014 contact-flow implementation; both changes are preserved. Re-ran lint, typecheck, the production build, and the full Playwright suite (59 passed).
 - [x] No deployment, production environment or provider change, domain configuration, analytics, backend service, or unrelated redesign was performed.
 - Remaining launch work is outside these source-level priorities: live-domain and production contact verification, manual LinkedIn confirmation, measured production performance, deeper accessibility/screen-reader review, and cross-browser/device testing. These remain TASK-010 or post-deployment checks.
