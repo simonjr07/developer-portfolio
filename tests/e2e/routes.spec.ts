@@ -16,7 +16,7 @@ const routes = [
   },
   {
     path: "/contact",
-    heading: /^Tell me what you.re looking to make work better\.$/i,
+    heading: /^Tell me about the project or collaboration you have in mind\.$/i,
   },
   {
     path: "/projects",

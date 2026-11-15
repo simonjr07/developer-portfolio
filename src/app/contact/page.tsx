@@ -9,19 +9,21 @@ import { SiteShell } from "@/components/site-shell";
 
 export const metadata = createPageMetadata({
   title: "Contact",
-  description: "Share the business context, problem, and goals for a website or web application project.",
+  description: "Share the context for a direct client website or web application project, agency collaboration, subcontracted development, or additional development capacity.",
   path: "/contact",
 });
 
 const projectAreas = [
-  "Business websites and web applications",
-  "Dashboards and internal business tools",
+  "Websites and web applications",
+  "Dashboards and internal tools",
   "APIs, integrations, and backend functionality",
   "Improvements to existing websites or software",
+  "Agency collaboration and subcontracted implementation",
+  "Additional development capacity for an existing team",
 ];
 
 const enquiryDetails = [
-  "A little about the business or project context.",
+  "A little about your context or the project.",
   "The problem you want to solve and who the work is for.",
   "The functionality or outcome you have in mind.",
   "An existing website, codebase, or application, if there is one.",
@@ -32,7 +34,7 @@ const nextSteps = [
   {
     step: "01",
     title: "Initial note",
-    detail: "Share your business context, problem, and goals using the template or a freeform note.",
+    detail: "Share the business, project, or team context using the template or a freeform note.",
   },
   {
     step: "02",
@@ -116,8 +118,8 @@ export default function ContactPage() {
           <SectionHeading
             level="h1"
             eyebrow="Contact"
-            title="Tell me what you’re looking to make work better."
-            description="If you’re considering a business website, web application, internal tool, or improvements to existing software, a little context is a useful place to begin. You don’t need a finished specification, just the problem you’re trying to solve."
+            title="Tell me about the project or collaboration you have in mind."
+            description="If you are considering a website, web application, internal tool, or improvements to existing software, or you need additional development capacity for a project, a little context is a useful place to begin. This is a place for direct client projects, agency collaboration, and subcontracted development. You don't need a finished specification, just the problem you're trying to solve or the part of the work you need help with."
           />
         </section>
 
@@ -126,7 +128,7 @@ export default function ContactPage() {
             <Eyebrow>What we can explore</Eyebrow>
             <h2 className="mt-4 text-xl font-semibold tracking-tight text-primary">Work I can help with.</h2>
             <p className="mt-3 text-sm leading-6 text-secondary">
-              Whether you are planning a new build or updating an existing system, I can help with:
+              Whether you are planning a new build, updating an existing system, or bringing in extra development capacity, I can help with:
             </p>
             <ul className="mt-4 space-y-3">
               {projectAreas.map((area) => (
@@ -154,18 +156,18 @@ export default function ContactPage() {
           </Card>
 
           <Card className="flex flex-col p-6 sm:p-8">
-            <div className="flex items-center justify-between gap-3">
+            <div className="flex flex-col items-start gap-2.5">
               <Eyebrow>Start a conversation</Eyebrow>
               <span className="inline-flex items-center gap-1.5 font-mono text-xs text-accent">
                 <span className="size-2 rounded-full bg-accent animate-pulse" aria-hidden="true" />
-                Available for projects
+                Available for projects &amp; collaboration
               </span>
             </div>
             <h2 className="mt-4 text-2xl font-semibold tracking-tight text-primary">A clear first note is enough.</h2>
             {contact ? (
               <>
                 <p className="mt-4 text-sm leading-7 text-secondary">
-                  Direct email goes straight to my inbox—no intermediaries or unmonitored forms. Both email options open a prefilled message with prompts for your project, goals, timeline, and constraints. For professional context, LinkedIn and GitHub are open too.
+                  Direct email goes straight to my inbox. Both email options open a prefilled message with prompts for your project, goals, timeline, and constraints. For professional context, LinkedIn and GitHub are open too.
                 </p>
                 <p className="mt-3 text-sm leading-6 text-secondary">
                   Based in <span className="font-medium text-primary">Lagos, Nigeria (WAT, UTC+1)</span> · Available for international remote collaboration.

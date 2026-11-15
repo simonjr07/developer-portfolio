@@ -28,6 +28,25 @@ const approach = [
   },
 ];
 
+const collaboration = [
+  {
+    title: "Clear communication",
+    description: "Regular progress updates, direct questions, and early discussion of trade-offs keep an existing team aligned without adding another layer of uncertainty.",
+  },
+  {
+    title: "Defined responsibilities and scope",
+    description: "Before implementation, we agree on what I am delivering, where it connects to your team's work, and what stays outside the engagement.",
+  },
+  {
+    title: "Maintainable implementation",
+    description: "Typed code, clear boundaries, and patterns that fit the existing codebase make the contribution easier for your team to review, extend, and maintain.",
+  },
+  {
+    title: "Practical documentation and handover",
+    description: "Notes on decisions, setup, and boundaries—plus an agreed handover point—help your team carry the work forward with confidence.",
+  },
+];
+
 export default function AboutPage() {
   return (
     <SiteShell>
@@ -38,13 +57,13 @@ export default function AboutPage() {
               level="h1"
               eyebrow="About"
               title="I build modern web applications around useful business workflows."
-              description="I’m a full-stack web developer specializing in modern business web applications. I build the public-facing website and the tools behind it—from service discovery and booking to ordering, dashboards, and internal operations."
+              description="I’m a full-stack web developer specializing in modern business web applications. I build the public-facing website and the tools behind it, from service discovery and booking to ordering, dashboards, and internal operations."
             />
             <p className="mt-6 max-w-2xl text-base leading-8 text-secondary">My focus is on turning a clear business problem into a practical, maintainable web product. That might mean helping customers understand an offer and take the next step, giving a team one place to manage requests and schedules, or replacing a manual workflow with a clearer application experience.</p>
-            <p className="mt-4 max-w-2xl text-base leading-8 text-secondary">I’m based in Lagos, Nigeria (WAT, UTC+1) and available for remote collaboration with businesses internationally.</p>
+            <p className="mt-4 max-w-2xl text-base leading-8 text-secondary">I’m based in Lagos, Nigeria (WAT, UTC+1) and available for international remote collaboration with businesses and individuals.</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <ButtonLink href="/projects">View my work</ButtonLink>
-              <ButtonLink href="/contact" variant="secondary">Get in touch</ButtonLink>
+              <ButtonLink href="/contact" variant="secondary">Discuss a project</ButtonLink>
             </div>
           </div>
           <ProfilePortrait className="mx-auto w-full max-w-xs lg:mx-0 lg:max-w-none" />
@@ -68,6 +87,23 @@ export default function AboutPage() {
           </div>
         </section>
 
+        <section aria-label="Collaboration with existing teams" className="mt-20 border-t border-border pt-16 sm:mt-28 sm:pt-20">
+          <SectionHeading
+            level="h2"
+            eyebrow="Collaboration"
+            title="Working alongside your team."
+            description="I can join an existing project for a defined piece of work, whether that means extra capacity for an agency or a focused contribution inside a product team. The aim is to make the contribution clear, reviewable, and easy to carry forward."
+          />
+          <div className="mt-10 grid gap-4 sm:gap-5 md:grid-cols-2">
+            {collaboration.map((item) => (
+              <Card key={item.title} className="h-full p-6">
+                <h3 className="text-base font-semibold text-primary">{item.title}</h3>
+                <p className="mt-2 text-sm leading-7 text-secondary">{item.description}</p>
+              </Card>
+            ))}
+          </div>
+        </section>
+
         <section aria-label="Portfolio overview" className="mt-20 border-t border-border pt-16 sm:mt-28 sm:pt-20">
           <SectionHeading
             level="h2"
@@ -79,10 +115,10 @@ export default function AboutPage() {
         </section>
 
         <section className="mt-20 rounded-3xl border border-border bg-surface px-6 py-12 text-center sm:mt-24 sm:px-12 sm:py-16">
-          <Eyebrow>Let&apos;s build something useful</Eyebrow>
-          <h2 className="mx-auto mt-4 max-w-2xl text-3xl font-semibold tracking-tight text-primary sm:text-4xl">Have a project you&apos;d like to move forward?</h2>
-          <p className="mx-auto mt-4 max-w-xl leading-7 text-secondary">Tell me about the problem you&apos;re solving, and we can explore whether I&apos;m the right partner to help.</p>
-          <div className="mt-7"><ButtonLink href="/contact">Get in touch</ButtonLink></div>
+          <Eyebrow>Let&apos;s work together</Eyebrow>
+          <h2 className="mx-auto mt-4 max-w-2xl text-3xl font-semibold tracking-tight text-primary sm:text-4xl">Have a project or collaboration in mind?</h2>
+          <p className="mx-auto mt-4 max-w-xl leading-7 text-secondary">Tell me about the problem you&apos;re solving or the capacity your team needs, and we can explore whether I&apos;m the right fit.</p>
+          <div className="mt-7"><ButtonLink href="/contact">Discuss a project</ButtonLink></div>
         </section>
       </Container>
     </SiteShell>

@@ -80,7 +80,7 @@ export function SiteHeader() {
         </nav>
 
         <Link href="/contact" className={buttonLinkClassName("primary", "max-lg:hidden")}>
-          Start a project
+          Discuss a project
         </Link>
 
         <button
@@ -121,7 +121,7 @@ export function SiteHeader() {
               onClick={() => setIsMenuOpen(false)}
               className={buttonLinkClassName("primary", "mt-3 w-full")}
             >
-              Start a project
+              Discuss a project
             </Link>
           </div>
         </nav>

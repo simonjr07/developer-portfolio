@@ -18,12 +18,12 @@ const responsiveRoutes = [
   {
     path: "/",
     heading: /^I build business websites and the tools behind them\.$/,
-    primaryAction: "Start a project",
+    primaryAction: "Discuss a project",
   },
   {
     path: "/projects",
     heading: /^Projects built to explore real business workflows\.$/,
-    primaryAction: "Get in touch",
+    primaryAction: "Discuss a project",
   },
   {
     path: "/services",
@@ -37,7 +37,7 @@ const responsiveRoutes = [
   },
   {
     path: "/contact",
-    heading: /^Tell me what you.re looking to make work better\.$/i,
+    heading: /^Tell me about the project or collaboration you have in mind\.$/i,
     primaryAction: "Email Simon Chikaobi at simonchikaobi.work@gmail.com",
   },
   {
