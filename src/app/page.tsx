@@ -45,7 +45,26 @@ const process = [
 
 const projectTypes = ["Business websites", "Booking & ordering", "Custom business tools"];
 
-const featuredProjectSlugs = ["nexaservice", "copper-spoon", "maison-vale"];
+const collaborationArrangements = [
+  {
+    title: "Additional development capacity",
+    description: "Extra hands for a defined period when your team is at capacity, scoped around the part of the build that needs support.",
+  },
+  {
+    title: "Project-based development support",
+    description: "Frontend, backend, or full-stack implementation for a specific project, delivered alongside your existing team and process.",
+  },
+  {
+    title: "Subcontracted implementation",
+    description: "A defined piece of implementation delivered to your agency's brief, with clear responsibilities and agreed review points.",
+  },
+  {
+    title: "Behind your client relationship",
+    description: "Where appropriate, I can work under your agency's existing client relationship while your team remains the main point of contact.",
+  },
+];
+
+const featuredProjectSlugs = ["nexaservice", "copper-spoon", "aurelia-studio", "maison-vale"];
 const featuredProjects = projects.filter((project) => featuredProjectSlugs.includes(project.slug));
 
 export default function Home() {
@@ -59,13 +78,13 @@ export default function Home() {
               I build business websites and the tools behind them.
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-secondary sm:text-xl">
-              I’m Simon, a full-stack web developer specializing in modern business web applications. I build customer-facing websites and the booking, ordering, and operational tools behind them for small and medium-sized businesses, startups, founders, and teams.
+              I’m Simon, a full-stack web developer specializing in modern business web applications. I build customer-facing websites and the booking, ordering, and operational tools behind them for businesses, individual clients, startups, founders, and teams.
             </p>
           </div>
           <ProfilePortrait eager className="mx-auto w-full max-w-xs lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mx-0 lg:max-w-none lg:self-center" />
           <div className="lg:col-start-1 lg:row-start-2">
             <div className="flex flex-col gap-3 sm:flex-row">
-              <ButtonLink href="/contact">Start a project</ButtonLink>
+              <ButtonLink href="/contact">Discuss a project</ButtonLink>
               <ButtonLink href="/projects" variant="secondary">Explore selected work</ButtonLink>
             </div>
             <ul className="mt-8 flex flex-wrap gap-2" aria-label="Types of projects">
@@ -85,8 +104,8 @@ export default function Home() {
         </section>
 
         <section id="selected-work" className="scroll-mt-24 border-t border-border py-20 sm:py-28">
-          <SectionHeading eyebrow="Selected work" title="Ideas shaped into useful digital experiences." description="Three independent demonstrations of common business workflows. Each case study explains the scope and boundaries of the work." />
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
+          <SectionHeading eyebrow="Selected work" title="Ideas shaped into useful digital experiences." description="Four independent demonstrations of common business workflows. Each case study explains the scope and boundaries of the work." />
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 sm:gap-5">
             {featuredProjects.map((project) => (
               <ProjectCard key={project.slug} project={project} headingLevel="h3" />
             ))}
@@ -100,6 +119,27 @@ export default function Home() {
             {services.map((service, index) => <Card key={service.title} className="h-full p-6"><span className="font-mono text-xs font-medium text-accent">0{index + 1}</span><h3 className="mt-5 text-lg font-semibold text-primary">{service.title}</h3><p className="mt-3 text-sm leading-6 text-secondary">{service.description}</p></Card>)}
           </div>
           <div className="mt-8"><ButtonLink href="/services" variant="secondary">See services</ButtonLink></div>
+        </section>
+
+        <section aria-label="Development support for agency teams" className="border-t border-border py-20 sm:py-28">
+          <SectionHeading
+            eyebrow="Agency collaboration"
+            title="Development support for agency teams"
+            description="I'm available to collaborate with software, web development, and design agencies that need additional development capacity for defined projects. I can contribute to frontend implementation, backend functionality, and full-stack business applications while working alongside your existing team."
+          />
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 sm:gap-5">
+            {collaborationArrangements.map((arrangement, index) => (
+              <Card key={arrangement.title} className="h-full p-6">
+                <span className="font-mono text-xs font-medium text-accent">0{index + 1}</span>
+                <h3 className="mt-4 text-lg font-semibold text-primary">{arrangement.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-secondary">{arrangement.description}</p>
+              </Card>
+            ))}
+          </div>
+          <p className="mt-8 max-w-2xl text-sm leading-7 text-secondary">
+            Every arrangement is agreed individually around the project, responsibilities, and handover. If your team needs an extra developer for a defined piece of work, we can start with the scope you have in mind.
+          </p>
+          <div className="mt-6"><ButtonLink href="/contact" variant="secondary">Discuss agency collaboration</ButtonLink></div>
         </section>
 
         <section className="border-t border-border py-20 sm:py-28">
@@ -130,9 +170,9 @@ export default function Home() {
 
         <section className="mb-16 rounded-3xl border border-border bg-surface px-6 py-12 text-center sm:mb-24 sm:px-12 sm:py-16">
           <Eyebrow>Have a project in mind?</Eyebrow>
-          <h2 className="mx-auto mt-4 max-w-2xl text-3xl font-semibold tracking-tight text-primary sm:text-4xl">Let&apos;s make something useful for your business.</h2>
-          <p className="mx-auto mt-4 max-w-xl leading-7 text-secondary">Tell me what you’re working toward, and we can explore whether I’m the right partner to help.</p>
-          <div className="mt-7"><ButtonLink href="/contact">Get in touch</ButtonLink></div>
+          <h2 className="mx-auto mt-4 max-w-2xl text-3xl font-semibold tracking-tight text-primary sm:text-4xl">Let&apos;s make something useful together.</h2>
+          <p className="mx-auto mt-4 max-w-xl leading-7 text-secondary">Tell me what you&apos;re working toward—whether that&apos;s a direct client project or additional capacity for your agency&apos;s team.</p>
+          <div className="mt-7"><ButtonLink href="/contact">Start a conversation</ButtonLink></div>
         </section>
       </Container>
     </SiteShell>

@@ -31,10 +31,10 @@ export default function ProjectsPage() {
 
         <section className="mt-16 flex flex-col items-start justify-between gap-5 border-t border-border pt-8 sm:mt-20 sm:flex-row sm:items-center">
           <div>
-            <h2 className="text-lg font-semibold text-primary">Have a project in mind?</h2>
-            <p className="mt-1 max-w-xl text-sm leading-6 text-secondary">Tell me about the workflow or business problem you want to improve.</p>
+            <h2 className="text-lg font-semibold text-primary">Have a project or collaboration in mind?</h2>
+            <p className="mt-1 max-w-xl text-sm leading-6 text-secondary">Tell me about the workflow or problem you want to improve—or the development capacity your team needs.</p>
           </div>
-          <ButtonLink href="/contact">Get in touch</ButtonLink>
+          <ButtonLink href="/contact">Discuss a project</ButtonLink>
         </section>
       </Container>
     </SiteShell>

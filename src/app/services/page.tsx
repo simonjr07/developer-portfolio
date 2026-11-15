@@ -48,8 +48,39 @@ const services = [
   },
 ];
 
+const capabilities = [
+  {
+    title: "Frontend development",
+    description: "Responsive interfaces built with React, Next.js App Router, TypeScript, and Tailwind CSS, from public-facing pages to application screens.",
+  },
+  {
+    title: "Backend application functionality",
+    description: "Server-side logic, input validation, and workflow rules using Node.js and Next.js server actions, keeping sensitive decisions on the server.",
+  },
+  {
+    title: "Database integration and application data",
+    description: "Relational data models and queries with PostgreSQL and Prisma, including constraints and transactional flows around business records.",
+  },
+  {
+    title: "Authentication and authorization",
+    description: "Role-aware access with Auth.js and server-enforced permission checks, so protected operations are verified rather than hidden in the interface.",
+  },
+  {
+    title: "Booking, ordering, and business workflows",
+    description: "Service discovery, appointment booking, menu and cart flows, order status, and operational queues shaped around how the work actually happens.",
+  },
+  {
+    title: "API integrations",
+    description: "Scoped API and data-flow integration where a project requires it, including signed Stripe test-mode webhooks and idempotent event handling in the Maison Vale demonstration.",
+  },
+  {
+    title: "Testing, maintenance, and practical handover",
+    description: "Domain and integration tests with Vitest, CI checks, documentation, and a handover that explains how the implementation fits together.",
+  },
+];
+
 const process = [
-  { number: "01", title: "Discover", detail: "Understand the business context, users, current tools, and the problem that matters most." },
+  { number: "01", title: "Discover", detail: "Understand the client context, users, current tools, and the problem that matters most." },
   { number: "02", title: "Define the scope", detail: "Agree on outcomes, priorities, constraints, assumptions, and a practical first release before implementation." },
   { number: "03", title: "Implement", detail: "Build in clear steps, keeping the interface and underlying workflow understandable as the work takes shape." },
   { number: "04", title: "Test and review", detail: "Check the agreed flows, review the result together, and resolve issues within the defined scope." },
@@ -65,7 +96,7 @@ export default function ServicesPage() {
             level="h1"
             eyebrow="Services"
             title="Practical web work, shaped around how your business operates."
-            description="From the customer-facing website to the server-side workflows behind it, I can help small and medium-sized businesses, startups, founders, and teams plan and build modern web experiences around a real need. The right scope starts with understanding the problem—not choosing a technology first."
+            description="Whether you are planning a new build, improving an existing system, or an agency looking for additional development capacity, I can help shape and build modern web experiences around a real need. The work spans the customer-facing website and the server-side workflows behind it, and the right scope starts with understanding the problem—not choosing a technology first."
           />
         </section>
 
@@ -99,6 +130,23 @@ export default function ServicesPage() {
           ))}
         </section>
 
+        <section aria-label="Supported capabilities" className="mt-20 border-t border-border pt-16 sm:mt-28 sm:pt-20">
+          <SectionHeading
+            level="h2"
+            eyebrow="Capabilities"
+            title="What I can contribute to a project."
+            description="The service areas draw on the same full-stack capabilities. These are the parts of the work I can take on directly, whether for a business, an individual client, or alongside an agency team."
+          />
+          <div className="mt-10 grid gap-4 sm:gap-5 md:grid-cols-2">
+            {capabilities.map((capability) => (
+              <Card key={capability.title} className="h-full p-6">
+                <h3 className="text-base font-semibold text-primary">{capability.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-secondary">{capability.description}</p>
+              </Card>
+            ))}
+          </div>
+        </section>
+
         <section aria-label="Proposed working process" className="mt-20 border-t border-border pt-16 sm:mt-28 sm:pt-20">
           <SectionHeading
             level="h2"
@@ -121,7 +169,7 @@ export default function ServicesPage() {
 
         <section className="mt-20 rounded-3xl border border-border bg-surface px-6 py-10 sm:mt-24 sm:px-10 sm:py-12">
           <h2 className="text-2xl font-semibold tracking-tight text-primary">Not sure which service fits?</h2>
-          <p className="mt-3 max-w-2xl text-sm leading-7 text-secondary">Start with the business problem and what you would like to change. We can clarify the scope together before deciding whether a project is a good fit.</p>
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-secondary">Start with the problem and what you would like to change. We can clarify the scope together before deciding whether a project is a good fit.</p>
           <div className="mt-6"><ButtonLink href="/contact">Share a project brief</ButtonLink></div>
         </section>
       </Container>
